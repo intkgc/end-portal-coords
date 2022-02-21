@@ -3,45 +3,44 @@ package com.jvmfrog.endportalcoords;
 import android.content.Context;
 import android.content.DialogInterface;
 
-import androidx.appcompat.app.AlertDialog;
-
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class ErrorDialogs {
-    /*
-    Init:
-    ErrorDialogs errorDialogs = new ErrorDialogs();
-
-    Use:
-    errorDialogs.angleEqualException(context);
-    errorDialogs.angleOppositeException(context);
-     */
-
     public void angleEqualException(Context context) {
-        AlertDialog builder = new MaterialAlertDialogBuilder(context)
-                .setIcon(R.drawable.ic_baseline_error_outline_24)
-                .setTitle(R.string.error)
-                .setMessage(R.string.angleEqualException)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //
-                    }
-                })
-                .show();
+        dialogBuilder(context, R.string.angleEqualException,
+                new Button("Ok", (dialog, which) -> {
+                    //
+                }), null).show();
     }
 
     public void angleOppositeException(Context context) {
-        AlertDialog builder = new MaterialAlertDialogBuilder(context)
+        dialogBuilder(context, R.string.angleOppositeException,
+                new Button("Ok", (dialog, which) -> {
+                    //
+                }), null).show();
+    }
+
+
+    private MaterialAlertDialogBuilder dialogBuilder(Context context, int msg, Button positiveButton, Button negativeButton) {
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context)
                 .setIcon(R.drawable.ic_baseline_error_outline_24)
                 .setTitle(R.string.error)
-                .setMessage(R.string.angleOppositeException)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //
-                    }
-                })
-                .show();
+                .setMessage(msg)
+                .setPositiveButton(positiveButton.msg, positiveButton.onClickListener);
+
+        if (negativeButton != null)
+            builder.setNegativeButton(negativeButton.msg, negativeButton.onClickListener);
+
+        return builder;
+    }
+
+    private static class Button {
+        public String msg;
+        public DialogInterface.OnClickListener onClickListener;
+
+        public Button(String msg, DialogInterface.OnClickListener onClickListener) {
+            this.msg = msg;
+            this.onClickListener = onClickListener;
+        }
     }
 }

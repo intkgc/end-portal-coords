@@ -1,18 +1,18 @@
 package com.jvmfrog.endportalcoords.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Point;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.jvmfrog.endportalcoords.EndPortal;
 import com.jvmfrog.endportalcoords.ErrorDialogs;
+import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
+import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
+import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,12 +33,18 @@ public class MainActivity extends AppCompatActivity {
 
         init();
 
-        calculate_coordinates_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                errorDialogs.angleOppositeException(v.getContext());
-            }
-        });
+
+        calculate_coordinates_btn.setOnClickListener(
+                v -> {
+                    try {
+                        Point endPortal = EndPortal.getPortalCoords(new Point(10, 10), new Point(20, 20), 60, 50);
+                        System.out.println(endPortal.x + " " + endPortal.z);
+                    } catch (AnglesEqualException e) {
+                        errorDialogs.angleEqualException(v.getContext());
+                    } catch (AnglesOppositeException e) {
+                        errorDialogs.angleOppositeException(v.getContext());
+                    }
+                });
 
         // Set error text
         //passwordLayout.error = getString(R.string.error)
