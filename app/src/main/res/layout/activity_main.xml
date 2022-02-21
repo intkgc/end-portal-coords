@@ -57,7 +57,8 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:singleLine="true"
-                            android:inputType="numberDecimal"/>
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -80,7 +81,8 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:singleLine="true"
-                            android:inputType="numberDecimal"/>
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -106,7 +108,8 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:singleLine="true"
-                            android:inputType="numberDecimal"/>
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -152,7 +155,8 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:singleLine="true"
-                            android:inputType="numberDecimal"/>
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -175,7 +179,8 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:singleLine="true"
-                            android:inputType="numberDecimal"/>
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -201,7 +206,8 @@
                             android:layout_height="wrap_content"
                             android:textSize="18sp"
                             android:singleLine="true"
-                            android:inputType="numberDecimal"/>
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -211,8 +217,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:padding="8dp"
-                android:layout_marginBottom="8dp"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
                 android:text="@string/calculate_coordinates"
                 android:textSize="18sp"
                 android:textAllCaps="false"
@@ -228,8 +234,6 @@
         android:layout_gravity="bottom|end"
         android:text="@string/guide"
         android:textAllCaps="false"
-        app:extendMotionSpec="@string/guide"
-        app:shrinkMotionSpec="@string/guide"
         app:icon="@drawable/ic_baseline_article_24"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

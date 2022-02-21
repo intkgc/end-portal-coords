@@ -5,8 +5,8 @@
     <string name="y_coord">Player Y Coordinate</string>
     <string name="z_coord">Player Z Coordinate</string>
     <string name="throw_angle">Throw Angle</string>
-    <string name="enter_firts_xyz_and_throw_angle">Enter the first XYZ coordinates and throw angle</string>
-    <string name="enter_second_xyz_and_throw_angle">Enter the second XYZ coordinates and throw angle</string>
+    <string name="enter_firts_xyz_and_throw_angle">Enter the first XZ coordinates and throw angle</string>
+    <string name="enter_second_xyz_and_throw_angle">Enter the second XZ coordinates and throw angle</string>
     <string name="calculate_coordinates">Calculate Coordinates</string>
     <string name="to">-180 to 180</string>
     <string name="guide">Guide</string>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Калькулятор Портала Край</string>
+    <string name="x_coord">X Координат Игрока</string>
+    <string name="y_coord">Y Координат Игрока</string>
+    <string name="z_coord">Z Координат Игрока</string>
+    <string name="throw_angle">Угол Броска</string>
+    <string name="enter_firts_xyz_and_throw_angle">Введите первые координаты XZ и угол броска</string>
+    <string name="enter_second_xyz_and_throw_angle">Введите вторвые координаты XZ и угол броска</string>
+    <string name="calculate_coordinates">Высчитать Координаты</string>
+    <string name="to">От -180 до 180</string>
+    <string name="guide">Гайд</string>
+    <string name="error">Ошибка</string>
+    <string name="angleEqualException">Углы не могут быть равны</string>
+    <string name="angleOppositeException">Углы не могут быть противоположными</string>
+</resources>
