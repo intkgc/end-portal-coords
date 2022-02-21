@@ -1,166 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.cardview.widget.CardView
-        style="@style/Theme.EndPortalCoords"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="4dp"
-        app:cardCornerRadius="16dp"
-        app:cardUseCompatPadding="true">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
+            android:elevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="8dp"
-                android:paddingTop="8dp"
-                android:text="@string/enter_firts_xyz_and_throw_angle"
-                android:textSize="21sp"/>
+                android:layout_margin="8dp"
+                android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:paddingHorizontal="8dp"
-                android:hint="@string/x_coord"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/first_x_coord"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:paddingHorizontal="8dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/enter_firts_xyz_and_throw_angle"
+                    android:textSize="21sp"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:paddingHorizontal="8dp"
-                android:hint="@string/z_coord"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/first_z_coord"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/first_x_coord_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:paddingTop="4dp"
+                    android:paddingHorizontal="8dp"
+                    android:hint="@string/x_coord"
+                    app:hintAnimationEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="12"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:paddingBottom="8dp"
-                android:paddingHorizontal="8dp"
-                android:hint="@string/throw_angle"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_x_coord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/first_throw_angle"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/first_z_coord_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                    android:paddingTop="4dp"
+                    android:paddingHorizontal="8dp"
+                    android:hint="@string/z_coord"
+                    app:hintAnimationEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="12"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <androidx.cardview.widget.CardView
-        style="@style/Theme.EndPortalCoords"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="4dp"
-        app:cardCornerRadius="16dp"
-        app:cardUseCompatPadding="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_z_coord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/first_throw_angle_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="8dp"
+                    android:paddingHorizontal="8dp"
+                    android:hint="@string/throw_angle"
+                    app:hintAnimationEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="6"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_throw_angle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="vertical">
+            android:elevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="8dp"
-                android:paddingTop="8dp"
-                android:text="@string/enter_second_xyz_and_throw_angle"
-                android:textSize="21sp"/>
+                android:layout_margin="8dp"
+                android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:paddingHorizontal="8dp"
-                android:hint="@string/x_coord"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/second_x_coord"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:paddingHorizontal="8dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/enter_second_xyz_and_throw_angle"
+                    android:textSize="21sp"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:paddingHorizontal="8dp"
-                android:hint="@string/z_coord"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/second_z_coord"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/second_x_coord_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:paddingTop="4dp"
+                    android:paddingHorizontal="8dp"
+                    android:hint="@string/x_coord"
+                    app:hintAnimationEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="12"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="4dp"
-                android:paddingBottom="8dp"
-                android:paddingHorizontal="8dp"
-                android:hint="@string/throw_angle"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/second_x_coord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/second_throw_angle"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/second_z_coord_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:singleLine="true"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                    android:paddingTop="4dp"
+                    android:paddingHorizontal="8dp"
+                    android:hint="@string/z_coord"
+                    app:hintAnimationEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="12"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/calculate_coordinates"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        style="@style/Widget.Material3.Button.ElevatedButton"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/second_z_coord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/second_throw_angle_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="8dp"
+                    android:paddingHorizontal="8dp"
+                    android:hint="@string/throw_angle"
+                    app:hintAnimationEnabled="true"
+                    app:errorEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="6"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/second_throw_angle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:singleLine="true"
+                        android:inputType="numberDecimal"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calculate_coordinates_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="8dp"
+            android:text="@string/calculate_coordinates"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            style="@style/Widget.Material3.Button.ElevatedButton"/>
+    </LinearLayout>
+
+</ScrollView>
