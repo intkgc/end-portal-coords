@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">End Portal Coords</string>
 
-    <string name="x_coord">X</string>
-    <string name="y_coord">Y</string>
-    <string name="z_coord">Z</string>
+    <string name="x_coord">Player X Coordinate</string>
+    <string name="y_coord">Player Y Coordinate</string>
+    <string name="z_coord">Player Z Coordinate</string>
     <string name="throw_angle">Throw Angle</string>
     <string name="enter_firts_xyz_and_throw_angle">Enter the first XYZ coordinates and throw angle</string>
     <string name="enter_second_xyz_and_throw_angle">Enter the second XYZ coordinates and throw angle</string>
