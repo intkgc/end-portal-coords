@@ -92,7 +92,9 @@
                     app:errorEnabled="true"
                     app:counterEnabled="true"
                     app:counterMaxLength="6"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    app:helperTextEnabled="true"
+                    app:helperText="@string/to"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/first_throw_angle"
@@ -185,6 +187,8 @@
                     app:endIconMode="clear_text"
                     app:counterEnabled="true"
                     app:counterMaxLength="6"
+                    app:helperTextEnabled="true"
+                    app:helperText="@string/to"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                     <com.google.android.material.textfield.TextInputEditText
