@@ -20,6 +20,10 @@ Then repeat this action with second eye of ender
 
 ## Credits
 
-* @IbremMiner837 - GUI
-* @KirboGames - rewrite end portal calculator from https://skrepkaq.ru/stronghold
-* @skrepkaq - end portal calculator 
+* [@IbremMiner837][IbremMiner837] - GUI
+* [@KirboGames][KirboGames] - rewrite end portal calculator from https://skrepkaq.ru/stronghold
+* [@skrepkaq][skrepkaq] - end portal calculator
+
+[IbremMiner837]: https://github.com/IbremMiner837
+[KirboGames]: https://github.com/KirboGames
+[skrepkaq]: https://github.com/skrepkaq
