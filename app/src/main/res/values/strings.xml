@@ -8,4 +8,8 @@
     <string name="enter_firts_xyz_and_throw_angle">Enter the first XYZ coordinates and throw angle</string>
     <string name="enter_second_xyz_and_throw_angle">Enter the second XYZ coordinates and throw angle</string>
     <string name="calculate_coordinates">Calculate Coordinates</string>
+
+    <string name="error">Error</string>
+    <string name="angleEqualException">Angles cannot be equal</string>
+    <string name="angleOppositeException">Angles cannot be opposite</string>
 </resources>

@@ -1,14 +1,18 @@
-package com.jvmfrog.endportalcoords;
+package com.jvmfrog.endportalcoords.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.jvmfrog.endportalcoords.ErrorDialogs;
+import com.jvmfrog.endportalcoords.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +29,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ErrorDialogs errorDialogs = new ErrorDialogs();
+
         init();
+
+        calculate_coordinates_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                errorDialogs.angleOppositeException(v.getContext());
+            }
+        });
 
         // Set error text
         //passwordLayout.error = getString(R.string.error)
