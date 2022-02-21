@@ -2,9 +2,11 @@ package com.jvmfrog.endportalcoords.ui;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.jvmfrog.endportalcoords.EndPortal;
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText first_x_coord, first_z_coord, first_throw_angle;
     private TextInputEditText second_x_coord, second_z_coord, second_throw_angle;
 
+    private float first_x, first_z, second_x, second_z, first_ta, second_ta;
+
     private MaterialButton calculate_coordinates_btn;
 
     @Override
@@ -36,9 +40,22 @@ public class MainActivity extends AppCompatActivity {
 
         calculate_coordinates_btn.setOnClickListener(
                 v -> {
+                    first_x = Float.parseFloat(first_x_coord.getText().toString());
+                    first_z = Float.parseFloat(first_z_coord.getText().toString());
+                    second_x = Float.parseFloat(second_x_coord.getText().toString());
+                    second_z = Float.parseFloat(second_z_coord.getText().toString());
+                    first_ta = Float.parseFloat(first_throw_angle.getText().toString());
+                    second_ta = Float.parseFloat(second_throw_angle.getText().toString());
+
                     try {
-                        Point endPortal = EndPortal.getPortalCoords(new Point(10, 10), new Point(20, 20), 60, 50);
+                        Point endPortal = EndPortal.getPortalCoords(new Point(first_x, first_z), new Point(second_x, second_z), first_ta, second_ta);
                         System.out.println(endPortal.x + " " + endPortal.z);
+
+                        AlertDialog builder = new MaterialAlertDialogBuilder(this)
+                                .setTitle("End Portal Coordinates")
+                                .setMessage("X:" + (int) endPortal.x + " " + "Z:" + endPortal.z)
+                                .setPositiveButton("Ok", null)
+                                .show();
                     } catch (AnglesEqualException e) {
                         errorDialogs.angleEqualException(v.getContext());
                     } catch (AnglesOppositeException e) {
