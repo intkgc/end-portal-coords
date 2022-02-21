@@ -1,12 +1,14 @@
 package com.jvmfrog.endportalcoords.ui;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.jvmfrog.endportalcoords.EndPortal;
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private float first_x, first_z, second_x, second_z, first_ta, second_ta;
 
     private MaterialButton calculate_coordinates_btn;
+
+    private ExtendedFloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,5 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Buttons
         calculate_coordinates_btn = findViewById(R.id.calculate_coordinates_btn);
+        fab = findViewById(R.id.extended_fab);
     }
 }
