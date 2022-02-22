@@ -50,6 +50,8 @@ public class EndPortal {
                     }
             }
         }
+        endPortal.x = Math.round(endPortal.x);
+        endPortal.z = Math.round(endPortal.z);
         return endPortal;
     }
 

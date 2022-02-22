@@ -1,18 +1,14 @@
 package com.jvmfrog.endportalcoords.ui;
 
 import android.os.Bundle;
-import android.view.View;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.jvmfrog.endportalcoords.EndPortal;
-import com.jvmfrog.endportalcoords.ErrorDialogs;
 import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
@@ -37,33 +33,39 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ErrorDialogs errorDialogs = new ErrorDialogs();
-
         init();
 
 
         calculate_coordinates_btn.setOnClickListener(
                 v -> {
-                    first_x = Float.parseFloat(first_x_coord.getText().toString());
-                    first_z = Float.parseFloat(first_z_coord.getText().toString());
-                    second_x = Float.parseFloat(second_x_coord.getText().toString());
-                    second_z = Float.parseFloat(second_z_coord.getText().toString());
-                    first_ta = Float.parseFloat(first_throw_angle.getText().toString());
-                    second_ta = Float.parseFloat(second_throw_angle.getText().toString());
+                    if (!first_x_coord.getText().toString().isEmpty() &&
+                            !first_z_coord.getText().toString().isEmpty() &&
+                            !first_throw_angle.getText().toString().isEmpty() &&
+                            !second_x_coord.getText().toString().isEmpty() &&
+                            !second_z_coord.getText().toString().isEmpty() &&
+                            !second_throw_angle.getText().toString().isEmpty()) {
 
-                    try {
-                        Point endPortal = EndPortal.getPortalCoords(new Point(first_x, first_z), new Point(second_x, second_z), first_ta, second_ta);
-                        System.out.println(endPortal.x + " " + endPortal.z);
+                        first_x = Float.parseFloat(first_x_coord.getText().toString());
+                        first_z = Float.parseFloat(first_z_coord.getText().toString());
+                        first_ta = Float.parseFloat(first_throw_angle.getText().toString());
 
-                        AlertDialog builder = new MaterialAlertDialogBuilder(this)
-                                .setTitle("End Portal Coordinates")
-                                .setMessage("X:" + (int) endPortal.x + " " + "Z:" + endPortal.z)
-                                .setPositiveButton("Ok", null)
-                                .show();
-                    } catch (AnglesEqualException e) {
-                        errorDialogs.angleEqualException(v.getContext());
-                    } catch (AnglesOppositeException e) {
-                        errorDialogs.angleOppositeException(v.getContext());
+                        second_x = Float.parseFloat(second_x_coord.getText().toString());
+                        second_z = Float.parseFloat(second_z_coord.getText().toString());
+                        second_ta = Float.parseFloat(second_throw_angle.getText().toString());
+
+                        try {
+                            Point endPortal = EndPortal.getPortalCoords(new Point(first_x, first_z), new Point(second_x, second_z), first_ta, second_ta);
+                            System.out.println(endPortal.x + " " + endPortal.z);
+
+                            Dialogs.endPortalCoordinates(this, endPortal.x, endPortal.z).show();
+                        } catch (AnglesEqualException e) {
+                            Dialogs.angleEqualException(v.getContext());
+                        } catch (AnglesOppositeException e) {
+                            Dialogs.angleOppositeException(v.getContext());
+                        }
+                    } else {
+                        System.out.println("Error fields must be filled");
+                        //TODO
                     }
                 });
 
