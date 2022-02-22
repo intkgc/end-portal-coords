@@ -13,10 +13,12 @@
         app:liftOnScroll="true">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="@string/app_name"
             app:titleCentered="true"
+            app:menu="@menu/toolbar_menu"
             app:layout_scrollFlags="scroll|enterAlways|snap"/>
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Калькулятор Портала Край</string>
+
+    <string name="about_app">О Приложении</string>
+
     <string name="x_coord">X Координат Игрока</string>
     <string name="y_coord">Y Координат Игрока</string>
     <string name="z_coord">Z Координат Игрока</string>
@@ -13,4 +16,10 @@
     <string name="error">Ошибка</string>
     <string name="angleEqualException">Углы не могут быть равны</string>
     <string name="angleOppositeException">Углы не могут быть противоположными</string>
+
+    <string name="develops">Разработчики:</string>
+    <string name="ibragim_maltsagov">Ибрагим Мальцагов</string>
+    <string name="kirill_borisenko">Кирилл Борисенко</string>
+    <string name="version">Версия</string>
+    <string name="source_code">Исходный код</string>
 </resources>

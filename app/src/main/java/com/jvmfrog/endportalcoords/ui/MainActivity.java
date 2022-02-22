@@ -1,11 +1,15 @@
 package com.jvmfrog.endportalcoords.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.core.widget.NestedScrollView;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -17,6 +21,8 @@ import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 
 public class MainActivity extends AppCompatActivity {
+
+    private MaterialToolbar toolbar;
 
     private TextInputLayout first_x_coord_layout, first_z_coord_layout, first_throw_angle_layout;
     private TextInputLayout second_x_coord_layout, second_z_coord_layout, second_throw_angle_layout;
@@ -74,11 +80,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        // Set error text
-        //passwordLayout.error = getString(R.string.error)
-
-        // Clear error text
-        //passwordLayout.error = null
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.about:
+                        Intent intent = new Intent(MainActivity.this, AboutAppActivity.class);
+                        startActivity(intent);
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     public void init() {
@@ -103,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         fab = findViewById(R.id.extended_fab);
 
         nestedScrollView = findViewById(R.id.nestedScrollView);
+        toolbar = findViewById(R.id.toolbar);
     }
 
     public void fabShrinkExtent() {
