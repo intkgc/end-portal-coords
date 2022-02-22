@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.core.widget.NestedScrollView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ExtendedFloatingActionButton fab;
 
+    private NestedScrollView nestedScrollView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
-
+        fabShrinkExtent();
 
         calculate_coordinates_btn.setOnClickListener(
                 v -> {
@@ -98,5 +101,26 @@ public class MainActivity extends AppCompatActivity {
         //Buttons
         calculate_coordinates_btn = findViewById(R.id.calculate_coordinates_btn);
         fab = findViewById(R.id.extended_fab);
+
+        nestedScrollView = findViewById(R.id.nestedScrollView);
+    }
+
+    public void fabShrinkExtent() {
+        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                if(scrollY > oldScrollY + 1 && fab.isExtended()) {
+                    fab.shrink();
+                }
+
+                if(scrollY < oldScrollY - 1 && !fab.isExtended()) {
+                    fab.extend();
+                }
+
+                if(scrollY == 0) {
+                    fab.extend();
+                }
+            }
+        });
     }
 }

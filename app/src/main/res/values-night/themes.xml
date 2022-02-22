@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.EndPortalCoords" parent="Theme.Material3.DayNight">
+    <style name="Theme.EndPortalCoords" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#ffd0bcff</item>
         <item name="colorPrimaryVariant">#ff4a4458</item>
