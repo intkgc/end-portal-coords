@@ -20,6 +20,14 @@
     <string name="angleEqualException">Angles cannot be equal</string>
     <string name="angleOppositeException">Angles cannot be opposite</string>
 
+    <string name="next_step">Next Step</string>
+    <string name="again">Again</string>
+    <string name="step_one">Step 1</string>
+    <string name="step_two">Step 2</string>
+    <string name="done">Done</string>
+
+    <string name="eye_of_ender_says">The All-Seeing Eye of Ender, says that the Portal to the End is located at the coordinates:</string>
+
     <string name="develops">Develops:</string>
     <string name="ibragim_maltsagov">Ibragim Maltsagov</string>
     <string name="kirill_borisenko">Kirill Borisenko</string>

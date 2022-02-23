@@ -17,6 +17,14 @@
     <string name="angleEqualException">Углы не могут быть равны</string>
     <string name="angleOppositeException">Углы не могут быть противоположными</string>
 
+    <string name="next_step">Следущий шаг</string>
+    <string name="again">Заново</string>
+    <string name="step_one">Шаг 1</string>
+    <string name="step_two">Шаг 2</string>
+    <string name="done">Готово</string>
+
+    <string name="eye_of_ender_says">Всевидящий Око Края, говорит что портал в Край находится по координатам:</string>
+
     <string name="develops">Разработчики:</string>
     <string name="ibragim_maltsagov">Ибрагим Мальцагов</string>
     <string name="kirill_borisenko">Кирилл Борисенко</string>
