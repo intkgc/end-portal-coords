@@ -37,7 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                app:sv_stepsNumber="3"
                 app:sv_stepLineWidth="1dp"
                 app:sv_stepPadding="4dp"
                 app:sv_doneCircleRadius="12dp"
@@ -45,6 +44,7 @@
                 app:sv_stepViewStyle="@style/StepView"
                 app:sv_stepNumberTextSize="12sp"
                 app:sv_animationType="All"
+                app:sv_stepsNumber="3"
                 style="@style/StepView"/>
 
             <com.google.android.material.card.MaterialCardView
@@ -144,6 +144,20 @@
                             android:inputType="number"
                             android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/first_step_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:padding="16dp"
+                        android:text="@string/next_step"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_baseline_navigate_next_24"
+                        app:iconGravity="textStart"
+                        style="@style/Widget.Material3.Button.ElevatedButton"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -244,6 +258,19 @@
                             android:inputType="number"
                             android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/second_step_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:padding="16dp"
+                        android:text="@string/calculate_coordinates"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_baseline_calculate_24"
+                        app:iconGravity="textStart"
+                        style="@style/Widget.Material3.Button.ElevatedButton"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -280,20 +307,22 @@
                         android:text="X: 0 Z: 0"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/finish_step_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:padding="16dp"
+                        android:text="@string/again"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_baseline_refresh_24"
+                        app:iconGravity="textStart"
+                        style="@style/Widget.Material3.Button.ElevatedButton"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/calculate_coordinates_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:padding="16dp"
-                android:text="@string/calculate_coordinates"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                app:iconGravity="textStart"
-                style="@style/Widget.Material3.Button.ElevatedButton"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

@@ -24,6 +24,9 @@ import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.shuhart.stepview.StepView;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class MainActivity extends AppCompatActivity {
 
     private MaterialToolbar toolbar;
@@ -33,18 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
     private float first_x, first_z, second_x, second_z, first_ta, second_ta;
 
-    private MaterialButton calculate_coordinates_btn;
+    private MaterialButton first_step_btn, second_step_btn, finish_step_btn;
     private TextView portal_coords;
 
     private ExtendedFloatingActionButton fab;
 
-    private NestedScrollView nestedScrollView;
-
     private MaterialCardView first_step, next_step, finish_step;
 
     private StepView stepView;
-
-    int stepIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,23 +52,76 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
-        fabShrinkExtent();
 
-        calculate_coordinates_btn.setOnClickListener(
+        first_step_btn.setOnClickListener(
                 v -> {
                     if (!first_x_coord.getText().toString().isEmpty() &&
                             !first_z_coord.getText().toString().isEmpty() &&
                             !first_throw_angle.getText().toString().isEmpty()) {
 
-                        nextStep();
-                    } else if (!second_x_coord.getText().toString().isEmpty() &&
-                            !second_z_coord.getText().toString().isEmpty() &&
-                            !second_throw_angle.getText().toString().isEmpty()) {
-                        nextStep();
+                        first_step.setVisibility(View.GONE);
+                        next_step.setVisibility(View.VISIBLE);
+                        finish_step.setVisibility(View.GONE);
+                        stepView.go(1, true);
                     } else {
                         System.out.println("Error fields must be filled");
                     }
                 });
+
+        second_step_btn.setOnClickListener(
+                v -> {
+                    if (!second_x_coord.getText().toString().isEmpty() &&
+                            !second_z_coord.getText().toString().isEmpty() &&
+                            !second_throw_angle.getText().toString().isEmpty()) {
+
+                        first_x = Float.parseFloat(first_x_coord.getText().toString());
+                        first_z = Float.parseFloat(first_z_coord.getText().toString());
+                        first_ta = Float.parseFloat(first_throw_angle.getText().toString());
+
+                        second_x = Float.parseFloat(second_x_coord.getText().toString());
+                        second_z = Float.parseFloat(second_z_coord.getText().toString());
+                        second_ta = Float.parseFloat(second_throw_angle.getText().toString());
+
+                        try {
+                            Point endPortal = EndPortal.getPortalCoords(new Point(first_x, first_z), new Point(second_x, second_z), first_ta, second_ta);
+                            System.out.println(endPortal.x + " " + endPortal.z);
+
+                            portal_coords.setText(endPortal.x + " " + endPortal.z);
+
+                            finish_step.setVisibility(View.GONE);
+                            next_step.setVisibility(View.GONE);
+                            finish_step.setVisibility(View.VISIBLE);
+                            stepView.go(2, true);
+                            stepView.done(true);
+
+                            //Dialogs.endPortalCoordinates(this, endPortal.x, endPortal.z).show();
+                        } catch (AnglesEqualException e) {
+                            Dialogs.angleEqualException(MainActivity.this);
+                        } catch (AnglesOppositeException e) {
+                            Dialogs.angleOppositeException(MainActivity.this);
+                        }
+                    } else {
+                        System.out.println("Error fields must be filled");
+                    }
+                }
+        );
+
+        finish_step_btn.setOnClickListener(
+                v -> {
+                    first_x_coord.setText("");
+                    first_z_coord.setText("");
+                    first_throw_angle.setText("");
+                    second_x_coord.setText("");
+                    second_z_coord.setText("");
+                    second_throw_angle.setText("");
+
+                    first_step.setVisibility(View.VISIBLE);
+                    next_step.setVisibility(View.GONE);
+                    finish_step.setVisibility(View.GONE);
+                    stepView.go(0,true);
+                    stepView.done(false);
+                }
+        );
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -88,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     public void init() {
         first_step = findViewById(R.id.first_step);
         next_step = findViewById(R.id.next_step);
-        finish_step = findViewById(R.id.first_step);
+        finish_step = findViewById(R.id.finish_step);
 
         //TextInputEditText
         first_x_coord = findViewById(R.id.first_x_coord);
@@ -99,91 +151,13 @@ public class MainActivity extends AppCompatActivity {
         second_throw_angle = findViewById(R.id.second_throw_angle);
 
         //Buttons
-        calculate_coordinates_btn = findViewById(R.id.calculate_coordinates_btn);
+        first_step_btn = findViewById(R.id.first_step_btn);
+        second_step_btn = findViewById(R.id.second_step_btn);
+        finish_step_btn = findViewById(R.id.finish_step_btn);
         fab = findViewById(R.id.extended_fab);
 
         portal_coords = findViewById(R.id.portal_coords);
-
-        nestedScrollView = findViewById(R.id.nestedScrollView);
         toolbar = findViewById(R.id.toolbar);
         stepView = findViewById(R.id.step_view);
-    }
-
-    public void fabShrinkExtent() {
-        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                if(scrollY > oldScrollY + 1 && fab.isExtended()) {
-                    fab.shrink();
-                }
-
-                if(scrollY < oldScrollY - 1 && !fab.isExtended()) {
-                    fab.extend();
-                }
-
-                if(scrollY == 0) {
-                    fab.extend();
-                }
-            }
-        });
-    }
-
-    public void nextStep() {
-        if(stepIndex == 0) {
-            first_step.setVisibility(View.VISIBLE);
-            next_step.setVisibility(View.GONE);
-            finish_step.setVisibility(View.GONE);
-            stepView.go(stepIndex, true);
-            calculate_coordinates_btn.setText(R.string.next_step);
-            calculate_coordinates_btn.setIcon(getDrawable(R.drawable.ic_baseline_navigate_next_24));
-        } else if(stepIndex == 1) {
-            first_step.setVisibility(View.GONE);
-            next_step.setVisibility(View.VISIBLE);
-            finish_step.setVisibility(View.GONE);
-            stepView.go(stepIndex, true);
-            calculate_coordinates_btn.setText(R.string.calculate_coordinates);
-            calculate_coordinates_btn.setIcon(getDrawable(R.drawable.ic_baseline_calculate_24));
-            calculateCoords();
-        } else if(stepIndex == 2) {
-            first_step.setVisibility(View.GONE);
-            next_step.setVisibility(View.GONE);
-            finish_step.setVisibility(View.VISIBLE);
-            stepView.go(stepIndex, true);
-            stepView.done(true);
-            calculate_coordinates_btn.setText(R.string.again);
-            calculate_coordinates_btn.setIcon(getDrawable(R.drawable.ic_baseline_refresh_24));
-            calculateCoords();
-        } else if(stepIndex > 2) {
-            stepIndex = 0;
-            first_step.setVisibility(View.VISIBLE);
-            next_step.setVisibility(View.GONE);
-            finish_step.setVisibility(View.GONE);
-            stepView.done(false);
-            calculate_coordinates_btn.setText(R.string.next_step);
-            calculate_coordinates_btn.setIcon(getDrawable(R.drawable.ic_baseline_navigate_next_24));
-        }
-    }
-
-    public void calculateCoords() {
-        first_x = Float.parseFloat(first_x_coord.getText().toString());
-        first_z = Float.parseFloat(first_z_coord.getText().toString());
-        first_ta = Float.parseFloat(first_throw_angle.getText().toString());
-
-        second_x = Float.parseFloat(second_x_coord.getText().toString());
-        second_z = Float.parseFloat(second_z_coord.getText().toString());
-        second_ta = Float.parseFloat(second_throw_angle.getText().toString());
-
-        try {
-            Point endPortal = EndPortal.getPortalCoords(new Point(first_x, first_z), new Point(second_x, second_z), first_ta, second_ta);
-            System.out.println(endPortal.x + " " + endPortal.z);
-
-            portal_coords.setText(endPortal.x + " " + endPortal.z);
-
-            //Dialogs.endPortalCoordinates(this, endPortal.x, endPortal.z).show();
-        } catch (AnglesEqualException e) {
-            Dialogs.angleEqualException(MainActivity.this);
-        } catch (AnglesOppositeException e) {
-            Dialogs.angleOppositeException(MainActivity.this);
-        }
     }
 }
