@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                             Point endPortal = EndPortal.getPortalCoords(new Point(first_x, first_z), new Point(second_x, second_z), first_ta, second_ta);
                             System.out.println(endPortal.x + " " + endPortal.z);
 
-                            portal_coords.setText(endPortal.x + " " + endPortal.z);
+                            portal_coords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
 
                             finish_step.setVisibility(View.GONE);
                             next_step.setVisibility(View.GONE);
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         first_step_btn = findViewById(R.id.first_step_btn);
         second_step_btn = findViewById(R.id.second_step_btn);
         finish_step_btn = findViewById(R.id.finish_step_btn);
-        fab = findViewById(R.id.extended_fab);
+        //fab = findViewById(R.id.extended_fab);
 
         portal_coords = findViewById(R.id.portal_coords);
         toolbar = findViewById(R.id.toolbar);

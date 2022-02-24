@@ -27,6 +27,9 @@
     <string name="done">Done</string>
 
     <string name="eye_of_ender_says">The All-Seeing Eye of Ender, says that the Portal to the End is located at the coordinates:</string>
+    <string name="guide_key_f">On the keyboard, press the "F3" key to open the debug menu</string>
+    <string name="guide_coords"></string>
+    <string name="guide_throw_angle"></string>
 
     <string name="develops">Develops:</string>
     <string name="ibragim_maltsagov">Ibragim Maltsagov</string>
