@@ -27,7 +27,11 @@ import com.shuhart.stepview.StepView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity {
+import eu.dkaratzas.android.inapp.update.Constants;
+import eu.dkaratzas.android.inapp.update.InAppUpdateManager;
+import eu.dkaratzas.android.inapp.update.InAppUpdateStatus;
+
+public class MainActivity extends AppCompatActivity implements InAppUpdateManager.InAppUpdateHandler {
 
     private MaterialToolbar toolbar;
 
@@ -44,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
     private MaterialCardView first_step, next_step, finish_step;
 
     private StepView stepView;
+
+    private static final int REQ_CODE_VERSION_UPDATE = 99;
+    private InAppUpdateManager inAppUpdateManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                         next_step.setVisibility(View.VISIBLE);
                         finish_step.setVisibility(View.GONE);
                         stepView.go(1, true);
+
                     } else {
                         System.out.println("Error fields must be filled");
                     }
@@ -135,6 +143,17 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        inAppUpdateManager = InAppUpdateManager.Builder(this, REQ_CODE_VERSION_UPDATE)
+                .resumeUpdates(true) // Resume the update, if the update was stalled. Default is true
+                .mode(Constants.UpdateMode.IMMEDIATE)
+                // default is false. If is set to true you,
+                // have to manage the user confirmation when
+                // you detect the InstallStatus.DOWNLOADED status,
+                .useCustomNotification(true)
+                .handler(this);
+
+        inAppUpdateManager.checkForAppUpdate();
     }
 
     public void init() {
@@ -159,5 +178,15 @@ public class MainActivity extends AppCompatActivity {
         portal_coords = findViewById(R.id.portal_coords);
         toolbar = findViewById(R.id.toolbar);
         stepView = findViewById(R.id.step_view);
+    }
+
+    @Override
+    public void onInAppUpdateError(int code, Throwable error) {
+        //
+    }
+
+    @Override
+    public void onInAppUpdateStatus(InAppUpdateStatus status) {
+        //
     }
 }

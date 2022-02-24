@@ -10,7 +10,7 @@ android {
         minSdk 21
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,6 +39,7 @@ dependencies {
     implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
 
     implementation 'com.shuhart.stepview:stepview:1.5.1'
+    implementation 'eu.dkaratzas:android-inapp-update:1.0.5'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
