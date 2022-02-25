@@ -1,32 +1,25 @@
 package com.jvmfrog.endportalcoords.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.splashscreen.SplashScreen;
-import androidx.core.widget.NestedScrollView;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 import com.jvmfrog.endportalcoords.EndPortal;
 import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.shuhart.stepview.StepView;
-
-import java.util.ArrayList;
-import java.util.Collections;
-
 import eu.dkaratzas.android.inapp.update.Constants;
 import eu.dkaratzas.android.inapp.update.InAppUpdateManager;
 import eu.dkaratzas.android.inapp.update.InAppUpdateStatus;
@@ -35,8 +28,7 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
 
     private MaterialToolbar toolbar;
 
-    private TextInputEditText first_x_coord, first_z_coord, first_throw_angle;
-    private TextInputEditText second_x_coord, second_z_coord, second_throw_angle;
+    private TextInputEditText first_x_coord, first_z_coord, first_throw_angle, second_x_coord, second_z_coord, second_throw_angle;
 
     private float first_x, first_z, second_x, second_z, first_ta, second_ta;
 
@@ -52,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
     private static final int REQ_CODE_VERSION_UPDATE = 99;
     private InAppUpdateManager inAppUpdateManager;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,17 +124,13 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
                 }
         );
 
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.about:
-                        Intent intent = new Intent(MainActivity.this, AboutAppActivity.class);
-                        startActivity(intent);
-                        return true;
-                }
-                return false;
+        toolbar.setOnMenuItemClickListener(item -> {
+            if (item.getItemId() == R.id.about) {
+                Intent intent = new Intent(MainActivity.this, AboutAppActivity.class);
+                startActivity(intent);
+                return true;
             }
+            return false;
         });
 
         inAppUpdateManager = InAppUpdateManager.Builder(this, REQ_CODE_VERSION_UPDATE)
