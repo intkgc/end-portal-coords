@@ -13,9 +13,11 @@
     <string name="calculate_coordinates">Высчитать Координаты</string>
     <string name="to">От -180 до 180</string>
     <string name="guide">Гайд</string>
+    <string name="skip">Пропустить</string>
     <string name="error">Ошибка</string>
     <string name="angleEqualException">Углы не могут быть равны</string>
     <string name="angleOppositeException">Углы не могут быть противоположными</string>
+    <string name="check_all_fields">Убедитесь что все поля заполнены</string>
 
     <string name="next_step">Следущий шаг</string>
     <string name="again">Заново</string>
@@ -24,9 +26,14 @@
     <string name="done">Готово</string>
 
     <string name="eye_of_ender_says">Всевидящий Око Края, говорит что портал в Край находится по координатам:</string>
+    <string name="debug_menu">Дебаг Меню</string>
+    <string name="guide_title_where_are_coords_and_angle_throw">Где найти координаты и угол броска?</string>
+    <string name="guide_title_coords_xz">Координаты X и Z</string>
+    <string name="guide_title_throw_angle">Угол Броска</string>
     <string name="guide_key_f">На клавиатуре нажмите клавишу "F3", чтобы открыть дебаг меню</string>
-    <string name="guide_coords"></string>
-    <string name="guide_throw_angle"></string>
+    <string name="guide_if_debug_menu_opened">Если у вас открылось что то в таком роде, то вы на верном пути</string>
+    <string name="guide_coords_xz">Координаты X и Z можно найти на 9-ой строке</string>
+    <string name="guide_throw_angle">Угол броска можно найти на 12-ой строке</string>
 
     <string name="develops">Разработчики:</string>
     <string name="ibragim_maltsagov">Ибрагим Мальцагов</string>

@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
 
                     } else {
                         System.out.println("Error fields must be filled");
+                        Dialogs.checkAllFields(MainActivity.this);
                     }
                 });
 
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
                         }
                     } else {
                         System.out.println("Error fields must be filled");
+                        Dialogs.checkAllFields(MainActivity.this);
                     }
                 }
         );
@@ -121,6 +123,13 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
                     finish_step.setVisibility(View.GONE);
                     stepView.go(0,true);
                     stepView.done(false);
+                }
+        );
+
+        fab.setOnClickListener(
+                v -> {
+                    Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+                    startActivity(intent);
                 }
         );
 
@@ -162,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
         first_step_btn = findViewById(R.id.first_step_btn);
         second_step_btn = findViewById(R.id.second_step_btn);
         finish_step_btn = findViewById(R.id.finish_step_btn);
-        //fab = findViewById(R.id.extended_fab);
+        fab = findViewById(R.id.extended_fab);
 
         portal_coords = findViewById(R.id.portal_coords);
         toolbar = findViewById(R.id.toolbar);

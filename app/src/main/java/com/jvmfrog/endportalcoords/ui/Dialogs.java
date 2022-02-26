@@ -18,6 +18,11 @@ public class Dialogs {
                 new Button("Ok", null), null).show();
     }
 
+    public static void checkAllFields(Context context) {
+        error(context, R.string.check_all_fields,
+                new Button("Ok", null), null).show();
+    }
+
     @SuppressLint("DefaultLocale")
     public static MaterialAlertDialogBuilder endPortalCoordinates(Context context, float x, float z) {
         return new MaterialAlertDialogBuilder(context)

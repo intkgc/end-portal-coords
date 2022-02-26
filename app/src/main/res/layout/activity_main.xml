@@ -327,7 +327,7 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!--com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/extended_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -335,6 +335,6 @@
         android:layout_gravity="bottom|end"
         android:text="@string/guide"
         android:textAllCaps="false"
-        app:icon="@drawable/ic_baseline_article_24"/-->
+        app:icon="@drawable/ic_baseline_article_24"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

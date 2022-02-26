@@ -5,8 +5,10 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/round_corners.xml" value="0.1485" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/activity_about_app.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/activity_guide.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/guide_dialog.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/intro_slide.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/menu/toolbar_menu.xml" value="0.18229166666666666" />
       </map>
     </option>

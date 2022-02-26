@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EndPortalCoords">
         <activity
+            android:name=".ui.GuideActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.AboutAppActivity"
             android:exported="false" />
         <activity

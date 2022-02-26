@@ -49,16 +49,16 @@
     </style>
     
     <style name="NextStepView" parent="Theme.EndPortalCoords">
-        <item name="sv_selectedCircleColor">#ffeaddff</item>
+        <item name="sv_selectedCircleColor">#ff79747e</item>
         <item name="sv_selectedTextColor">#ff1d192b</item>
         <item name="sv_nextTextColor">#ff49454f</item>
         <item name="sv_nextStepCircleColor">#ff49454f</item>
         <item name="sv_nextStepLineColor">#ff49454f</item>
-        <item name="sv_doneCircleColor">#ffeaddff</item>
+        <item name="sv_doneCircleColor">#ff79747e</item>
         <item name="sv_doneTextColor">#ff1d192b</item>
-        <item name="sv_doneStepLineColor">#ffeaddff</item>
+        <item name="sv_doneStepLineColor">#ff79747e</item>
         <item name="sv_doneStepMarkColor">#ff1d192b</item>
-        <item name="sv_selectedStepNumberColor">#ffeaddff</item>
+        <item name="sv_selectedStepNumberColor">#ff79747e</item>
     </style>
 
     <style name="Theme.AppSplash" parent="Theme.SplashScreen">
