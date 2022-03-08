@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
 
         inAppUpdateManager = InAppUpdateManager.Builder(this, REQ_CODE_VERSION_UPDATE)
                 .resumeUpdates(true) // Resume the update, if the update was stalled. Default is true
-                .mode(Constants.UpdateMode.IMMEDIATE)
+                .mode(Constants.UpdateMode.FLEXIBLE)
                 // default is false. If is set to true you,
                 // have to manage the user confirmation when
                 // you detect the InstallStatus.DOWNLOADED status,

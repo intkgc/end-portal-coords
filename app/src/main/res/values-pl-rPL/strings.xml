@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">End Portal Coords</string>
+    <string name="about_app">O Aplikacji</string>
+    <string name="x_coord">X Współrzędne Gracza</string>
+    <string name="y_coord">Z Współrzędne Gracza</string>
+    <string name="z_coord">Z Współrzędne Gracza</string>
+    <string name="throw_angle">Kąt Rzutu</string>
+    <string name="enter_firts_xyz_and_throw_angle">Wprowadź pierwze współrzędne XZ i kąt rzutu</string>
+    <string name="enter_second_xyz_and_throw_angle">Wprowadź drugie współrzędne XZ i kąt rzutu</string>
+    <string name="calculate_coordinates">Oblicz współrzędne</string>
+    <string name="to">-180 do 180</string>
+    <string name="guide">Hyde</string>
+    <string name="skip">Pomijać</string>
+    <string name="error">Błąd</string>
+    <string name="angleEqualException">Kąty nie mogą być równe</string>
+    <string name="angleOppositeException">Kąty nie mogą być przeciwne</string>
+    <string name="check_all_fields">Upewnij się, że wszystkie pola są wypełnione</string>
+    <string name="next_step">Następnyj krok</string>
+    <string name="again">Ponownie</string>
+    <string name="step_one">Krok 1</string>
+    <string name="step_two">Krok 2</string>
+    <string name="done">Gotowy</string>
+    <string name="eye_of_ender_says">Wszechwidzące Oko Enda, mówi że portal do Endera znajduje się na współrzędnych:</string>
+    <string name="debug_menu">Menu Debugowania</string>
+    <string name="guide_title_where_are_coords_and_angle_throw">Gdzie znaleźć współrzędne i kąt rzutu</string>
+    <string name="guide_title_coords_xz">Współrzędne X i Z</string>
+    <string name="guide_title_throw_angle">Kąt Rzutu</string>
+    <string name="guide_key_f">Na klawiaturze naciśnij klawisz F3, aby otworzyć menu debugowania</string>
+    <string name="guide_if_debug_menu_opened">Jeśli masz coś takiego, to jesteś na dobrej drodze</string>
+    <string name="guide_coords_xz">Współrzędne X i Z znajdują si na 9 linii</string>
+    <string name="guide_throw_angle">Kąt rzutu można znaleźć na 12 linii</string>
+    <string name="develops">Deweloperzy:</string>
+    <string name="ibragim_maltsagov">Ibragim Maltsagov</string>
+    <string name="kirill_borisenko">Kirill Borisenko</string>
+    <string name="version">Wersja</string>
+    <string name="source_code">Kod źródłowy</string>
+</resources>
