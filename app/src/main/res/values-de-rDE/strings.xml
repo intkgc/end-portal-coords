@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">End Portal Coords</string>
+    <string name="about_app">Über App</string>
+    <string name="x_coord">X-Koordinate</string>
+    <string name="y_coord">Y-Koordinate</string>
+    <string name="z_coord">Z-Koordinate</string>
+    <string name="throw_angle">Wurfwinkel</string>
+    <string name="enter_firts_xyz_and_throw_angle">Geben Sie die ersten Koordinaten und den Wurfwinkel ein</string>
+    <string name="version">Version</string>
+    <string name="source_code">Source Code</string>
+    <string name="kirill_borisenko">Kirill Borisenko</string>
+    <string name="ibragim_maltsagov">Ibragim Maltsagov</string>
+    <string name="develops">Entwickler:</string>
+    <string name="enter_second_xyz_and_throw_angle">Geben Sie folgenden Koordinaten und den Wurfwinkel ein</string>
+    <string name="calculate_coordinates">Koordinaten berechnen</string>
+    <string name="to">von -180 bis 180</string>
+    <string name="guide">Guide</string>
+    <string name="error">Fehler</string>
+    <string name="skip">Überspringen</string>
+    <string name="angleEqualException">Winkel können nicht gleich sein</string>
+    <string name="angleOppositeException">Winkel können nicht entgegengesetzt sein</string>
+    <string name="check_all_fields">Überprüfen Sie, ob alle Felder ausgefüllt sind</string>
+    <string name="next_step">Nächster Schritt</string>
+    <string name="again">Noch einmal</string>
+    <string name="step_one">Schritt 1</string>
+    <string name="step_two">Schritt 2</string>
+    <string name="done">Fertig</string>
+    <string name="eye_of_ender_says">Das Allsehende Auge von Ender sagt, dass sich das Portal zum Ende an den Koordinaten befindet:</string>
+    <string name="debug_menu">Debug-Menü</string>
+    <string name="guide_title_where_are_coords_and_angle_throw">Wo finde ich die Koordinaten und den Wurfwinkel?</string>
+    <string name="guide_title_coords_xz">X- und Z-Koordinaten</string>
+    <string name="guide_title_throw_angle">Wurfwinkel</string>
+    <string name="guide_key_f">Drücken Sie auf der Tastatur die Taste F3, um das Debug-Menü zu öffnen</string>
+    <string name="guide_if_debug_menu_opened">Wenn Sie so etwas haben, sind Sie auf dem richtigen Weg</string>
+    <string name="guide_coords_xz">X- und Z-Koordinaten finden Sie in der 9. Zeile</string>
+    <string name="guide_throw_angle">Der Wurfwinkel ist in Zeile 12 zu finden</string>
+</resources>
