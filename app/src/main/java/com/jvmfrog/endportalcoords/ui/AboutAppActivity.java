@@ -17,7 +17,7 @@ public class AboutAppActivity extends AppCompatActivity {
 
     private TextView version;
 
-    private MaterialButton source_code_btn, kirill_btn, ibragim_btn;
+    private MaterialButton source_code_btn, kirill_btn, ibragim_btn, app_translate_btn;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -46,6 +46,8 @@ public class AboutAppActivity extends AppCompatActivity {
         kirill_btn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.kirill_url), R.color.white));
 
         ibragim_btn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.ibragim_url), R.color.white));
+
+        app_translate_btn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.crowdin_project_url), R.color.white));
     }
 
     public void Init() {
@@ -55,6 +57,7 @@ public class AboutAppActivity extends AppCompatActivity {
         source_code_btn = findViewById(R.id.source_code_btn);
         kirill_btn = findViewById(R.id.kirill_btn);
         ibragim_btn = findViewById(R.id.ibragim_btn);
+        app_translate_btn = findViewById(R.id.translate_app_btn);
     }
 
     @Override

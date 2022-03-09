@@ -4,6 +4,7 @@
     <string name="about_app">About App</string>
 
     <string name="source_code_url" translatable="false">https://github.com/JVMFrog/end-portal-coords</string>
+    <string name="crowdin_project_url" translatable="false">https://crwd.in/end-portal-finder</string>
     <string name="kirill_url" translatable="false">https://github.com/KirboGames</string>
     <string name="ibragim_url" translatable="false">https://github.com/IbremMiner837</string>
 
@@ -43,4 +44,8 @@
     <string name="kirill_borisenko">Kirill Borisenko</string>
     <string name="version">Version</string>
     <string name="source_code">Source Code</string>
+    <string name="translate">Translate</string>
+    <string name="help_in_app_translation">The app doesn\'t have your language? Or do you want to help translate the application into other languages? Then I invite you to take part in the translation of the application into other languages</string>
+    <string name="translate_application">Translate Application</string>
+    <string name="app_logo">App Logo</string>
 </resources>

@@ -22,15 +22,15 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+        <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="4dp"
@@ -47,8 +47,10 @@
                         android:layout_height="96dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="16dp"
+                        android:contentDescription="@string/app_logo"
+                        android:scaleType="centerCrop"
                         android:src="@mipmap/ic_launcher_round"
-                        android:scaleType="centerCrop"/>
+                        tools:ignore="ImageContrastCheck" />
 
                     <TextView
                         android:id="@+id/version_text"
@@ -57,7 +59,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:gravity="center"
-                        android:text="Version: 4.0(1)"
+                        android:text=""
                         android:textSize="21sp"
                         android:textStyle="bold"/>
 
@@ -130,7 +132,48 @@
                     style="@style/Widget.Material3.Button.TextButton"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            app:cardCornerRadius="16dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/translate"
+                    android:textSize="21sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/help_in_app_translation"
+                    android:textSize="18sp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/translate_app_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/translate_application"
+                    android:textSize="18sp"
+                    app:icon="@drawable/ic_baseline_translate_24"
+                    style="@style/Widget.Material3.Button.TextButton"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
