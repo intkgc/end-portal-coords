@@ -2,6 +2,8 @@
 
 This app calculates the coordinates of the portal to the end by 2 throws of ender pearl
 
+[![Crowdin](https://badges.crowdin.net/end-portal-finder/localized.svg)](https://crowdin.com/project/end-portal-finder)
+
 ## Usage
 
 First cast eye of ender and look straight at it
