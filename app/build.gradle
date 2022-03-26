@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -9,8 +10,8 @@ android {
         applicationId "com.jvmfrog.endportalcoords"
         minSdk 21
         targetSdk 31
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,10 +37,13 @@ dependencies {
     //Google Play and Google
     implementation 'com.google.android.play:core:1.10.3'
     implementation "androidx.browser:browser:1.4.0"
-    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
 
     implementation 'com.shuhart.stepview:stepview:1.5.1'
     implementation 'eu.dkaratzas:android-inapp-update:1.0.5'
+    implementation 'com.google.firebase:firebase-analytics:20.1.2'
+    implementation 'com.google.firebase:firebase-messaging:23.0.2'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:20.1.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
