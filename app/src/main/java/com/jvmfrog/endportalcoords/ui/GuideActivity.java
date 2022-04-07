@@ -3,22 +3,16 @@ package com.jvmfrog.endportalcoords.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.google.android.material.appbar.MaterialToolbar;
+import android.view.View;
 import com.jvmfrog.endportalcoords.R;
+import com.jvmfrog.endportalcoords.databinding.ActivityGuideBinding;
 import com.shuhart.stepview.StepView;
 
 public class GuideActivity extends AppCompatActivity {
 
-    private StepView stepView;
-
-    private TextView guide_title, guide_description;
-    private ImageView guide_image;
+    ActivityGuideBinding binding;
 
     int stepIndex = 0;
     private String[] guideTitle;
@@ -28,17 +22,18 @@ public class GuideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guide);
+        binding = ActivityGuideBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         guideTitle = new String[] {
                 getString(R.string.guide_title_where_are_coords_and_angle_throw),
@@ -59,17 +54,17 @@ public class GuideActivity extends AppCompatActivity {
                 getDrawable(R.drawable.debug_menu_xz), getDrawable(R.drawable.debug_menu_throw_angle)
         };
 
-        stepView = findViewById(R.id.step_view);
-
-        guide_title = findViewById(R.id.guide_title);
-        guide_description = findViewById(R.id.guide_description);
-        guide_image = findViewById(R.id.guide_image);
-
-        stepView.getState()
+        binding.stepView.getState()
                 .animationType(StepView.ANIMATION_ALL)
                 .stepsNumber(4)
                 .animationDuration(getResources().getInteger(android.R.integer.config_shortAnimTime))
                 .commit();
+
+        binding.extendedFab.setOnClickListener(
+                v -> {
+                    onBackPressed();
+                }
+        );
 
         guide();
     }
@@ -82,10 +77,10 @@ public class GuideActivity extends AppCompatActivity {
                 stepIndex++;
 
                 if (stepIndex < guideTitle.length) {
-                    guide_title.setText(guideTitle[stepIndex]);
-                    guide_description.setText(guideDescription[stepIndex]);
-                    guide_image.setImageDrawable(guideImage[stepIndex]);
-                    stepView.go(stepIndex, true);
+                    binding.guideTitle.setText(guideTitle[stepIndex]);
+                    binding.guideDescription.setText(guideDescription[stepIndex]);
+                    binding.guideImage.setImageDrawable(guideImage[stepIndex]);
+                    binding.stepView.go(stepIndex, true);
                     guide();
                 } else {
                     finish();

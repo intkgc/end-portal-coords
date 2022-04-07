@@ -5,59 +5,41 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.button.MaterialButton;
 import com.jvmfrog.endportalcoords.BuildConfig;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.api.ChromeCustomTabAPI;
+import com.jvmfrog.endportalcoords.databinding.ActivityAboutAppBinding;
 
 public class AboutAppActivity extends AppCompatActivity {
 
-    private TextView version;
-
-    private MaterialButton source_code_btn, kirill_btn, ibragim_btn, app_translate_btn;
+    ActivityAboutAppBinding binding;
 
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about_app);
+        binding = ActivityAboutAppBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        Init();
-
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
-        version.setText(getString(R.string.version) + ":" + " " + BuildConfig.VERSION_NAME + " " + "(" + BuildConfig.VERSION_CODE + ")");
+        binding.versionText.setText(getString(R.string.version) + ":" + " " + BuildConfig.VERSION_NAME + " " + "(" + BuildConfig.VERSION_CODE + ")");
 
         final ChromeCustomTabAPI chromeCustomTabAPI = new ChromeCustomTabAPI(AboutAppActivity.this);
 
-        source_code_btn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.source_code_url), R.color.white));
-
-        kirill_btn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.kirill_url), R.color.white));
-
-        ibragim_btn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.ibragim_url), R.color.white));
-
-        app_translate_btn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.crowdin_project_url), R.color.white));
-    }
-
-    public void Init() {
-
-        version = findViewById(R.id.version_text);
-
-        source_code_btn = findViewById(R.id.source_code_btn);
-        kirill_btn = findViewById(R.id.kirill_btn);
-        ibragim_btn = findViewById(R.id.ibragim_btn);
-        app_translate_btn = findViewById(R.id.translate_app_btn);
+        binding.sourceCodeBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.source_code_url), R.color.white));
+        binding.kirillBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.kirill_url), R.color.white));
+        binding.ibragimBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.ibragim_url), R.color.white));
+        binding.translateAppBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(AboutAppActivity.this, getString(R.string.crowdin_project_url), R.color.white));
     }
 
     @Override

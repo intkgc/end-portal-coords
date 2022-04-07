@@ -10,36 +10,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
-import com.google.android.material.textfield.TextInputEditText;
 import com.jvmfrog.endportalcoords.EndPortal;
 import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
+import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
-import com.shuhart.stepview.StepView;
 import eu.dkaratzas.android.inapp.update.Constants;
 import eu.dkaratzas.android.inapp.update.InAppUpdateManager;
 import eu.dkaratzas.android.inapp.update.InAppUpdateStatus;
 
 public class MainActivity extends AppCompatActivity implements InAppUpdateManager.InAppUpdateHandler {
 
-    private MaterialToolbar toolbar;
-
-    private TextInputEditText first_x_coord, first_z_coord, first_throw_angle, second_x_coord, second_z_coord, second_throw_angle;
+    ActivityMainBinding binding;
 
     private float first_x, first_z, second_x, second_z, first_ta, second_ta;
-
-    private MaterialButton first_step_btn, second_step_btn, finish_step_btn;
-    private TextView portal_coords;
-
-    private ExtendedFloatingActionButton fab;
-
-    private MaterialCardView first_step, next_step, finish_step;
-
-    private StepView stepView;
 
     private static final int REQ_CODE_VERSION_UPDATE = 99;
     private InAppUpdateManager inAppUpdateManager;
@@ -49,20 +34,20 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        init();
-
-        first_step_btn.setOnClickListener(
+        binding.firstStepBtn.setOnClickListener(
                 v -> {
-                    if (!first_x_coord.getText().toString().isEmpty() &&
-                            !first_z_coord.getText().toString().isEmpty() &&
-                            !first_throw_angle.getText().toString().isEmpty()) {
+                    if (!binding.firstXCoord.getText().toString().isEmpty() &&
+                            !binding.firstZCoord.getText().toString().isEmpty() &&
+                            !binding.firstThrowAngle.getText().toString().isEmpty()) {
 
-                        first_step.setVisibility(View.GONE);
-                        next_step.setVisibility(View.VISIBLE);
-                        finish_step.setVisibility(View.GONE);
-                        stepView.go(1, true);
+                        binding.firstStep.setVisibility(View.GONE);
+                        binding.nextStep.setVisibility(View.VISIBLE);
+                        binding.finishStep.setVisibility(View.GONE);
+                        binding.stepView.go(1, true);
 
                     } else {
                         System.out.println("Error fields must be filled");
@@ -70,31 +55,31 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
                     }
                 });
 
-        second_step_btn.setOnClickListener(
+        binding.secondStepBtn.setOnClickListener(
                 v -> {
-                    if (!second_x_coord.getText().toString().isEmpty() &&
-                            !second_z_coord.getText().toString().isEmpty() &&
-                            !second_throw_angle.getText().toString().isEmpty()) {
+                    if (!binding.secondXCoord.getText().toString().isEmpty() &&
+                            !binding.secondZCoord.getText().toString().isEmpty() &&
+                            !binding.secondThrowAngle.getText().toString().isEmpty()) {
 
-                        first_x = Float.parseFloat(first_x_coord.getText().toString());
-                        first_z = Float.parseFloat(first_z_coord.getText().toString());
-                        first_ta = Float.parseFloat(first_throw_angle.getText().toString());
+                        first_x = Float.parseFloat(binding.firstXCoord.getText().toString());
+                        first_z = Float.parseFloat(binding.firstZCoord.getText().toString());
+                        first_ta = Float.parseFloat(binding.firstThrowAngle.getText().toString());
 
-                        second_x = Float.parseFloat(second_x_coord.getText().toString());
-                        second_z = Float.parseFloat(second_z_coord.getText().toString());
-                        second_ta = Float.parseFloat(second_throw_angle.getText().toString());
+                        second_x = Float.parseFloat(binding.secondXCoord.getText().toString());
+                        second_z = Float.parseFloat(binding.secondZCoord.getText().toString());
+                        second_ta = Float.parseFloat(binding.secondThrowAngle.getText().toString());
 
                         try {
                             Point endPortal = EndPortal.getPortalCoords(new Point(first_x, first_z), new Point(second_x, second_z), first_ta, second_ta);
                             System.out.println(endPortal.x + " " + endPortal.z);
 
-                            portal_coords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
+                            binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
 
-                            finish_step.setVisibility(View.GONE);
-                            next_step.setVisibility(View.GONE);
-                            finish_step.setVisibility(View.VISIBLE);
-                            stepView.go(2, true);
-                            stepView.done(true);
+                            binding.firstStep.setVisibility(View.GONE);
+                            binding.nextStep.setVisibility(View.GONE);
+                            binding.finishStep.setVisibility(View.VISIBLE);
+                            binding.stepView.go(2, true);
+                            binding.stepView.done(true);
 
                             //Dialogs.endPortalCoordinates(this, endPortal.x, endPortal.z).show();
                         } catch (AnglesEqualException e) {
@@ -109,31 +94,32 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
                 }
         );
 
-        finish_step_btn.setOnClickListener(
+        binding.finishStepBtn.setOnClickListener(
                 v -> {
-                    first_x_coord.setText("");
-                    first_z_coord.setText("");
-                    first_throw_angle.setText("");
-                    second_x_coord.setText("");
-                    second_z_coord.setText("");
-                    second_throw_angle.setText("");
+                    binding.firstXCoord.getText().clear();
+                    binding.firstZCoord.getText().clear();
+                    binding.firstThrowAngle.getText().clear();
 
-                    first_step.setVisibility(View.VISIBLE);
-                    next_step.setVisibility(View.GONE);
-                    finish_step.setVisibility(View.GONE);
-                    stepView.go(0,true);
-                    stepView.done(false);
+                    binding.secondXCoord.getText().clear();
+                    binding.secondZCoord.getText().clear();
+                    binding.secondThrowAngle.getText().clear();
+
+                    binding.firstStep.setVisibility(View.VISIBLE);
+                    binding.nextStep.setVisibility(View.GONE);
+                    binding.finishStep.setVisibility(View.GONE);
+                    binding.stepView.go(0,true);
+                    binding.stepView.done(false);
                 }
         );
 
-        fab.setOnClickListener(
+        binding.extendedFab.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(MainActivity.this, GuideActivity.class);
                     startActivity(intent);
                 }
         );
 
-        toolbar.setOnMenuItemClickListener(item -> {
+        binding.toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.about) {
                 Intent intent = new Intent(MainActivity.this, AboutAppActivity.class);
                 startActivity(intent);
@@ -152,30 +138,6 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
                 .handler(this);
 
         inAppUpdateManager.checkForAppUpdate();
-    }
-
-    public void init() {
-        first_step = findViewById(R.id.first_step);
-        next_step = findViewById(R.id.next_step);
-        finish_step = findViewById(R.id.finish_step);
-
-        //TextInputEditText
-        first_x_coord = findViewById(R.id.first_x_coord);
-        first_z_coord = findViewById(R.id.first_z_coord);
-        first_throw_angle = findViewById(R.id.first_throw_angle);
-        second_x_coord = findViewById(R.id.second_x_coord);
-        second_z_coord = findViewById(R.id.second_z_coord);
-        second_throw_angle = findViewById(R.id.second_throw_angle);
-
-        //Buttons
-        first_step_btn = findViewById(R.id.first_step_btn);
-        second_step_btn = findViewById(R.id.second_step_btn);
-        finish_step_btn = findViewById(R.id.finish_step_btn);
-        fab = findViewById(R.id.extended_fab);
-
-        portal_coords = findViewById(R.id.portal_coords);
-        toolbar = findViewById(R.id.toolbar);
-        stepView = findViewById(R.id.step_view);
     }
 
     @Override
