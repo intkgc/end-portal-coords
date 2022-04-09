@@ -16,18 +16,12 @@ import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
-import eu.dkaratzas.android.inapp.update.Constants;
-import eu.dkaratzas.android.inapp.update.InAppUpdateManager;
-import eu.dkaratzas.android.inapp.update.InAppUpdateStatus;
 
-public class MainActivity extends AppCompatActivity implements InAppUpdateManager.InAppUpdateHandler {
+public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
     private float first_x, first_z, second_x, second_z, first_ta, second_ta;
-
-    private static final int REQ_CODE_VERSION_UPDATE = 99;
-    private InAppUpdateManager inAppUpdateManager;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -127,26 +121,5 @@ public class MainActivity extends AppCompatActivity implements InAppUpdateManage
             }
             return false;
         });
-
-        inAppUpdateManager = InAppUpdateManager.Builder(this, REQ_CODE_VERSION_UPDATE)
-                .resumeUpdates(true) // Resume the update, if the update was stalled. Default is true
-                .mode(Constants.UpdateMode.FLEXIBLE)
-                // default is false. If is set to true you,
-                // have to manage the user confirmation when
-                // you detect the InstallStatus.DOWNLOADED status,
-                .useCustomNotification(true)
-                .handler(this);
-
-        inAppUpdateManager.checkForAppUpdate();
-    }
-
-    @Override
-    public void onInAppUpdateError(int code, Throwable error) {
-        //
-    }
-
-    @Override
-    public void onInAppUpdateStatus(InAppUpdateStatus status) {
-        //
     }
 }

@@ -45,7 +45,6 @@ dependencies {
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
 
     implementation 'com.shuhart.stepview:stepview:1.5.1'
-    implementation 'eu.dkaratzas:android-inapp-update:1.0.5'
     implementation 'com.google.firebase:firebase-analytics:20.1.2'
     implementation 'com.google.firebase:firebase-messaging:23.0.2'
     implementation 'com.google.firebase:firebase-inappmessaging-display:20.1.2'
