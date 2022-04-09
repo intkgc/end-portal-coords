@@ -42,11 +42,11 @@
                 app:sv_stepPadding="4dp"
                 app:sv_doneCircleRadius="12dp"
                 app:sv_selectedCircleRadius="12dp"
-                app:sv_stepViewStyle="@style/StepView"
+                app:sv_stepViewStyle="@style/NextStepView"
                 app:sv_stepNumberTextSize="12sp"
                 app:sv_animationType="All"
                 app:sv_stepsNumber="3"
-                style="@style/StepView"/>
+                style="@style/NextStepView"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/first_step"

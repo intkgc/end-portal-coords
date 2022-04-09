@@ -32,7 +32,7 @@
 
             <com.shuhart.stepview.StepView
                 android:id="@+id/step_view"
-                style="@style/StepView"
+                style="@style/NextStepView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
