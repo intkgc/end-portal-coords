@@ -4,13 +4,13 @@
 
     <string name="about_app">О Приложении</string>
 
-    <string name="x_coord">X Координат Игрока</string>
-    <string name="y_coord">Y Координат Игрока</string>
-    <string name="z_coord">Z Координат Игрока</string>
+    <string name="x_coord">X Координата Игрока</string>
+    <string name="y_coord">Y Координата Игрока</string>
+    <string name="z_coord">Z Координата Игрока</string>
     <string name="throw_angle">Угол Броска</string>
     <string name="enter_firts_xyz_and_throw_angle">Введите первые координаты XZ и угол броска</string>
-    <string name="enter_second_xyz_and_throw_angle">Введите вторвые координаты XZ и угол броска</string>
-    <string name="calculate_coordinates">Высчитать Координаты</string>
+    <string name="enter_second_xyz_and_throw_angle">Введите вторые координаты XZ и угол броска</string>
+    <string name="calculate_coordinates">Рассчитать Координаты</string>
     <string name="to">От -180 до 180</string>
     <string name="guide">Гайд</string>
     <string name="skip">Пропустить</string>
@@ -19,7 +19,7 @@
     <string name="angleOppositeException">Углы не могут быть противоположными</string>
     <string name="check_all_fields">Убедитесь что все поля заполнены</string>
 
-    <string name="next_step">Следущий шаг</string>
+    <string name="next_step">Следующий шаг</string>
     <string name="again">Заново</string>
     <string name="step_one">Шаг 1</string>
     <string name="step_two">Шаг 2</string>

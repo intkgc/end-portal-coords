@@ -52,9 +52,9 @@
         <item name="sv_selectedCircleColor">#ffeaddff</item>
         <item name="sv_selectedTextColor">#ff1d192b</item>
         <item name="sv_selectedStepNumberColor">#ff1d192b</item>
-        <item name="sv_nextTextColor">#ff49454f</item>
-        <item name="sv_nextStepCircleColor">#ff49454f</item>
-        <item name="sv_nextStepLineColor">#ff49454f</item>
+        <item name="sv_nextTextColor">#5E5965</item>
+        <item name="sv_nextStepCircleColor">#5E5965</item>
+        <item name="sv_nextStepLineColor">#5E5965</item>
         <item name="sv_doneCircleColor">#ffeaddff</item>
         <item name="sv_doneTextColor">#ff1d192b</item>
         <item name="sv_doneStepLineColor">#ffeaddff</item>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">End Portal Coords</string>
+    <string name="about_app">Про додаток</string>
+    <string name="x_coord">X Координата Гравця</string>
+    <string name="y_coord">Y Координата Гравця</string>
+    <string name="z_coord">Z Координата Игрока</string>
+    <string name="throw_angle">Кут кидка</string>
+    <string name="enter_firts_xyz_and_throw_angle">Введіть перші координати XZ та кут кидка</string>
+    <string name="enter_second_xyz_and_throw_angle">Введіть другі координати XZ та кут кидка</string>
+    <string name="calculate_coordinates">Розрахувати Координати</string>
+    <string name="to">Від -180 до 180</string>
+    <string name="guide">Гайд</string>
+    <string name="skip">Пропустити</string>
+    <string name="error">Помилка</string>
+    <string name="angleEqualException">Кути не можуть бути рівними</string>
+    <string name="angleOppositeException">Кути не можуть бути протилежними</string>
+    <string name="check_all_fields">Переконайтеся, що всі поля заповнені</string>
+    <string name="next_step">Наступний крок</string>
+    <string name="again">Заново</string>
+    <string name="step_one">Крок 1</string>
+    <string name="step_two">Крок 2</string>
+    <string name="done">Готово</string>
+    <string name="eye_of_ender_says">Всевидячий Око Краю, каже що портал у Край знаходиться за координатами:</string>
+    <string name="debug_menu">Дебаг Меню</string>
+    <string name="guide_title_where_are_coords_and_angle_throw">Де знайти координати та кут кидка?</string>
+    <string name="guide_title_coords_xz">Координати X та Z</string>
+    <string name="guide_title_throw_angle">Кут кидка</string>
+    <string name="guide_key_f">На клавіатурі натисніть клавішу F3, щоб відкрити меню</string>
+    <string name="guide_if_debug_menu_opened">Якщо у вас відкрилося щось таке, то ви на вірному шляху</string>
+    <string name="guide_coords_xz">Координати X та Z можна знайти на 9-му рядку</string>
+    <string name="guide_throw_angle">Кут кидка можна знайти на 12-му рядку</string>
+    <string name="develops">Розробники:</string>
+    <string name="ibragim_maltsagov">Ібрагім Мальцагов</string>
+    <string name="kirill_borisenko">Кирило Борисенко</string>
+    <string name="version">Версія</string>
+    <string name="source_code">Вихідний код</string>
+    <string name="translate">Переклад</string>
+    <string name="help_in_app_translation">У додатку немає вашої мови? Чи хочеш допомогти з перекладом програми іншими мовами? Тоді запрошую Вас взяти участь у перекладі програми іншими мовами</string>
+    <string name="translate_application">Перекласти Додаток</string>
+</resources>
