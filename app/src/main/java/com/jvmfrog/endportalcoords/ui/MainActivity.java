@@ -4,18 +4,35 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.Task;
 import com.jvmfrog.endportalcoords.EndPortal;
 import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
+import com.jvmfrog.endportalcoords.config.Settings;
+import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 
+import org.json.JSONException;
+
+import java.io.File;
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
+    private ReviewInfo reviewInfo;
+    private ReviewManager reviewManager;
 
     private float first_x, first_z, second_x, second_z, first_ta, second_ta;
 
@@ -23,10 +40,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        File settingsFile = new File(getFilesDir(), "Settings.json");
+
+        if(!settingsFile.exists()) {
+            try {
+                SettingsAssist.save(settingsFile, Settings.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        loadSettings();
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        activateReviewInfo();
 
         binding.firstStepBtn.setOnClickListener(
                 v -> {
@@ -70,6 +99,13 @@ public class MainActivity extends AppCompatActivity {
                             binding.finishStep.setVisibility(View.VISIBLE);
                             binding.stepView.go(2, true);
                             binding.stepView.done(true);
+
+                            if(Settings.feedbackCounter == 5) {
+                                startReviewFlow();
+                            } else {
+                                Settings.feedbackCounter += 1;
+                                saveSettings();
+                            }
 
                             //Dialogs.endPortalCoordinates(this, endPortal.x, endPortal.z).show();
                         } catch (AnglesEqualException e) {
@@ -117,5 +153,46 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    void activateReviewInfo() {
+        reviewManager = ReviewManagerFactory.create(this);
+        Task<ReviewInfo> managerInfoTask = reviewManager.requestReviewFlow();
+        managerInfoTask.addOnCompleteListener((task)->{
+            if(task.isSuccessful()) {
+                reviewInfo = task.getResult();
+            } else {
+                Toast.makeText(this, "Review failed to start", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    void startReviewFlow() {
+        if(reviewInfo != null) {
+            Task<Void> flow = reviewManager.launchReviewFlow(this, reviewInfo);
+            flow.addOnCompleteListener(task -> {
+                Toast.makeText(this, "Thank for you rating <3", Toast.LENGTH_SHORT).show();
+            });
+        }
+    }
+
+    public void saveSettings() {
+        File settingsFile = new File(getFilesDir(), "Settings.json");
+
+        try {
+            SettingsAssist.save(settingsFile, Settings.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadSettings() {
+        File settingsFile = new File(getFilesDir(), "Settings.json");
+
+        try {
+            SettingsAssist.load(settingsFile, Settings.class);
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
