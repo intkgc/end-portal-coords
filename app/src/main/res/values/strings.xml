@@ -48,4 +48,5 @@
     <string name="help_in_app_translation">The app doesn\'t have your language? Or do you want to help translate the application into other languages? Then I invite you to take part in the translation of the application into other languages</string>
     <string name="translate_application">Translate Application</string>
     <string name="app_logo" translatable="false">App Logo</string>
+    <string name="thank_for_review">Thanks for the review</string>
 </resources>

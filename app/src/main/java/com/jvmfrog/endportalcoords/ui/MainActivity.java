@@ -100,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
                             binding.stepView.go(2, true);
                             binding.stepView.done(true);
 
-                            if(Settings.feedbackCounter == 5) {
+                            if(Settings.feedbackCounter == 5 && Settings.isFeedbackShowed == false) {
+                                Settings.isFeedbackShowed = true;
+                                saveSettings();
                                 startReviewFlow();
                             } else {
                                 Settings.feedbackCounter += 1;
