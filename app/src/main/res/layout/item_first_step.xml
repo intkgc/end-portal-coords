@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:paddingTop="8dp"
+                android:text="@string/enter_firts_xyz_and_throw_angle"
+                android:textSize="21sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/first_x_coord_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingHorizontal="8dp"
+                android:hint="@string/x_coord"
+                app:hintAnimationEnabled="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/first_x_coord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:digits="0123456789.-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/first_z_coord_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingHorizontal="8dp"
+                android:hint="@string/z_coord"
+                app:hintAnimationEnabled="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/first_z_coord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:digits="0123456789.-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/first_throw_angle_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp"
+                android:paddingHorizontal="8dp"
+                android:hint="@string/throw_angle"
+                app:hintAnimationEnabled="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="6"
+                app:helperTextEnabled="true"
+                app:helperText="@string/to"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/first_throw_angle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:digits="0123456789.-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

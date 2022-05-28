@@ -4,19 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/round_corners.xml" value="0.1485" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/viewpager_indicator_active.xml" value="0.15" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/viewpager_indicator_inactive.xml" value="0.15" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-large/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-normal-v24/activity_main.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-normal/activity_about_app.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-normal/activity_guide.xml" value="0.18229166666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-normal/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-normal/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-small/activity_about_app.xml" value="0.5" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-small/activity_guide.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-small/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout-v24/activity_main.xml" value="1.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/activity_about_app.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/activity_guide.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/activity_main2.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/fragment_main.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/guide_dialog.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/intro_slide.xml" value="0.18229166666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/item_first_step.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/layout/settings_activity.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/menu/toolbar_menu.xml" value="0.18229166666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/xml/root_preferences.xml" value="0.33" />
