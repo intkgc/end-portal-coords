@@ -1,40 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.EndPortalCoords" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">#ff6750a4</item>
-        <item name="colorPrimaryVariant">#ff6750a4</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimaryContainer">#ffeaddff</item>
-        <item name="colorOnPrimaryContainer">#ff21005d</item>
-        <item name="colorPrimaryInverse">#ffd0bcff</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">#ff625b71</item>
-        <item name="colorSecondaryVariant">#ff625b71</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <item name="colorSecondaryContainer">#ffe8def8</item>
-        <item name="colorOnSecondaryContainer">#ff1d192b</item>
-        <!-- Tertiary. -->
-        <item name="colorTertiary">#ff7d5260</item>
-        <item name="colorOnTertiary">@color/white</item>
-        <item name="colorTertiaryContainer">#ffffd8e4</item>
-        <item name="colorOnTertiaryContainer">#ff31111d</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-        <item name="colorError">#ffb3261e</item>
-        <item name="colorOnError">@color/white</item>
-        <item name="colorErrorContainer">#fff9dedc</item>
-        <item name="colorOnErrorContainer">#ff410e0b</item>
-        <item name="colorOutline">#ff79747e</item>
-        <item name="android:colorBackground">#fffffbfe</item>
-        <item name="colorOnBackground">#ff1c1b1f</item>
-        <item name="colorSurface">#fffffbfe</item>
-        <item name="colorOnSurface">#ff1c1b1f</item>
-        <item name="colorSurfaceVariant">#ffe7e0ec</item>
-        <item name="colorOnSurfaceVariant">#ff49454f</item>
-        <item name="colorSurfaceInverse">#ff313033</item>
-        <item name="colorOnSurfaceInverse">#fff4eff4</item>
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/md_theme_light_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/md_theme_light_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/md_theme_light_tertiary</item>
+        <item name="colorOnTertiary">@color/md_theme_light_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/md_theme_light_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/md_theme_light_onTertiaryContainer</item>
+        <item name="colorError">@color/md_theme_light_error</item>
+        <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
+        <item name="colorOnError">@color/md_theme_light_onError</item>
+        <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
+        <item name="android:colorBackground">@color/md_theme_light_background</item>
+        <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorOnSurface">@color/md_theme_light_onSurface</item>
+        <item name="colorSurfaceVariant">@color/md_theme_light_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/md_theme_light_onSurfaceVariant</item>
+        <item name="colorOutline">@color/md_theme_light_outline</item>
+        <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
+        <!--item name="colorInversePrimary">@color/md_theme_light_inversePrimary</item>
+        <item name="colorShadow">@color/md_theme_light_shadow</item-->
+        <item name="colorPrimaryInverse">@color/md_theme_light_primaryInverse</item>
+
+        <item name="android:navigationBarColor">@color/app_bar_light_color</item>
+        <item name="android:statusBarColor">@color/app_bar_light_color</item>
     </style>
 
     <style name="BottomSheetDialog" parent="Theme.EndPortalCoords">

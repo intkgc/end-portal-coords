@@ -1,30 +1,14 @@
 package com.jvmfrog.endportalcoords.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentManager;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.google.android.material.button.MaterialButton;
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.ViewPagerAdapter;
-import com.jvmfrog.endportalcoords.ViewPagerItem;
 import com.jvmfrog.endportalcoords.databinding.ActivityMain2Binding;
-import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
-import com.jvmfrog.endportalcoords.ui.fragment.FinishStepFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.FirstStepFragment;
-import com.jvmfrog.endportalcoords.ui.fragment.SecondStepFragment;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity2 extends AppCompatActivity {
 
