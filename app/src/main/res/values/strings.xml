@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">End Portal Seeker</string>
 
+    <!-- Admob -->
+    <string name="app_id" translatable="false">ca-app-pub-4193046598871025~1742207292</string>
+    <string name="native_ad_id" translatable="false">ca-app-pub-4193046598871025/5410823710</string>
+    <string name="app_launch_ad" translatable="false">ca-app-pub-4193046598871025/5006950297</string>
+    <string name="banner_ad" translatable="false">ca-app-pub-4193046598871025/1806071883</string>
+
     <string name="about_app">About App</string>
 
     <string name="source_code_url" translatable="false">https://github.com/JVMFrog/end-portal-coords</string>

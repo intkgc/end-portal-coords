@@ -9,6 +9,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.play.core.review.ReviewInfo;
 import com.google.android.play.core.review.ReviewManager;
 import com.google.android.play.core.review.ReviewManagerFactory;
@@ -51,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new FirstStepFragment()).commit();
+
+        MobileAds.initialize(this);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);
 
         binding.extendedFab.setOnClickListener(
                 v -> {

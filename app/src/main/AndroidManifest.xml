@@ -21,10 +21,12 @@
             android:theme="@style/Theme.AppSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4193046598871025~1742207292"/>
+    </application>
 </manifest>
