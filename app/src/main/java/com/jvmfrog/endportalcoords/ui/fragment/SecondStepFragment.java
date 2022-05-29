@@ -15,7 +15,6 @@ import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.config.Settings;
 import com.jvmfrog.endportalcoords.config.SettingsAssist;
-import com.jvmfrog.endportalcoords.databinding.ActivityMain2Binding;
 import com.jvmfrog.endportalcoords.databinding.FragmentSecondStepBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
@@ -31,7 +30,6 @@ import java.io.IOException;
 public class SecondStepFragment extends Fragment {
 
     private FragmentSecondStepBinding binding;
-    private ActivityMain2Binding main2Binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,15 +53,26 @@ public class SecondStepFragment extends Fragment {
                         Settings.secondThrowAngle = Float.parseFloat(binding.secondThrowAngle.getText().toString());
                         saveSettings();
 
-                        FragmentManager manager = getActivity().getSupportFragmentManager();
-                        FinishStepFragment fragment = new FinishStepFragment();
-                        manager.beginTransaction().replace(R.id.wrapper, fragment)
-                                .addToBackStack(null)
-                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                                .commit();
+                        try {
+                            Point endPortal = EndPortal.getPortalCoords(new Point(Settings.firstXCoordinate, Settings.firstZCoordinate),
+                                    new Point(Settings.secondXCoordinate, Settings.secondZCoordinate), Settings.firstThrowAngle, Settings.secondThrowAngle);
 
-                        stepView.go(2, true);
-                        stepView.done(true);
+                            FragmentManager manager = getActivity().getSupportFragmentManager();
+                            FinishStepFragment fragment = new FinishStepFragment();
+                            manager.beginTransaction()
+                                    .setCustomAnimations(R.anim.enter_right_to_left, R.anim.exit_right_to_left,
+                                            R.anim.enter_left_to_right, R.anim.exit_left_to_right)
+                                    .replace(R.id.wrapper, fragment)
+                                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                                    .commit();
+
+                            stepView.go(2, true);
+                            stepView.done(true);
+                        } catch (AnglesEqualException e) {
+                            Dialogs.angleEqualException(getContext());
+                        } catch (AnglesOppositeException e) {
+                            Dialogs.angleOppositeException(getContext());
+                        }
                     } else {
                         System.out.println("Error fields must be filled");
                         Dialogs.checkAllFields(v.getContext());

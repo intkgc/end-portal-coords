@@ -10,15 +10,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.android.material.button.MaterialButton;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.config.Settings;
 import com.jvmfrog.endportalcoords.config.SettingsAssist;
-import com.jvmfrog.endportalcoords.databinding.ActivityMain2Binding;
 import com.jvmfrog.endportalcoords.databinding.FragmentFirstStepBinding;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
-import com.jvmfrog.endportalcoords.ui.MainActivity;
 import com.shuhart.stepview.StepView;
 
 import org.json.JSONException;
@@ -29,7 +25,6 @@ import java.io.IOException;
 public class FirstStepFragment extends Fragment {
 
     private FragmentFirstStepBinding binding;
-    private ActivityMain2Binding main2Binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,8 +51,10 @@ public class FirstStepFragment extends Fragment {
 
                 FragmentManager manager = getActivity().getSupportFragmentManager();
                 SecondStepFragment fragment = new SecondStepFragment();
-                manager.beginTransaction().replace(R.id.wrapper, fragment)
-                        .addToBackStack(null)
+                manager.beginTransaction()
+                        .setCustomAnimations(R.anim.enter_right_to_left, R.anim.exit_right_to_left,
+                                R.anim.enter_left_to_right, R.anim.exit_left_to_right)
+                        .replace(R.id.wrapper, fragment)
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                         .commit();
 

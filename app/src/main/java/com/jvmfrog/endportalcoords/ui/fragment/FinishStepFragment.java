@@ -60,8 +60,10 @@ public class FinishStepFragment extends Fragment {
         binding.finishStepBtn.setOnClickListener(view -> {
             FragmentManager manager = getActivity().getSupportFragmentManager();
             FirstStepFragment fragment = new FirstStepFragment();
-            manager.beginTransaction().replace(R.id.wrapper, fragment)
-                    .addToBackStack(null)
+            manager.beginTransaction()
+                    .setCustomAnimations(R.anim.enter_left_to_right, R.anim.exit_left_to_right,
+                            R.anim.enter_right_to_left, R.anim.exit_right_to_left)
+                    .replace(R.id.wrapper, fragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit();
 

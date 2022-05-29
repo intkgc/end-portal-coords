@@ -94,4 +94,10 @@ public class GuideActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.enter_left_to_right, R.anim.exit_left_to_right);
+    }
 }
