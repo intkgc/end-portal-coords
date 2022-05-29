@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Портал іздеушісін аяқтау</string>
+
+    <string name="about_app">Қолданба туралы</string>
+
+    <string name="x_coord">X координат ойнатқышы</string>
+    <string name="y_coord">Y координат ойнатқышы</string>
+    <string name="z_coord">Z Ойыншының координаты</string>
+    <string name="throw_angle">Лақтыру бұрышы</string>
+    <string name="enter_firts_xyz_and_throw_angle">Бірінші XZ координаттарын және лақтыру бұрышын енгізіңіз</string>
+    <string name="enter_second_xyz_and_throw_angle">Екінші XZ координаттарын енгізіп, лақтыру бұрышы</string>
+    <string name="calculate_coordinates">Координаталарды есептеңіз</string>
+    <string name="to">-180-ден 180-ге дейін</string>
+    <string name="guide">Хайд</string>
+    <string name="skip">Өткізіп жіберу</string>
+    <string name="error">Қате</string>
+    <string name="angleEqualException">Бұрыштар тең болуы мүмкін емес</string>
+    <string name="angleOppositeException">Бұрыштар қарама-қарсы болуы мүмкін емес</string>
+    <string name="check_all_fields">Барлық өрістер толтырылғанына көз жеткізіңіз</string>
+
+    <string name="next_step">Келесі қадам</string>
+    <string name="again">жаңадан</string>
+    <string name="step_one">1-қадам</string>
+    <string name="step_two">2-қадам</string>
+    <string name="done">Дайын</string>
+
+    <string name="eye_of_ender_says">Ақырзаманның бәрін көретін көзі Ақырзаманның порталы координаттарда орналасқанын айтады:</string>
+    <string name="debug_menu">Түзету мәзірі</string>
+    <string name="guide_title_where_are_coords_and_angle_throw">Лақтыру координаталары мен бұрышын қайдан табуға болады?</string>
+    <string name="guide_title_coords_xz">X және Z координаталары</string>
+    <string name="guide_title_throw_angle">Лақтыру бұрышы</string>
+    <string name="guide_key_f">Түзету мәзірін ашу үшін пернетақтада «F3» пернесін басыңыз</string>
+    <string name="guide_if_debug_menu_opened">Егер сізде осындай нәрсе болса, онда сіз дұрыс жолдасыз.</string>
+    <string name="guide_coords_xz">X және Z координаттарын 9-шы жолда табуға болады</string>
+    <string name="guide_throw_angle">Лақтыру бұрышын 12-ші жолда табуға болады</string>
+
+    <string name="develops">Әзірлеушілер:</string>
+    <string name="ibragim_maltsagov">Ибрагим Малцагов</string>
+    <string name="kirill_borisenko">Кирилл Борисенко</string>
+    <string name="version">Нұсқа</string>
+    <string name="source_code">Дереккөз</string>
+    <string name="translate">Аударма</string>
+    <string name="help_in_app_translation">Қолданбада сіздің тіліңіз жоқ па? Немесе қолданбаны басқа тілдерге аударуға көмектескіңіз келе ме? Олай болса, қосымшаны басқа тілдерге аударуға қатысуға шақырамын</string>
+    <string name="translate_application">Translate қолданбасы</string>
+    <string name="app_logo">App Logo</string>
+    <string name="thank_for_review">Пікіріңізге рахмет</string>
+    <string name="we_are_on_vk">Біз ВКонтакте желісіндеміз</string>
+    <string name="other_apps">Басқа қолданбалар</string>
+</resources>

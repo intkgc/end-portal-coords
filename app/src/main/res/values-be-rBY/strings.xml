@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Шукальнік Партала ў Край</string>
+
+    <string name="about_app">Аб Дадатку</string>
+
+    <string name="x_coord">X Каардыната Гульца</string>
+    <string name="y_coord">Y Каардыната Гульца</string>
+    <string name="z_coord">Z Каардыната Гульца</string>
+    <string name="throw_angle">Кут Кідка</string>
+    <string name="enter_firts_xyz_and_throw_angle">Увядзіце першыя каардынаты XZ і вугал кідка</string>
+    <string name="enter_second_xyz_and_throw_angle">Увядзіце другія каардынаты XZ і кут кідка</string>
+    <string name="calculate_coordinates">Разлічыць Каардынаты</string>
+    <string name="to">Ад -180 да 180</string>
+    <string name="guide">Гайд</string>
+    <string name="skip">Прапусціць</string>
+    <string name="error">Памылка</string>
+    <string name="angleEqualException">Куты не могуць быць роўныя</string>
+    <string name="angleOppositeException">Куты не могуць быць супрацьлеглымі</string>
+    <string name="check_all_fields">Пераканайцеся, што ўсе палі запоўненыя</string>
+
+    <string name="next_step">Наступны крок</string>
+    <string name="again">Нанова</string>
+    <string name="step_one">Крок 1</string>
+    <string name="step_two">Крок 2</string>
+    <string name="done">Гатова</string>
+
+    <string name="eye_of_ender_says">Усёбачны Вока Краю, кажа што партал у Край знаходзіцца па каардынатах:</string>
+    <string name="debug_menu">Дэбаг Меню</string>
+    <string name="guide_title_where_are_coords_and_angle_throw">Дзе знайсці каардынаты і вугал кідка?</string>
+    <string name="guide_title_coords_xz">Каардынаты X і Z</string>
+    <string name="guide_title_throw_angle">Кут Кідка</string>
+    <string name="guide_key_f">На клавіятуры націсніце клавішу "F3", каб адкрыць дэбаг меню</string>
+    <string name="guide_if_debug_menu_opened">Калі ў вас адкрылася што тое ў такім родзе, тыя вы на дакладным шляху</string>
+    <string name="guide_coords_xz">Каардынаты X і Z можна знайсці на 9-ым радку</string>
+    <string name="guide_throw_angle">Кут кідка можна знайсці на 12-м радку</string>
+
+    <string name="develops">Распрацоўнікі:</string>
+    <string name="ibragim_maltsagov">Ібрагім Мальцагаў</string>
+    <string name="kirill_borisenko">Кірыл Барысенка</string>
+    <string name="version">Версія</string>
+    <string name="source_code">Зыходны код</string>
+    <string name="translate">Пераклад</string>
+    <string name="help_in_app_translation">У дадатку няма вашай мовы? Ці хочаш дапамагчы з перакладам дадатку на іншыя мовы? Тады запрашаю Вас прыняць удзел у перакладзе дадатку на іншыя мовы.</string>
+    <string name="translate_application">Перавесці Дадатак</string>
+    <string name="app_logo">App Logo</string>
+    <string name="thank_for_review">Дзякуй за водгук</string>
+    <string name="we_are_on_vk">Мы ва Укантакце</string>
+    <string name="other_apps">Іншыя прыкладанні</string>
+</resources>
