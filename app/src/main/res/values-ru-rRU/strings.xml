@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Калькулятор Портала Край</string>
+    <string name="app_name">Искатель Портала в Край</string>
 
     <string name="about_app">О Приложении</string>
 
@@ -45,4 +45,6 @@
     <string name="translate_application">Перевести Приложение</string>
     <string name="app_logo">App Logo</string>
     <string name="thank_for_review">Спасибо за отзыв</string>
+    <string name="we_are_on_vk">Мы в ВКонтакте</string>
+    <string name="other_apps">Другие приложения</string>
 </resources>

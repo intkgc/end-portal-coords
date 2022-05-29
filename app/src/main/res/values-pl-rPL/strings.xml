@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">End Portal Coords</string>
+    <string name="app_name">End Portal Seeker</string>
     <string name="about_app">O Aplikacji</string>
     <string name="x_coord">X Współrzędne Gracza</string>
     <string name="y_coord">Z Współrzędne Gracza</string>
@@ -39,4 +39,6 @@
     <string name="help_in_app_translation">Aplikacja nie ma Twojego języka? Albo może chcesz pomóc w tłumaczeniu aplikacji na inne języki? Następnie zapraszam do wzięcia udziału w tłumaczeniu aplikacji na inne języki</string>
     <string name="translate_application">Przetłumacz Aplikację</string>
     <string name="thank_for_review">Dzięki za opinie</string>
+    <string name="we_are_on_vk">Jesteśmy na VKontakte</string>
+    <string name="other_apps">Inne aplikacje</string>
 </resources>
