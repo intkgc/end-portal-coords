@@ -16,6 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_round_arrow_back_24"
             app:title="@string/about_app"
             app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
@@ -78,7 +79,7 @@
                         android:paddingHorizontal="16dp"
                         android:text="@string/source_code"
                         android:textSize="18sp"
-                        app:icon="@drawable/ic_baseline_code_24"
+                        app:icon="@drawable/ic_round_code_24"
                         style="@style/Widget.Material3.Button.ElevatedButton"/>
 
                     <View
@@ -169,7 +170,7 @@
                     android:paddingHorizontal="16dp"
                     android:text="@string/translate_application"
                     android:textSize="18sp"
-                    app:icon="@drawable/ic_baseline_translate_24"
+                    app:icon="@drawable/ic_round_translate_24"
                     style="@style/Widget.Material3.Button.TextButton"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

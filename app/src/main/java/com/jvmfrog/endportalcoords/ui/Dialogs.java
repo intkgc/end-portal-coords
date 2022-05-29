@@ -10,17 +10,17 @@ import com.jvmfrog.endportalcoords.util.Button;
 public class Dialogs {
     public static void angleEqualException(Context context) {
         error(context, R.string.angleEqualException,
-                new Button("Ok", null), null).show();
+                new Button("OK", null), null).show();
     }
 
     public static void angleOppositeException(Context context) {
         error(context, R.string.angleOppositeException,
-                new Button("Ok", null), null).show();
+                new Button("OK", null), null).show();
     }
 
     public static void checkAllFields(Context context) {
         error(context, R.string.check_all_fields,
-                new Button("Ok", null), null).show();
+                new Button("OK", null), null).show();
     }
 
     @SuppressLint("DefaultLocale")
@@ -34,7 +34,7 @@ public class Dialogs {
     public static MaterialAlertDialogBuilder error(Context context, int msg,
                                                    Button positiveButton, Button negativeButton) {
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context)
-                .setIcon(R.drawable.ic_baseline_error_outline_24)
+                .setIcon(R.drawable.ic_round_error_outline_24)
                 .setTitle(R.string.error)
                 .setMessage(msg)
                 .setPositiveButton(positiveButton.msg, positiveButton.onClickListener);

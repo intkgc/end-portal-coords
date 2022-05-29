@@ -48,7 +48,7 @@
                 android:text="@string/again"
                 android:textSize="18sp"
                 android:textAllCaps="false"
-                app:icon="@drawable/ic_baseline_refresh_24"
+                app:icon="@drawable/ic_round_refresh_24"
                 app:iconGravity="textStart"
                 style="@style/Widget.Material3.Button.ElevatedButton"/>
         </LinearLayout>

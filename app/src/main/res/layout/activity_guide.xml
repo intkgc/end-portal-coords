@@ -16,6 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_round_arrow_back_24"
             app:title="@string/guide"
             app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
@@ -79,6 +80,6 @@
         android:layout_gravity="bottom|end"
         android:text="@string/skip"
         android:textAllCaps="false"
-        app:icon="@drawable/ic_baseline_skip_next_24"/>
+        app:icon="@drawable/ic_round_skip_next_24"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

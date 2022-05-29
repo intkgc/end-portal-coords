@@ -26,13 +26,6 @@ public class GuideActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        setSupportActionBar(binding.toolbar);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
-
         binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         guideTitle = new String[] {

@@ -60,6 +60,6 @@
         android:layout_gravity="bottom|end"
         android:text="@string/guide"
         android:textAllCaps="false"
-        app:icon="@drawable/ic_baseline_article_24"/>
+        app:icon="@drawable/ic_round_article_24"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

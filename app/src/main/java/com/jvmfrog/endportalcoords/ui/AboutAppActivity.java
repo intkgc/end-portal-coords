@@ -23,13 +23,6 @@ public class AboutAppActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        setSupportActionBar(binding.toolbar);
-
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
-
         binding.toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
         binding.versionText.setText(getString(R.string.version) + ":" + " " + BuildConfig.VERSION_NAME + " " + "(" + BuildConfig.VERSION_CODE + ")");

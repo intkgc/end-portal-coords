@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/ic_round_error_outline_24.xml" value="0.166" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/ic_round_info_24.xml" value="0.166" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/round_corners.xml" value="0.1485" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/viewpager_indicator_active.xml" value="0.15" />
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/drawable/viewpager_indicator_inactive.xml" value="0.15" />
