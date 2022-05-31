@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private ConsentInformation consentInformation;
     private ConsentForm consentForm;
 
-    private AdRequest adRequestPersonalized, adRequestNotPersonalized;
+    private AdRequest adRequestNotPersonalized;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extras = new Bundle();
         extras.putString("npa", "1");
 
-        adRequestPersonalized = new AdRequest.Builder()
+        AdRequest adRequestPersonalized = new AdRequest.Builder()
                 .build();
 
         adRequestNotPersonalized = new AdRequest.Builder()
