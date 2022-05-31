@@ -1,30 +1,27 @@
 package com.jvmfrog.endportalcoords.ui;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.play.core.review.ReviewInfo;
-import com.google.android.play.core.review.ReviewManager;
-import com.google.android.play.core.review.ReviewManagerFactory;
-import com.google.android.play.core.tasks.Task;
-import com.jvmfrog.endportalcoords.EndPortal;
-import com.jvmfrog.endportalcoords.Point;
+import com.google.android.ump.ConsentDebugSettings;
+import com.google.android.ump.ConsentForm;
+import com.google.android.ump.ConsentInformation;
+import com.google.android.ump.ConsentRequestParameters;
+import com.google.android.ump.FormError;
+import com.google.android.ump.UserMessagingPlatform;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.config.Settings;
 import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
-import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
-import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.fragment.FirstStepFragment;
 
 import org.json.JSONException;
@@ -35,6 +32,11 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
+    private ConsentInformation consentInformation;
+    private ConsentForm consentForm;
+
+    private AdRequest adRequestPersonalized, adRequestNotPersonalized;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +59,57 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new FirstStepFragment()).commit();
 
         MobileAds.initialize(this);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        binding.adView.loadAd(adRequest);
+        Bundle extras = new Bundle();
+        extras.putString("npa", "1");
+
+        adRequestPersonalized = new AdRequest.Builder()
+                .build();
+
+        adRequestNotPersonalized = new AdRequest.Builder()
+                .addNetworkExtrasBundle(AdMobAdapter.class, extras)
+                .build();
+
+        //Set tag for underage of consent. false means users are not underage.
+        ConsentRequestParameters params = new ConsentRequestParameters
+                .Builder()
+                .setAdMobAppId(getString(R.string.app_id))
+                .setTagForUnderAgeOfConsent(false)
+                .build();
+
+        // Debug settings for Form
+        ConsentDebugSettings debugSettings = new ConsentDebugSettings.Builder(this)
+                .setDebugGeography(ConsentDebugSettings
+                .DebugGeography
+                .DEBUG_GEOGRAPHY_EEA)
+                .addTestDeviceHashedId("AF0F2B6E3BCDC6ACBFD315C64B00")
+                .build();
+
+        ConsentRequestParameters debugParams = new ConsentRequestParameters
+                .Builder()
+                .setConsentDebugSettings(debugSettings)
+                .build();
+
+        consentInformation = UserMessagingPlatform.getConsentInformation(this);
+        consentInformation.requestConsentInfoUpdate(
+                this,
+                params,
+                new ConsentInformation.OnConsentInfoUpdateSuccessListener() {
+                    @Override
+                    public void onConsentInfoUpdateSuccess() {
+                        // The consent information state was updated.
+                        // You are now ready to check if a form is available.
+                        if (consentInformation.isConsentFormAvailable()) {
+                            loadForm();
+                        }
+                    }
+                },
+                new ConsentInformation.OnConsentInfoUpdateFailureListener() {
+                    @Override
+                    public void onConsentInfoUpdateFailure(@NonNull FormError formError) {
+                        // Handle the error.
+                    }
+                }
+        );
 
         binding.extendedFab.setOnClickListener(
                 v -> {
@@ -77,6 +128,47 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    public void loadForm() {
+        UserMessagingPlatform.loadConsentForm(
+                this,
+                new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
+                    @Override
+                    public void onConsentFormLoadSuccess(@NonNull ConsentForm consentForm) {
+                        MainActivity.this.consentForm = consentForm;
+                        if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.UNKNOWN) {
+                            consentForm.show(
+                                    MainActivity.this,
+                                    new ConsentForm.OnConsentFormDismissedListener() {
+                                        @Override
+                                        public void onConsentFormDismissed(@Nullable FormError formError) {
+                                            // Handle dismissal by reloading form.
+                                            loadForm();
+                                        }
+                                    }
+                            );
+                        } if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.REQUIRED) {
+                            consentForm.show(
+                                    MainActivity.this,
+                                    new ConsentForm.OnConsentFormDismissedListener() {
+                                        @Override
+                                        public void onConsentFormDismissed(@Nullable FormError formError) {
+                                            // Handle dismissal by reloading form.
+                                            loadForm();
+                                        }
+                                    }
+                            );
+                        }
+                    }
+                },
+                new UserMessagingPlatform.OnConsentFormLoadFailureListener() {
+                    @Override
+                    public void onConsentFormLoadFailure(@NonNull FormError formError) {
+                        // Handle the error
+                    }
+                }
+        );
     }
 
     public void saveSettings() {

@@ -6,6 +6,7 @@
     <string name="native_ad_id" translatable="false">ca-app-pub-4193046598871025/5410823710</string>
     <string name="app_launch_ad" translatable="false">ca-app-pub-4193046598871025/5006950297</string>
     <string name="banner_ad" translatable="false">ca-app-pub-4193046598871025/1806071883</string>
+    <string name="test_banner_ad" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 
     <string name="about_app">About App</string>
 
