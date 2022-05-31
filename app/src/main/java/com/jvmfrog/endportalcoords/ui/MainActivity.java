@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 .addNetworkExtrasBundle(AdMobAdapter.class, extras)
                 .build();
 
+        binding.adView.loadAd(adRequestPersonalized);
+
         //Set tag for underage of consent. false means users are not underage.
         ConsentRequestParameters params = new ConsentRequestParameters
                 .Builder()
