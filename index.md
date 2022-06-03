@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+# End Portal Seeker
 
 You can use the [editor on GitHub](https://github.com/JVMFrog/end-portal-coords/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
