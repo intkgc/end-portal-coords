@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
@@ -16,7 +14,6 @@ import com.google.android.ump.ConsentDebugSettings;
 import com.google.android.ump.ConsentForm;
 import com.google.android.ump.ConsentInformation;
 import com.google.android.ump.ConsentRequestParameters;
-import com.google.android.ump.FormError;
 import com.google.android.ump.UserMessagingPlatform;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.config.Settings;
@@ -34,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
     private ConsentInformation consentInformation;
-    private ConsentForm consentForm;
 
     private AdRequest adRequestNotPersonalized;
+    private ConsentForm consentForm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
         loadSettings();
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -95,21 +93,15 @@ public class MainActivity extends AppCompatActivity {
         consentInformation.requestConsentInfoUpdate(
                 this,
                 params,
-                new ConsentInformation.OnConsentInfoUpdateSuccessListener() {
-                    @Override
-                    public void onConsentInfoUpdateSuccess() {
-                        // The consent information state was updated.
-                        // You are now ready to check if a form is available.
-                        if (consentInformation.isConsentFormAvailable()) {
-                            loadForm();
-                        }
+                () -> {
+                    // The consent information state was updated.
+                    // You are now ready to check if a form is available.
+                    if (consentInformation.isConsentFormAvailable()) {
+                        loadForm();
                     }
                 },
-                new ConsentInformation.OnConsentInfoUpdateFailureListener() {
-                    @Override
-                    public void onConsentInfoUpdateFailure(@NonNull FormError formError) {
-                        // Handle the error.
-                    }
+                formError -> {
+                    // Handle the error.
                 }
         );
 
@@ -135,40 +127,28 @@ public class MainActivity extends AppCompatActivity {
     public void loadForm() {
         UserMessagingPlatform.loadConsentForm(
                 this,
-                new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
-                    @Override
-                    public void onConsentFormLoadSuccess(@NonNull ConsentForm consentForm) {
-                        MainActivity.this.consentForm = consentForm;
-                        if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.UNKNOWN) {
-                            consentForm.show(
-                                    MainActivity.this,
-                                    new ConsentForm.OnConsentFormDismissedListener() {
-                                        @Override
-                                        public void onConsentFormDismissed(@Nullable FormError formError) {
-                                            // Handle dismissal by reloading form.
-                                            loadForm();
-                                        }
-                                    }
-                            );
-                        } if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.REQUIRED) {
-                            consentForm.show(
-                                    MainActivity.this,
-                                    new ConsentForm.OnConsentFormDismissedListener() {
-                                        @Override
-                                        public void onConsentFormDismissed(@Nullable FormError formError) {
-                                            // Handle dismissal by reloading form.
-                                            loadForm();
-                                        }
-                                    }
-                            );
-                        }
+                consentForm -> {
+                    MainActivity.this.consentForm = consentForm;
+                    if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.UNKNOWN) {
+                        consentForm.show(
+                                MainActivity.this,
+                                formError -> {
+                                    // Handle dismissal by reloading form.
+                                    loadForm();
+                                }
+                        );
+                    } if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.REQUIRED) {
+                        consentForm.show(
+                                MainActivity.this,
+                                formError -> {
+                                    // Handle dismissal by reloading form.
+                                    loadForm();
+                                }
+                        );
                     }
                 },
-                new UserMessagingPlatform.OnConsentFormLoadFailureListener() {
-                    @Override
-                    public void onConsentFormLoadFailure(@NonNull FormError formError) {
-                        // Handle the error
-                    }
+                formError -> {
+                    // Handle the error
                 }
         );
     }

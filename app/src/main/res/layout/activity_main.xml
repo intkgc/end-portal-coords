@@ -33,15 +33,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.google.android.gms.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/adView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                ads:adSize="SMART_BANNER"
-                ads:adUnitId="@string/banner_ad"/>
-
             <com.shuhart.stepview.StepView
                 android:id="@+id/step_view"
                 android:layout_width="match_parent"
@@ -58,6 +49,16 @@
                 style="@style/NextStepView"/>
 
             <include layout="@layout/wrapper"/>
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:foregroundGravity="bottom"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="@string/test_banner_ad"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -66,9 +67,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_gravity="bottom|end"
+        app:layout_anchor="@id/toolbar"
+        app:layout_anchorGravity="end|bottom"
         android:text="@string/guide"
         android:textAllCaps="false"
+        android:visibility="gone"
         app:icon="@drawable/ic_round_article_24"/>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
