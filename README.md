@@ -8,7 +8,7 @@ This app calculates the coordinates of the portal to the end by 2 throws of ende
 
 First cast eye of ender and look straight at it
 
-![throw_0](img/throw_0.png)
+![throw_0](img/throw_0.png) 
 
 Then press `F3` to open debug menu
 
