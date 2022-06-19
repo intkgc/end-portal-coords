@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EndPortalCoords"
-        android:hardwareAccelerated="true">
+        android:hardwareAccelerated="true"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name=".ui.GuideActivity"
             android:exported="false"

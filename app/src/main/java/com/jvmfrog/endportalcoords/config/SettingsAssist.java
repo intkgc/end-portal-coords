@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 
 public class SettingsAssist {
+
     public static void save(File file, Class<?> settingsClass) throws IOException {
         JSONObject settings = new JSONObject();
         for (Field field : settingsClass.getDeclaredFields()) {

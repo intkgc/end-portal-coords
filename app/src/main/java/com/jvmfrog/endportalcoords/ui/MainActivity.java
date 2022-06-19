@@ -2,6 +2,7 @@ package com.jvmfrog.endportalcoords.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -154,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void saveSettings() {
-        File settingsFile = new File(getFilesDir(), "Settings.json");
+        File settingsFile = new File(getExternalFilesDir(null), "Settings.json");
 
         try {
             SettingsAssist.save(settingsFile, Settings.class);
@@ -164,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadSettings() {
-        File settingsFile = new File(getFilesDir(), "Settings.json");
+        File settingsFile = new File(getExternalFilesDir(null), "Settings.json");
 
         try {
             SettingsAssist.load(settingsFile, Settings.class);

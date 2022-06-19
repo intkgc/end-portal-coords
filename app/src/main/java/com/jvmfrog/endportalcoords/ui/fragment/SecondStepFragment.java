@@ -84,7 +84,7 @@ public class SecondStepFragment extends Fragment {
     }
 
     public void saveSettings() {
-        File settingsFile = new File(getContext().getFilesDir(), "Settings.json");
+        File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
 
         try {
             SettingsAssist.save(settingsFile, Settings.class);
@@ -94,7 +94,7 @@ public class SecondStepFragment extends Fragment {
     }
 
     public void loadSettings() {
-        File settingsFile = new File(getContext().getFilesDir(), "Settings.json");
+        File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
 
         try {
             SettingsAssist.load(settingsFile, Settings.class);
