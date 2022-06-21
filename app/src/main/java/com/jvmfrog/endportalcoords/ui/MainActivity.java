@@ -106,15 +106,15 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-        binding.extendedFab.setOnClickListener(
+        /*binding.extendedFab.setOnClickListener(
                 v -> {
                     Intent intent = new Intent(MainActivity.this, GuideActivity.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.enter_right_to_left, R.anim.exit_right_to_left);
                 }
-        );
+        );*/
 
-        binding.toolbar.setOnMenuItemClickListener(item -> {
+        /*binding.toolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.about) {
                 Intent intent = new Intent(MainActivity.this, AboutAppActivity.class);
                 startActivity(intent);
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
             return false;
-        });
+        });*/
     }
 
     public void loadForm() {

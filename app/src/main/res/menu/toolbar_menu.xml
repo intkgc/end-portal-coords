@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/calculator"
+        android:title="Калькулятор"
+        android:icon="@drawable/ic_round_calculate_24"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/guide"
+        android:title="Гайд"
+        android:icon="@drawable/ic_round_article_24"
+        android:enabled="true"/>
+
     <item
         android:id="@+id/about"
         android:title="@string/about_app"
         android:icon="@drawable/ic_round_info_24"
-        app:showAsAction="ifRoom"/>
+        android:enabled="true"/>
 </menu>
