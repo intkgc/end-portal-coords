@@ -14,10 +14,6 @@
         android:hardwareAccelerated="true"
         android:requestLegacyExternalStorage="true">
         <activity
-            android:name=".ui.GuideActivity"
-            android:exported="false"
-            android:hardwareAccelerated="false"/>
-        <activity
             android:name=".ui.AboutAppActivity"
             android:exported="false"
             android:hardwareAccelerated="false"/>

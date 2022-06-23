@@ -20,69 +20,33 @@
             app:titleCentered="true"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <FrameLayout
+                android:id="@+id/frame"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"/>
+        </androidx.core.widget.NestedScrollView>
 
-                <com.shuhart.stepview.StepView
-                    android:id="@+id/step_view"
-                    style="@style/NextStepView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0"
-                    app:sv_animationType="All"
-                    app:sv_doneCircleRadius="12dp"
-                    app:sv_selectedCircleRadius="12dp"
-                    app:sv_stepLineWidth="1dp"
-                    app:sv_stepNumberTextSize="12sp"
-                    app:sv_stepPadding="4dp"
-                    app:sv_stepViewStyle="@style/NextStepView"
-                    app:sv_stepsNumber="3" />
-
-                <include
-                    layout="@layout/wrapper"
-                    app:layout_constraintBottom_toTopOf="@+id/adView"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/step_view" />
-
-                <com.google.android.gms.ads.AdView
-                    android:id="@+id/adView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:adSize="SMART_BANNER"
-                    app:adUnitId="@string/test_banner_ad"
-                    app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/bottom_navigation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:menu="@menu/toolbar_menu" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </LinearLayout>
-    </FrameLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/toolbar_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

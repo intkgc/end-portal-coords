@@ -58,20 +58,23 @@ public class FinishStepFragment extends Fragment {
         }
 
         binding.finishStepBtn.setOnClickListener(view -> {
-            FragmentManager manager = getActivity().getSupportFragmentManager();
-            FirstStepFragment fragment = new FirstStepFragment();
-            manager.beginTransaction()
-                    .setCustomAnimations(R.anim.enter_left_to_right, R.anim.exit_left_to_right,
-                            R.anim.enter_right_to_left, R.anim.exit_right_to_left)
-                    .replace(R.id.wrapper, fragment)
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .commit();
+            replaceFragment(new FirstStepFragment());
 
             stepView.go(0,true);
             stepView.done(false);
         });
 
         return binding.getRoot();
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_left_to_right, R.anim.exit_left_to_right,
+                R.anim.enter_right_to_left, R.anim.exit_right_to_left);
+        fragmentTransaction.replace(R.id.wrapper, fragment);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
     }
 
     public void saveSettings() {

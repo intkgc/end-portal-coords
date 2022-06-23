@@ -57,14 +57,7 @@ public class SecondStepFragment extends Fragment {
                             Point endPortal = EndPortal.getPortalCoords(new Point(Settings.firstXCoordinate, Settings.firstZCoordinate),
                                     new Point(Settings.secondXCoordinate, Settings.secondZCoordinate), Settings.firstThrowAngle, Settings.secondThrowAngle);
 
-                            FragmentManager manager = getActivity().getSupportFragmentManager();
-                            FinishStepFragment fragment = new FinishStepFragment();
-                            manager.beginTransaction()
-                                    .setCustomAnimations(R.anim.enter_right_to_left, R.anim.exit_right_to_left,
-                                            R.anim.enter_left_to_right, R.anim.exit_left_to_right)
-                                    .replace(R.id.wrapper, fragment)
-                                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                                    .commit();
+                            replaceFragment(new FinishStepFragment());
 
                             stepView.go(2, true);
                             stepView.done(true);
@@ -81,6 +74,16 @@ public class SecondStepFragment extends Fragment {
         );
 
         return binding.getRoot();
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_left_to_right, R.anim.exit_left_to_right,
+                R.anim.enter_right_to_left, R.anim.exit_right_to_left);
+        fragmentTransaction.replace(R.id.wrapper, fragment);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
     }
 
     public void saveSettings() {

@@ -7,20 +7,17 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
-
-import com.google.ads.mediation.admob.AdMobAdapter;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.ump.ConsentDebugSettings;
-import com.google.android.ump.ConsentForm;
-import com.google.android.ump.ConsentInformation;
-import com.google.android.ump.ConsentRequestParameters;
-import com.google.android.ump.UserMessagingPlatform;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.config.Settings;
 import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
+import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
+import com.jvmfrog.endportalcoords.ui.fragment.EndPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.FirstStepFragment;
+import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
 
 import org.json.JSONException;
 
@@ -30,11 +27,6 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-
-    private ConsentInformation consentInformation;
-
-    private AdRequest adRequestNotPersonalized;
-    private ConsentForm consentForm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,59 +44,25 @@ public class MainActivity extends AppCompatActivity {
         loadSettings();
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+        setContentView(binding.getRoot());
+        replaceFragment(new EndPortalFinderFragment());
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.wrapper, new FirstStepFragment()).commit();
+        binding.bottomNavigation.setOnItemSelectedListener(item -> {
 
-        MobileAds.initialize(this);
-        Bundle extras = new Bundle();
-        extras.putString("npa", "1");
+            switch (item.getItemId()) {
+                case R.id.calculate:
+                    replaceFragment(new EndPortalFinderFragment());
+                    break;
+                case R.id.guide:
+                    replaceFragment(new GuideFragment());
+                    break;
+                case R.id.about:
+                    replaceFragment(new AboutFragment());
+                    break;
+            }
 
-        AdRequest adRequestPersonalized = new AdRequest.Builder()
-                .build();
-
-        adRequestNotPersonalized = new AdRequest.Builder()
-                .addNetworkExtrasBundle(AdMobAdapter.class, extras)
-                .build();
-
-        binding.adView.loadAd(adRequestPersonalized);
-
-        //Set tag for underage of consent. false means users are not underage.
-        ConsentRequestParameters params = new ConsentRequestParameters
-                .Builder()
-                .setAdMobAppId(getString(R.string.app_id))
-                .setTagForUnderAgeOfConsent(false)
-                .build();
-
-        // Debug settings for Form
-        ConsentDebugSettings debugSettings = new ConsentDebugSettings.Builder(this)
-                .setDebugGeography(ConsentDebugSettings
-                .DebugGeography
-                .DEBUG_GEOGRAPHY_EEA)
-                .addTestDeviceHashedId("AF0F2B6E3BCDC6ACBFD315C64B00")
-                .build();
-
-        ConsentRequestParameters debugParams = new ConsentRequestParameters
-                .Builder()
-                .setConsentDebugSettings(debugSettings)
-                .build();
-
-        consentInformation = UserMessagingPlatform.getConsentInformation(this);
-        consentInformation.requestConsentInfoUpdate(
-                this,
-                params,
-                () -> {
-                    // The consent information state was updated.
-                    // You are now ready to check if a form is available.
-                    if (consentInformation.isConsentFormAvailable()) {
-                        loadForm();
-                    }
-                },
-                formError -> {
-                    // Handle the error.
-                }
-        );
+            return true;
+        });
 
         /*binding.extendedFab.setOnClickListener(
                 v -> {
@@ -125,33 +83,12 @@ public class MainActivity extends AppCompatActivity {
         });*/
     }
 
-    public void loadForm() {
-        UserMessagingPlatform.loadConsentForm(
-                this,
-                consentForm -> {
-                    MainActivity.this.consentForm = consentForm;
-                    if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.UNKNOWN) {
-                        consentForm.show(
-                                MainActivity.this,
-                                formError -> {
-                                    // Handle dismissal by reloading form.
-                                    loadForm();
-                                }
-                        );
-                    } if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.REQUIRED) {
-                        consentForm.show(
-                                MainActivity.this,
-                                formError -> {
-                                    // Handle dismissal by reloading form.
-                                    loadForm();
-                                }
-                        );
-                    }
-                },
-                formError -> {
-                    // Handle the error
-                }
-        );
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame, fragment);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
     }
 
     public void saveSettings() {

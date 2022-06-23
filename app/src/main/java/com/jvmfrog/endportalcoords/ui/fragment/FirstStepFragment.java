@@ -49,14 +49,7 @@ public class FirstStepFragment extends Fragment {
                 Settings.firstThrowAngle = Float.parseFloat(binding.firstThrowAngle.getText().toString());
                 saveSettings();
 
-                FragmentManager manager = getActivity().getSupportFragmentManager();
-                SecondStepFragment fragment = new SecondStepFragment();
-                manager.beginTransaction()
-                        .setCustomAnimations(R.anim.enter_right_to_left, R.anim.exit_right_to_left,
-                                R.anim.enter_left_to_right, R.anim.exit_left_to_right)
-                        .replace(R.id.wrapper, fragment)
-                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                        .commit();
+                replaceFragment(new SecondStepFragment());
 
                 stepView.go(1, true);
             } else {
@@ -66,6 +59,16 @@ public class FirstStepFragment extends Fragment {
         });
 
         return binding.getRoot();
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left, R.anim.exit_right_to_left,
+                R.anim.enter_left_to_right, R.anim.exit_left_to_right);
+        fragmentTransaction.replace(R.id.wrapper, fragment);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        fragmentTransaction.commit();
     }
 
     public void saveSettings() {

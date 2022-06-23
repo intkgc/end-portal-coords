@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/calculator"
+        android:id="@+id/calculate"
         android:title="Калькулятор"
         android:icon="@drawable/ic_round_calculate_24"
         android:enabled="true"/>
