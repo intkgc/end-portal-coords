@@ -15,6 +15,7 @@
     <string name="enter_second_xyz_and_throw_angle">Geben Sie folgenden Koordinaten und den Wurfwinkel ein</string>
     <string name="calculate_coordinates">Koordinaten berechnen</string>
     <string name="to">von -180 bis 180</string>
+    <string name="too">von -999999999 bis 999999999</string>
     <string name="guide">Guide</string>
     <string name="error">Fehler</string>
     <string name="skip">Überspringen</string>

@@ -12,6 +12,7 @@
     <string name="enter_second_xyz_and_throw_angle">Екінші XZ координаттарын енгізіп, лақтыру бұрышы</string>
     <string name="calculate_coordinates">Координаталарды есептеңіз</string>
     <string name="to">-180-ден 180-ге дейін</string>
+    <string name="too">-999999999-ден to 999999999-ге дейін</string>
     <string name="guide">Хайд</string>
     <string name="skip">Өткізіп жіберу</string>
     <string name="error">Қате</string>

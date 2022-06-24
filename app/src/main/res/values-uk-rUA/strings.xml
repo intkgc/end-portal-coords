@@ -10,6 +10,7 @@
     <string name="enter_second_xyz_and_throw_angle">Введіть другі координати XZ та кут кидка</string>
     <string name="calculate_coordinates">Розрахувати Координати</string>
     <string name="to">Від -180 до 180</string>
+    <string name="too">Від -999999999 до 999999999</string>
     <string name="guide">Гайд</string>
     <string name="skip">Пропустити</string>
     <string name="error">Помилка</string>

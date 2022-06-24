@@ -12,6 +12,7 @@
     <string name="enter_second_xyz_and_throw_angle">İkinci XZ koordinatlarını ve atış açısını girin</string>
     <string name="calculate_coordinates">Koordinatları Hesapla</string>
     <string name="to">-180 ila 180</string>
+    <string name="too">-999999999 ila 999999999</string>
     <string name="guide">Hyde</string>
     <string name="skip">Atlamak</string>
     <string name="error">Hata</string>

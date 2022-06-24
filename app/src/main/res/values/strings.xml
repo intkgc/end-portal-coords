@@ -25,6 +25,7 @@
     <string name="enter_second_xyz_and_throw_angle">Enter the second XZ coordinates and throw angle</string>
     <string name="calculate_coordinates">Calculate Coordinates</string>
     <string name="to">-180 to 180</string>
+    <string name="too">-999999999 to 999999999</string>
     <string name="guide">Guide</string>
     <string name="skip">Skip</string>
     <string name="error">Error</string>

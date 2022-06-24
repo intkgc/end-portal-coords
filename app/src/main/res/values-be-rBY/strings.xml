@@ -12,6 +12,7 @@
     <string name="enter_second_xyz_and_throw_angle">Увядзіце другія каардынаты XZ і кут кідка</string>
     <string name="calculate_coordinates">Разлічыць Каардынаты</string>
     <string name="to">Ад -180 да 180</string>
+    <string name="too">Ад -999999999 да 999999999</string>
     <string name="guide">Гайд</string>
     <string name="skip">Прапусціць</string>
     <string name="error">Памылка</string>

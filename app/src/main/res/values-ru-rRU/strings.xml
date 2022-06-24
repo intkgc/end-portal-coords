@@ -12,6 +12,7 @@
     <string name="enter_second_xyz_and_throw_angle">Введите вторые координаты XZ и угол броска</string>
     <string name="calculate_coordinates">Рассчитать Координаты</string>
     <string name="to">От -180 до 180</string>
+    <string name="too">От -999999999 до 999999999</string>
     <string name="guide">Гайд</string>
     <string name="skip">Пропустить</string>
     <string name="error">Ошибка</string>

@@ -10,6 +10,7 @@
     <string name="enter_second_xyz_and_throw_angle">Wprowadź drugie współrzędne XZ i kąt rzutu</string>
     <string name="calculate_coordinates">Oblicz współrzędne</string>
     <string name="to">-180 do 180</string>
+    <string name="too">-999999999 do 999999999</string>
     <string name="guide">Hyde</string>
     <string name="skip">Pomijać</string>
     <string name="error">Błąd</string>

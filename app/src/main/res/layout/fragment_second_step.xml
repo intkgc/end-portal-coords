@@ -39,6 +39,7 @@
                 app:errorEnabled="true"
                 app:counterEnabled="true"
                 app:counterMaxLength="12"
+                app:helperText="@string/too"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -64,6 +65,7 @@
                 app:errorEnabled="true"
                 app:counterEnabled="true"
                 app:counterMaxLength="12"
+                app:helperText="@string/too"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
                 <com.google.android.material.textfield.TextInputEditText
