@@ -17,6 +17,7 @@ import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.EndPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
+import com.jvmfrog.endportalcoords.ui.fragment.HistoryFragment;
 
 import org.json.JSONException;
 
@@ -26,6 +27,9 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
+    String []data = {};
+    int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
         replaceFragment(new EndPortalFinderFragment());
 
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
-
             switch (item.getItemId()) {
                 case R.id.calculate:
                     replaceFragment(new EndPortalFinderFragment());
+                    break;
+                case R.id.history:
+                    replaceFragment(new HistoryFragment());
                     break;
                 case R.id.guide:
                     replaceFragment(new GuideFragment());
@@ -59,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new AboutFragment());
                     break;
             }
-
             return true;
         });
     }

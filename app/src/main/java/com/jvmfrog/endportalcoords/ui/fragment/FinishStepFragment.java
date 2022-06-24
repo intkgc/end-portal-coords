@@ -1,18 +1,25 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
 import com.jvmfrog.endportalcoords.EndPortal;
 import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
+import com.jvmfrog.endportalcoords.adapter.Adapter;
+import com.jvmfrog.endportalcoords.adapter.Model;
 import com.jvmfrog.endportalcoords.config.Settings;
 import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.FragmentFinishStepBinding;
@@ -25,10 +32,16 @@ import org.json.JSONException;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FinishStepFragment extends Fragment {
 
     private FragmentFinishStepBinding binding;
+    private String coords;
+    private Adapter adapter;
+    ArrayList<Model> items_list;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,14 +56,17 @@ public class FinishStepFragment extends Fragment {
 
         StepView stepView = getActivity().findViewById(R.id.step_view);
 
+        items_list = new ArrayList<>();
+
         try {
             Point endPortal = EndPortal.getPortalCoords(new Point(Settings.firstXCoordinate, Settings.firstZCoordinate),
                     new Point(Settings.secondXCoordinate, Settings.secondZCoordinate), Settings.firstThrowAngle, Settings.secondThrowAngle);
             System.out.println(endPortal.x + " " + endPortal.z);
 
             binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
+            coords = "X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z;
+            items_list.add(new Model("It's WORKING!!!!", coords));
 
-            //Dialogs.endPortalCoordinates(this, endPortal.x, endPortal.z).show();
         } catch (AnglesEqualException e) {
             Dialogs.angleEqualException(getContext());
         } catch (AnglesOppositeException e) {
@@ -59,7 +75,7 @@ public class FinishStepFragment extends Fragment {
 
         binding.finishStepBtn.setOnClickListener(view -> {
             replaceFragment(new FirstStepFragment());
-
+            saveData();
             stepView.go(0,true);
             stepView.done(false);
         });
@@ -94,6 +110,28 @@ public class FinishStepFragment extends Fragment {
             SettingsAssist.load(settingsFile, Settings.class);
         } catch (IOException | JSONException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void saveData(){
+        SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(items_list);
+        editor.putString("data", json);
+        editor.apply();
+    }
+
+    public void loadData() {
+        SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = prefs.getString("data", null);
+        Type type = new TypeToken<ArrayList<Model>>() {
+        }.getType();
+        items_list = gson.fromJson(json, type);
+
+        if (items_list == null) {
+            items_list = new ArrayList<>();
         }
     }
 }

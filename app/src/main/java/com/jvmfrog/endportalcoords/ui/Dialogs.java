@@ -2,6 +2,10 @@ package com.jvmfrog.endportalcoords.ui;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.jvmfrog.endportalcoords.R;
@@ -43,5 +47,23 @@ public class Dialogs {
             builder.setNegativeButton(negativeButton.msg, negativeButton.onClickListener);
 
         return builder;
+    }
+
+    public static void saveCoordinates(Context c) {
+        final EditText taskEditText = new EditText(c);
+        AlertDialog builder = new MaterialAlertDialogBuilder(c)
+                .setIcon(R.drawable.ic_round_save_24)
+                .setTitle("Save Coordinates")
+                .setMessage("Enter coordinates name")
+                .setView(taskEditText)
+                .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String task = String.valueOf(taskEditText.getText());
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .create();
+        builder.show();
     }
 }
