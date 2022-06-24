@@ -1,44 +1,35 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
+import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithAnimation;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.jvmfrog.endportalcoords.EndPortal;
-import com.jvmfrog.endportalcoords.Point;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.adapter.Adapter;
 import com.jvmfrog.endportalcoords.adapter.Model;
-import com.jvmfrog.endportalcoords.config.Settings;
-import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.FragmentFinishStepBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
+import com.jvmfrog.endportalcoords.util.EndPortalCalculator;
+import com.jvmfrog.endportalcoords.util.Point;
 import com.shuhart.stepview.StepView;
 
-import org.json.JSONException;
-
-import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.List;
 
 public class FinishStepFragment extends Fragment {
 
@@ -54,17 +45,19 @@ public class FinishStepFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle bundle) {
         binding = FragmentFinishStepBinding.inflate(inflater, container, false);
-        loadSettings();
 
         StepView stepView = getActivity().findViewById(R.id.step_view);
 
         items_list = new ArrayList<>();
 
         try {
-            Point endPortal = EndPortal.getPortalCoords(new Point(Settings.firstXCoordinate, Settings.firstZCoordinate),
-                    new Point(Settings.secondXCoordinate, Settings.secondZCoordinate), Settings.firstThrowAngle, Settings.secondThrowAngle);
+            Bundle finalBundle = getArguments();
+            Point endPortal = EndPortalCalculator.calculate(
+                    new Point(finalBundle.getFloat("firstX"), finalBundle.getFloat("firstZ")),
+                    new Point(finalBundle.getFloat("secondX"), finalBundle.getFloat("secondZ")),
+                    finalBundle.getFloat("firstAngle"), finalBundle.getFloat("secondAngle"));
             System.out.println(endPortal.x + " " + endPortal.z);
 
             binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
@@ -79,8 +72,8 @@ public class FinishStepFragment extends Fragment {
         //При клике возвращяет пользователя в первый шаг
         //Типо сохроняет коорды и сбрасывает счетчик шагов
         binding.finishStepBtn.setOnClickListener(view -> {
-            replaceFragment(new FirstStepFragment());
-            stepView.go(0,true);
+            changeFragmentWithAnimation(getActivity(), new FirstStepFragment(), R.id.wrapper, bundle);
+            stepView.go(0, true);
             stepView.done(false);
         });
 
@@ -107,41 +100,8 @@ public class FinishStepFragment extends Fragment {
         return binding.getRoot();
     }
 
-    //Лучше не трогать :)
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.enter_left_to_right, R.anim.exit_left_to_right,
-                R.anim.enter_right_to_left, R.anim.exit_right_to_left);
-        fragmentTransaction.replace(R.id.wrapper, fragment);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        fragmentTransaction.commit();
-    }
-
-    //мое любимое сохранение
-    public void saveSettings() {
-        File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
-
-        try {
-            SettingsAssist.save(settingsFile, Settings.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    //мое любимое загрузка сохранений
-    public void loadSettings() {
-        File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
-
-        try {
-            SettingsAssist.load(settingsFile, Settings.class);
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
     //типо сохранение координат
-    public void saveData(){
+    public void saveData() {
         SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();

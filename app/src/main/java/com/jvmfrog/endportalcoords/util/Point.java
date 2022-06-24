@@ -1,4 +1,4 @@
-package com.jvmfrog.endportalcoords;
+package com.jvmfrog.endportalcoords.util;
 
 public class Point {
     public float x;

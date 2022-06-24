@@ -1,31 +1,18 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
+import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithAnimation;
+
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jvmfrog.endportalcoords.EndPortal;
-import com.jvmfrog.endportalcoords.Point;
+import androidx.fragment.app.Fragment;
+
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.config.Settings;
-import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.FragmentSecondStepBinding;
-import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
-import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
-import com.jvmfrog.endportalcoords.ui.MainActivity;
 import com.shuhart.stepview.StepView;
-
-import org.json.JSONException;
-
-import java.io.File;
-import java.io.IOException;
 
 public class SecondStepFragment extends Fragment {
 
@@ -38,7 +25,7 @@ public class SecondStepFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle bundle) {
         binding = FragmentSecondStepBinding.inflate(inflater, container, false);
 
         StepView stepView = getActivity().findViewById(R.id.step_view);
@@ -47,25 +34,15 @@ public class SecondStepFragment extends Fragment {
                     if (!binding.secondXCoord.getText().toString().isEmpty() &&
                             !binding.secondZCoord.getText().toString().isEmpty() &&
                             !binding.secondThrowAngle.getText().toString().isEmpty()) {
+                        Bundle finalBundle = new Bundle();
+                        finalBundle.putAll(getArguments());
+                        finalBundle.putFloat("secondX", Float.parseFloat(binding.secondXCoord.getText().toString()));
+                        finalBundle.putFloat("secondZ", Float.parseFloat(binding.secondZCoord.getText().toString()));
+                        finalBundle.putFloat("secondAngle", Float.parseFloat(binding.secondThrowAngle.getText().toString()));
+                        changeFragmentWithAnimation(getActivity(), new FinishStepFragment(), R.id.wrapper, finalBundle);
 
-                        Settings.secondXCoordinate = Float.parseFloat(binding.secondXCoord.getText().toString());
-                        Settings.secondZCoordinate = Float.parseFloat(binding.secondZCoord.getText().toString());
-                        Settings.secondThrowAngle = Float.parseFloat(binding.secondThrowAngle.getText().toString());
-                        saveSettings();
-
-                        try {
-                            Point endPortal = EndPortal.getPortalCoords(new Point(Settings.firstXCoordinate, Settings.firstZCoordinate),
-                                    new Point(Settings.secondXCoordinate, Settings.secondZCoordinate), Settings.firstThrowAngle, Settings.secondThrowAngle);
-
-                            replaceFragment(new FinishStepFragment());
-
-                            stepView.go(2, true);
-                            stepView.done(true);
-                        } catch (AnglesEqualException e) {
-                            Dialogs.angleEqualException(getContext());
-                        } catch (AnglesOppositeException e) {
-                            Dialogs.angleOppositeException(getContext());
-                        }
+                        stepView.go(2, true);
+                        stepView.done(true);
                     } else {
                         System.out.println("Error fields must be filled");
                         Dialogs.checkAllFields(v.getContext());
@@ -74,35 +51,5 @@ public class SecondStepFragment extends Fragment {
         );
 
         return binding.getRoot();
-    }
-
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.enter_right_to_left, R.anim.exit_right_to_left,
-                R.anim.enter_left_to_right, R.anim.exit_left_to_right);
-        fragmentTransaction.replace(R.id.wrapper, fragment);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        fragmentTransaction.commit();
-    }
-
-    public void saveSettings() {
-        File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
-
-        try {
-            SettingsAssist.save(settingsFile, Settings.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void loadSettings() {
-        File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
-
-        try {
-            SettingsAssist.load(settingsFile, Settings.class);
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
     }
 }

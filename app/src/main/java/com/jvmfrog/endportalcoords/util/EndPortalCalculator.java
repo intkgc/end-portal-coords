@@ -1,4 +1,4 @@
-package com.jvmfrog.endportalcoords;
+package com.jvmfrog.endportalcoords.util;
 
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
@@ -7,11 +7,13 @@ import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
  * Code from <a href="https://skrepkaq.ru/stronghold">https://skrepkaq.ru/stronghold</a>
  */
 
-public class EndPortal {
-    public static Point getPortalCoords(Point throw0, Point throw1, float angle0, float angle1)
+public class EndPortalCalculator {
+    public static Point calculate(Point throw0, Point throw1, float angle0, float angle1)
             throws AnglesEqualException, AnglesOppositeException {
         Point endPortal = new Point(0, 0);
-
+        System.out.println(throw0.x + " " + throw0.z);
+        System.out.println(throw1.x + " " + throw1.z);
+        System.out.println(angle0 + " " + angle1);
         if (Math.abs(angle0 - angle1) < 1)
             throw new AnglesEqualException();
         else if ((((angle0 < 0) && (angle1 > 0)) ||

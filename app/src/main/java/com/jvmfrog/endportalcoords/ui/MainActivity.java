@@ -1,103 +1,52 @@
 package com.jvmfrog.endportalcoords.ui;
 
-import android.content.Intent;
+import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragment;
+
 import android.os.Bundle;
-import android.os.Environment;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.config.Settings;
-import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.EndPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.HistoryFragment;
 
-import org.json.JSONException;
-
-import java.io.File;
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
-    String []data = {};
+    String[] data = {};
     int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        File settingsFile = new File(getFilesDir(), "Settings.json");
 
-        if(!settingsFile.exists()) {
-            try {
-                SettingsAssist.save(settingsFile, Settings.class);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        loadSettings();
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        replaceFragment(new EndPortalFinderFragment());
+        changeFragment(this, new EndPortalFinderFragment(), R.id.frame, null);
 
         //Переключатель для нижнего бара
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.calculate:
-                    replaceFragment(new EndPortalFinderFragment());
+                    changeFragment(this, new EndPortalFinderFragment(), R.id.frame, null);
                     break;
                 case R.id.history:
-                    replaceFragment(new HistoryFragment());
+                    changeFragment(this, new HistoryFragment(), R.id.frame, null);
                     break;
                 case R.id.guide:
-                    replaceFragment(new GuideFragment());
+                    changeFragment(this, new GuideFragment(), R.id.frame, null);
                     break;
                 case R.id.about:
-                    replaceFragment(new AboutFragment());
+                    changeFragment(this, new AboutFragment(), R.id.frame, null);
                     break;
             }
             return true;
         });
-    }
-
-    //Лучше не трогать :)
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame, fragment);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        fragmentTransaction.commit();
-    }
-
-    //мое любимое сохранение
-    public void saveSettings() {
-        File settingsFile = new File(getExternalFilesDir(null), "Settings.json");
-
-        try {
-            SettingsAssist.save(settingsFile, Settings.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    //мое любимое загрузка сохранений
-    public void loadSettings() {
-        File settingsFile = new File(getExternalFilesDir(null), "Settings.json");
-
-        try {
-            SettingsAssist.load(settingsFile, Settings.class);
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
-        }
     }
 }
