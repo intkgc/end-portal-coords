@@ -29,6 +29,8 @@ public class AboutFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentAboutBinding.inflate(inflater, container, false);
 
+        //Сам разберешся
+
         final ChromeCustomTabAPI chromeCustomTabAPI = new ChromeCustomTabAPI(getActivity());
 
         binding.appVersionBtn.setText(getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");

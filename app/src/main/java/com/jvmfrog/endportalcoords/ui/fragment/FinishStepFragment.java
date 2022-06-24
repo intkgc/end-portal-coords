@@ -64,6 +64,7 @@ public class FinishStepFragment extends Fragment {
             System.out.println(endPortal.x + " " + endPortal.z);
 
             binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
+
             coords = "X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z;
             items_list.add(new Model("It's WORKING!!!!", coords));
 
@@ -73,6 +74,8 @@ public class FinishStepFragment extends Fragment {
             Dialogs.angleOppositeException(getContext());
         }
 
+        //При клике возвращяет пользователя в первый шаг
+        //Типо сохроняет коорды и сбрасывает счетчик шагов
         binding.finishStepBtn.setOnClickListener(view -> {
             replaceFragment(new FirstStepFragment());
             saveData();
@@ -83,6 +86,7 @@ public class FinishStepFragment extends Fragment {
         return binding.getRoot();
     }
 
+    //Лучше не трогать :)
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -93,6 +97,7 @@ public class FinishStepFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
+    //мое любимое сохранение
     public void saveSettings() {
         File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
 
@@ -103,6 +108,7 @@ public class FinishStepFragment extends Fragment {
         }
     }
 
+    //мое любимое загрузка сохранений
     public void loadSettings() {
         File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
 
@@ -113,6 +119,7 @@ public class FinishStepFragment extends Fragment {
         }
     }
 
+    //типо сохранение координат
     public void saveData(){
         SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -122,6 +129,7 @@ public class FinishStepFragment extends Fragment {
         editor.apply();
     }
 
+    //типо загрузка координат
     public void loadData() {
         SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
         Gson gson = new Gson();
@@ -130,6 +138,7 @@ public class FinishStepFragment extends Fragment {
         }.getType();
         items_list = gson.fromJson(json, type);
 
+        //только дурак не поймет что оно делает
         if (items_list == null) {
             items_list = new ArrayList<>();
         }

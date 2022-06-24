@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new EndPortalFinderFragment());
 
+        //Переключатель для нижнего бара
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.calculate:
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Лучше не трогать :)
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    //мое любимое сохранение
     public void saveSettings() {
         File settingsFile = new File(getExternalFilesDir(null), "Settings.json");
 
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //мое любимое загрузка сохранений
     public void loadSettings() {
         File settingsFile = new File(getExternalFilesDir(null), "Settings.json");
 

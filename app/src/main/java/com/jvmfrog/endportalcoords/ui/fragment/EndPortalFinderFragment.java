@@ -33,6 +33,7 @@ public class EndPortalFinderFragment extends Fragment {
         return binding.getRoot();
     }
 
+    //Лучше не трогать :)
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

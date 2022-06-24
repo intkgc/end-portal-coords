@@ -39,6 +39,7 @@ public class FirstStepFragment extends Fragment {
 
         StepView stepView = getActivity().findViewById(R.id.step_view);
 
+        //Тут ты и так знаешь
         binding.firstStepBtn.setOnClickListener(view -> {
             if (!binding.firstXCoord.getText().toString().isEmpty() &&
                     !binding.firstZCoord.getText().toString().isEmpty() &&
@@ -61,6 +62,7 @@ public class FirstStepFragment extends Fragment {
         return binding.getRoot();
     }
 
+    //Лучше не трогать :)
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -71,6 +73,7 @@ public class FirstStepFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
+    //мое любимое сохранение
     public void saveSettings() {
         File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
 
@@ -81,6 +84,7 @@ public class FirstStepFragment extends Fragment {
         }
     }
 
+    //мое любимое загрузка сохранений
     public void loadSettings() {
         File settingsFile = new File(getContext().getExternalFilesDir(null), "Settings.json");
 

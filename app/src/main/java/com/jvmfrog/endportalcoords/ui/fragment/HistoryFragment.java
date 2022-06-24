@@ -47,6 +47,7 @@ public class HistoryFragment extends Fragment {
         return binding.getRoot();
     }
 
+    //типо сохранение координат
     public void saveData(){
         SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -56,6 +57,7 @@ public class HistoryFragment extends Fragment {
         editor.apply();
     }
 
+    //типо загрузка координат
     public void loadData() {
         SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
         Gson gson = new Gson();
