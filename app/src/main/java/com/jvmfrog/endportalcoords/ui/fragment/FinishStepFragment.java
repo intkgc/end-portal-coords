@@ -1,9 +1,11 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,7 +14,9 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.jvmfrog.endportalcoords.EndPortal;
@@ -64,9 +68,7 @@ public class FinishStepFragment extends Fragment {
             System.out.println(endPortal.x + " " + endPortal.z);
 
             binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
-
             coords = "X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z;
-            items_list.add(new Model("It's WORKING!!!!", coords));
 
         } catch (AnglesEqualException e) {
             Dialogs.angleEqualException(getContext());
@@ -78,9 +80,28 @@ public class FinishStepFragment extends Fragment {
         //Типо сохроняет коорды и сбрасывает счетчик шагов
         binding.finishStepBtn.setOnClickListener(view -> {
             replaceFragment(new FirstStepFragment());
-            saveData();
             stepView.go(0,true);
             stepView.done(false);
+        });
+
+        binding.coordsSaveBtn.setOnClickListener(view -> {
+            final EditText item_name_edit_text = new EditText(view.getContext());
+            AlertDialog builder = new MaterialAlertDialogBuilder(view.getContext())
+                    .setIcon(R.drawable.ic_round_save_24)
+                    .setTitle("Save Coordinates")
+                    .setMessage("Enter coordinates name")
+                    .setView(item_name_edit_text)
+                    .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String item_name = String.valueOf(item_name_edit_text.getText());
+                            items_list.add(new Model(item_name, coords));
+                            saveData();
+                        }
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .create();
+            builder.show();
         });
 
         return binding.getRoot();
