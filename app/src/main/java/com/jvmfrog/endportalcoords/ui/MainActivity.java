@@ -16,7 +16,6 @@ import com.jvmfrog.endportalcoords.config.SettingsAssist;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.EndPortalFinderFragment;
-import com.jvmfrog.endportalcoords.ui.fragment.FirstStepFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
 
 import org.json.JSONException;
@@ -63,24 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         });
-
-        /*binding.extendedFab.setOnClickListener(
-                v -> {
-                    Intent intent = new Intent(MainActivity.this, GuideActivity.class);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.enter_right_to_left, R.anim.exit_right_to_left);
-                }
-        );*/
-
-        /*binding.toolbar.setOnMenuItemClickListener(item -> {
-            if (item.getItemId() == R.id.about) {
-                Intent intent = new Intent(MainActivity.this, AboutAppActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.enter_right_to_left, R.anim.exit_right_to_left);
-                return true;
-            }
-            return false;
-        });*/
     }
 
     private void replaceFragment(Fragment fragment) {
