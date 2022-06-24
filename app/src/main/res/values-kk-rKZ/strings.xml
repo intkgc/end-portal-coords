@@ -47,4 +47,15 @@
     <string name="thank_for_review">Пікіріңізге рахмет</string>
     <string name="we_are_on_vk">Біз ВКонтакте желісіндеміз</string>
     <string name="other_apps">Басқа қолданбалар</string>
+
+    <!--Navigation Bar-->
+    <string name="calculator">Калькулятор</string>
+    <string name="coordinates">Координаттар</string>
+
+    <!--Save Coords-->
+    <string name="save_coordinates">Координаттарды сақтау</string>
+    <string name="saving_coordinates">Координаттарды сақтау</string>
+    <string name="enter_a_name_for_coordinates">Координаттардың атауын енгізіңіз</string>
+    <string name="save">Сақтау</string>
+    <string name="cancel">Болдырмау</string>
 </resources>

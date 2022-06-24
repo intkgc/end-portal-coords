@@ -41,4 +41,15 @@
     <string name="thank_for_review">Спасибо за отзыв</string>
     <string name="we_are_on_vk">Ми у ВКонтакті</string>
     <string name="other_apps">Інші програми</string>
+
+    <!--Navigation Bar-->
+    <string name="calculator">Калькулятор</string>
+    <string name="coordinates">Координати</string>
+
+    <!--Save Coords-->
+    <string name="save_coordinates">Зберегти координати</string>
+    <string name="saving_coordinates">Збереження координат</string>
+    <string name="enter_a_name_for_coordinates">Будь ласка, введіть назву для координат</string>
+    <string name="save">Зберегти</string>
+    <string name="cancel">Скасувати</string>
 </resources>

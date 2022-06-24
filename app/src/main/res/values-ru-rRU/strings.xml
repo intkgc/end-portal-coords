@@ -47,4 +47,15 @@
     <string name="thank_for_review">Спасибо за отзыв</string>
     <string name="we_are_on_vk">Мы в ВКонтакте</string>
     <string name="other_apps">Другие приложения</string>
+
+    <!--Navigation Bar-->
+    <string name="calculator">Калькулятор</string>
+    <string name="coordinates">Координаты</string>
+
+    <!--Save Coords-->
+    <string name="save_coordinates">Сохранить Координаты</string>
+    <string name="saving_coordinates">Сохранение Координат</string>
+    <string name="enter_a_name_for_coordinates">Пожалуйста введите название для координат</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
 </resources>

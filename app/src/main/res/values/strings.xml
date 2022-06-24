@@ -60,6 +60,15 @@
     <string name="thank_for_review">Thanks for the review</string>
     <string name="we_are_on_vk">We are on VK</string>
     <string name="other_apps">Other Apps</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Navigation Bar-->
+    <string name="calculator">Calculator</string>
+    <string name="coordinates">Coordinates</string>
+
+    <!--Save Coords-->
+    <string name="save_coordinates">Save Coordinates</string>
+    <string name="saving_coordinates">Saving Coordinates</string>
+    <string name="enter_a_name_for_coordinates">Please enter a name for the coordinates</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>

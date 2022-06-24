@@ -47,4 +47,15 @@
     <string name="thank_for_review">Дзякуй за водгук</string>
     <string name="we_are_on_vk">Мы ва Укантакце</string>
     <string name="other_apps">Іншыя прыкладанні</string>
+
+    <!--Navigation Bar-->
+    <string name="calculator">Калькулятар</string>
+    <string name="coordinates">Каардынаты</string>
+
+    <!--Save Coords-->
+    <string name="save_coordinates">Захаваць каардынаты</string>
+    <string name="saving_coordinates">Захаванне каардынатаў</string>
+    <string name="enter_a_name_for_coordinates">Калі ласка, увядзіце назву для каардынат</string>
+    <string name="save">Захаваць</string>
+    <string name="cancel">Адмяніць</string>
 </resources>

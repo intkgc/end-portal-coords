@@ -88,10 +88,10 @@ public class FinishStepFragment extends Fragment {
             final EditText item_name_edit_text = new EditText(view.getContext());
             AlertDialog builder = new MaterialAlertDialogBuilder(view.getContext())
                     .setIcon(R.drawable.ic_round_save_24)
-                    .setTitle("Save Coordinates")
-                    .setMessage("Enter coordinates name")
+                    .setTitle(R.string.saving_coordinates)
+                    .setMessage(R.string.enter_a_name_for_coordinates)
                     .setView(item_name_edit_text)
-                    .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                    .setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             String item_name = String.valueOf(item_name_edit_text.getText());
@@ -99,7 +99,7 @@ public class FinishStepFragment extends Fragment {
                             saveData();
                         }
                     })
-                    .setNegativeButton("Cancel", null)
+                    .setNegativeButton(R.string.cancel, null)
                     .create();
             builder.show();
         });

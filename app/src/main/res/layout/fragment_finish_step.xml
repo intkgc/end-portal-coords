@@ -59,7 +59,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_marginBottom="8dp"
                 android:padding="16dp"
-                android:text="Save Coordinates"
+                android:text="@string/save_coordinates"
                 android:textSize="18sp"
                 android:textAllCaps="false"
                 app:icon="@drawable/ic_round_save_24"

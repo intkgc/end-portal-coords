@@ -41,4 +41,15 @@
     <string name="thank_for_review">Thanks  for the review</string>
     <string name="we_are_on_vk">Wir sind auf VKontakte</string>
     <string name="other_apps">Andere Anwendungen</string>
+
+    <!--Navigation Bar-->
+    <string name="calculator">Taschenrechner</string>
+    <string name="coordinates">Koordinaten</string>
+
+    <!--Save Coords-->
+    <string name="save_coordinates">Koordinaten speichern</string>
+    <string name="saving_coordinates">Koordinaten speichern</string>
+    <string name="enter_a_name_for_coordinates">Bitte geben Sie einen Namen für die Koordinaten ein</string>
+    <string name="save">Speichern</string>
+    <string name="cancel">Absagen</string>
 </resources>
