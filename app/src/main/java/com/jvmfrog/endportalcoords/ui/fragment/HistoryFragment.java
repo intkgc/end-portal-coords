@@ -41,8 +41,16 @@ public class HistoryFragment extends Fragment {
         loadData();
 
         binding.recview.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new Adapter((ArrayList<Model>) items_list);
+        adapter = new Adapter((ArrayList<Model>) items_list, getActivity());
         binding.recview.setAdapter(adapter);
+
+        if (items_list.isEmpty()) {
+            binding.recview.setVisibility(View.GONE);
+            binding.linear.setVisibility(View.VISIBLE);
+        } else {
+            binding.recview.setVisibility(View.VISIBLE);
+            binding.linear.setVisibility(View.GONE);
+        }
 
         return binding.getRoot();
     }

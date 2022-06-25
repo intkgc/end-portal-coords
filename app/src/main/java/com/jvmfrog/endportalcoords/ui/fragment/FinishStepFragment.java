@@ -59,7 +59,7 @@ public class FinishStepFragment extends Fragment {
             System.out.println(endPortal.x + " " + endPortal.z);
 
             binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
-            coords = "X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z;
+            coords = (int) endPortal.x + " " + (int) endPortal.z;
 
         } catch (AnglesEqualException e) {
             Dialogs.angleEqualException(getContext());
@@ -77,7 +77,7 @@ public class FinishStepFragment extends Fragment {
 
         binding.coordsSaveBtn.setOnClickListener(view -> {
             final EditText item_name_edit_text = new EditText(view.getContext());
-            AlertDialog builder = new MaterialAlertDialogBuilder(view.getContext())
+            new MaterialAlertDialogBuilder(view.getContext())
                     .setIcon(R.drawable.ic_round_save_24)
                     .setTitle(R.string.saving_coordinates)
                     .setMessage(R.string.enter_a_name_for_coordinates)
@@ -86,13 +86,13 @@ public class FinishStepFragment extends Fragment {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             String item_name = String.valueOf(item_name_edit_text.getText());
-                            items_list.add(new Model(item_name, coords));
+                            items_list.add(new Model(item_name, getString(R.string.coordinates) + ": " +  coords));
                             saveData();
                         }
                     })
                     .setNegativeButton(R.string.cancel, null)
-                    .create();
-            builder.show();
+                    .create()
+                    .show();
         });
 
         return binding.getRoot();

@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.jvmfrog.endportalcoords.BuildConfig;
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.api.ChromeCustomTabAPI;
+import com.jvmfrog.endportalcoords.util.ChromeCustomTab;
 import com.jvmfrog.endportalcoords.databinding.FragmentAboutBinding;
 
 public class AboutFragment extends Fragment {
@@ -30,8 +30,7 @@ public class AboutFragment extends Fragment {
         binding = FragmentAboutBinding.inflate(inflater, container, false);
 
         //Сам разберешся
-
-        final ChromeCustomTabAPI chromeCustomTabAPI = new ChromeCustomTabAPI(getActivity());
+        final ChromeCustomTab chromeCustomTabAPI = new ChromeCustomTab(getActivity());
 
         binding.appVersionBtn.setText(getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");
         binding.sourceCodeBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.source_code_url), R.color.white));

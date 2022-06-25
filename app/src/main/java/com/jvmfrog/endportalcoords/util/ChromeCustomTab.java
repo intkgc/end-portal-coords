@@ -1,4 +1,4 @@
-package com.jvmfrog.endportalcoords.api;
+package com.jvmfrog.endportalcoords.util;
 
 import android.app.Activity;
 import android.net.Uri;
@@ -6,10 +6,10 @@ import android.net.Uri;
 import androidx.browser.customtabs.CustomTabColorSchemeParams;
 import androidx.browser.customtabs.CustomTabsIntent;
 
-public class ChromeCustomTabAPI {
+public class ChromeCustomTab {
     private Activity activity;
 
-    public ChromeCustomTabAPI(Activity myActivity) {
+    public ChromeCustomTab(Activity myActivity) {
         activity = myActivity;
     }
 
