@@ -1,14 +1,13 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
-import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithAnimation;
+import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithLeftToRightAnimation;
+import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithRightToLeftAnimation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.fragment.app.Fragment;
-
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.databinding.FragmentSecondStepBinding;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
@@ -39,7 +38,7 @@ public class SecondStepFragment extends Fragment {
                         finalBundle.putFloat("secondX", Float.parseFloat(binding.secondXCoord.getText().toString()));
                         finalBundle.putFloat("secondZ", Float.parseFloat(binding.secondZCoord.getText().toString()));
                         finalBundle.putFloat("secondAngle", Float.parseFloat(binding.secondThrowAngle.getText().toString()));
-                        changeFragmentWithAnimation(getActivity(), new FinishStepFragment(), R.id.wrapper, finalBundle);
+                        changeFragmentWithRightToLeftAnimation(getActivity(), new FinishStepFragment(), R.id.wrapper, finalBundle);
 
                         stepView.go(2, true);
                         stepView.done(true);

@@ -1,7 +1,7 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
-import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragment;
-import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithAnimation;
+import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithLeftToRightAnimation;
+import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithRightToLeftAnimation;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -40,7 +40,7 @@ public class FirstStepFragment extends Fragment {
                 finalBundle.putFloat("firstX", Float.parseFloat(binding.firstXCoord.getText().toString()));
                 finalBundle.putFloat("firstZ", Float.parseFloat(binding.firstZCoord.getText().toString()));
                 finalBundle.putFloat("firstAngle", Float.parseFloat(binding.firstThrowAngle.getText().toString()));
-                changeFragmentWithAnimation(getActivity(), new SecondStepFragment(), R.id.wrapper, finalBundle);
+                changeFragmentWithRightToLeftAnimation(getActivity(), new SecondStepFragment(), R.id.wrapper, finalBundle);
                 stepView.go(1, true);
             } else {
                 System.out.println("Error fields must be filled");
