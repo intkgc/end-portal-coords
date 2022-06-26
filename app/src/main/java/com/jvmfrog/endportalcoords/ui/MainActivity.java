@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.adView.loadAd(adRequest);
 
-        //Set tag for underage of consent. false means users are not underage.
+        // Set tag for underage of consent. false means users are not underage.
         ConsentRequestParameters params = new ConsentRequestParameters
                 .Builder()
                 .setAdMobAppId(getString(R.string.app_id))
