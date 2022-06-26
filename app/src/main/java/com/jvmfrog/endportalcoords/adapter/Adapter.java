@@ -60,27 +60,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             tv_item_position = itemView.findViewById(R.id.item_position);
             tv_item_name = itemView.findViewById(R.id.item_name);
             tv_item_coordinates = itemView.findViewById(R.id.item_coordinates);
-
-            itemView.setOnClickListener(view -> {
-                items_list.remove(getAdapterPosition());
-                notifyItemRemoved(getAdapterPosition());
-                saveData();
-            });
         }
 
         public void setData(String item_name, String item_coordinates) {
             tv_item_name.setText(item_name);
             tv_item_coordinates.setText(item_coordinates);
         }
-    }
-
-    //типо сохранение координат
-    public void saveData() {
-        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(items_list);
-        editor.putString("data", json);
-        editor.apply();
     }
 }
