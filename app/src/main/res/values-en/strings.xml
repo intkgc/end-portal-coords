@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">End Portal Seeker</string>
+
+    <string name="about_app">About App</string>
+
+    <string name="x_coord">Player X Coordinate</string>
+    <string name="y_coord">Player Y Coordinate</string>
+    <string name="z_coord">Player Z Coordinate</string>
+    <string name="throw_angle">Throw Angle</string>
+    <string name="enter_firts_xyz_and_throw_angle">Enter the first XZ coordinates and throw angle</string>
+    <string name="enter_second_xyz_and_throw_angle">Enter the second XZ coordinates and throw angle</string>
+    <string name="calculate_coordinates">Calculate Coordinates</string>
+    <string name="to">-180 to 180</string>
+    <string name="too">-999999999 to 999999999</string>
+    <string name="guide">Guide</string>
+    <string name="skip">Skip</string>
+    <string name="error">Error</string>
+    <string name="angleEqualException">Angles cannot be equal</string>
+    <string name="angleOppositeException">Angles cannot be opposite</string>
+    <string name="check_all_fields">Check if all fields are filled</string>
+
+    <string name="next_step">Next Step</string>
+    <string name="again">Again</string>
+    <string name="step_one">Step 1</string>
+    <string name="step_two">Step 2</string>
+    <string name="done">Done</string>
+
+    <string name="eye_of_ender_says">The All-Seeing Eye of Ender, says that the Portal to the End is located at the coordinates:</string>
+    <string name="debug_menu">Debug Menu</string>
+    <string name="guide_title_where_are_coords_and_angle_throw">Where can I find the coordinates and angle throw</string>
+    <string name="guide_title_coords_xz">Coordinates X and Z</string>
+    <string name="guide_title_throw_angle">Angle Throw</string>
+    <string name="guide_key_f">On the keyboard, press the "F3" key to open the debug menu</string>
+    <string name="guide_if_debug_menu_opened">If you have something like this, you are on the right track</string>
+    <string name="guide_coords_xz">X and Z coordinates can be found on the 9th line</string>
+    <string name="guide_throw_angle">Throw Angle can be found on line 12</string>
+
+    <string name="develops">Develops:</string>
+    <string name="ibragim_maltsagov">Ibragim Maltsagov</string>
+    <string name="kirill_borisenko">Kirill Borisenko</string>
+    <string name="version">Version</string>
+    <string name="source_code">Source Code</string>
+    <string name="translate">Translate</string>
+    <string name="help_in_app_translation">The app doesn\'t have your language? Or do you want to help translate the application into other languages? Then I invite you to take part in the translation of the application into other languages</string>
+    <string name="translate_application">Translate Application</string>
+    <string name="app_logo" translatable="false">App Logo</string>
+    <string name="thank_for_review">Thanks for the review</string>
+    <string name="we_are_on_vk">We are on VK</string>
+    <string name="other_apps">Other Apps</string>
+
+    <!--Navigation Bar-->
+    <string name="calculator">Calculator</string>
+    <string name="coordinates">Coordinates</string>
+
+    <!--Save Coords-->
+    <string name="save_coordinates">Save Coordinates</string>
+    <string name="saving_coordinates">Saving Coordinates</string>
+    <string name="coordinates_removed">Coordinates Removed</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Oops, it\'s empty here, save the coordinates so it appears here.</string>
+    <string name="enter_a_name_for_coordinates">Please enter a name for the coordinates</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+</resources>

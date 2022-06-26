@@ -10,7 +10,11 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.databinding.FragmentSecondStepBinding;
+import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
+import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
+import com.jvmfrog.endportalcoords.util.EndPortalCalculator;
+import com.jvmfrog.endportalcoords.util.Point;
 import com.shuhart.stepview.StepView;
 
 public class SecondStepFragment extends Fragment {
@@ -38,17 +42,28 @@ public class SecondStepFragment extends Fragment {
                         finalBundle.putFloat("secondX", Float.parseFloat(binding.secondXCoord.getText().toString()));
                         finalBundle.putFloat("secondZ", Float.parseFloat(binding.secondZCoord.getText().toString()));
                         finalBundle.putFloat("secondAngle", Float.parseFloat(binding.secondThrowAngle.getText().toString()));
-                        changeFragmentWithRightToLeftAnimation(getActivity(), new FinishStepFragment(), R.id.wrapper, finalBundle);
 
-                        stepView.go(2, true);
-                        stepView.done(true);
+                        try {
+                            Point endPortal = EndPortalCalculator.calculate(
+                                    new Point(finalBundle.getFloat("firstX"), finalBundle.getFloat("firstZ")),
+                                    new Point(finalBundle.getFloat("secondX"), finalBundle.getFloat("secondZ")),
+                                    finalBundle.getFloat("firstAngle"), finalBundle.getFloat("secondAngle"));
+
+                            changeFragmentWithRightToLeftAnimation(getActivity(), new FinishStepFragment(), R.id.wrapper, finalBundle);
+                            stepView.go(2, true);
+                            stepView.done(true);
+
+                        } catch (AnglesEqualException e) {
+                            Dialogs.angleEqualException(getContext());
+                        } catch (AnglesOppositeException e) {
+                            Dialogs.angleOppositeException(getContext());
+                        }
                     } else {
                         System.out.println("Error fields must be filled");
                         Dialogs.checkAllFields(v.getContext());
                     }
                 }
         );
-
         return binding.getRoot();
     }
 }
