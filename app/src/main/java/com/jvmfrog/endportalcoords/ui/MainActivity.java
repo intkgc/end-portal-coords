@@ -18,13 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
-    String[] data = {};
-    int counter = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
