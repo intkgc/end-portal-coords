@@ -69,6 +69,8 @@
     <!--Save Coords-->
     <string name="save_coordinates">Save Coordinates</string>
     <string name="saving_coordinates">Saving Coordinates</string>
+    <string name="coordinates_removed">Coordinates Removed</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Oops, it\'s empty here, save the coordinates so it appears here.</string>
     <string name="enter_a_name_for_coordinates">Please enter a name for the coordinates</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>

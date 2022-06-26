@@ -50,6 +50,8 @@
     <!--Save Coords-->
     <string name="save_coordinates">Зберегти координати</string>
     <string name="saving_coordinates">Збереження координат</string>
+    <string name="coordinates_removed">Координати видалено</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Ой, тут порожньо, збережіть координати, щоб воно з’являлося тут.</string>
     <string name="enter_a_name_for_coordinates">Будь ласка, введіть назву для координат</string>
     <string name="save">Зберегти</string>
     <string name="cancel">Скасувати</string>

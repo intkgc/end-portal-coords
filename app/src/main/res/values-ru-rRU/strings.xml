@@ -56,6 +56,8 @@
     <!--Save Coords-->
     <string name="save_coordinates">Сохранить Координаты</string>
     <string name="saving_coordinates">Сохранение Координат</string>
+    <string name="coordinates_removed">Координаты удалены</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Упс, тут пусто, сохраните координаты чтобы они появились тут.</string>
     <string name="enter_a_name_for_coordinates">Пожалуйста введите название для координат</string>
     <string name="save">Сохранить</string>
     <string name="cancel">Отмена</string>

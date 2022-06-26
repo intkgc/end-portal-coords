@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.adapter.Adapter;
 import com.jvmfrog.endportalcoords.adapter.Model;
 import com.jvmfrog.endportalcoords.databinding.FragmentHistoryBinding;
@@ -70,7 +71,7 @@ public class HistoryFragment extends Fragment {
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             items_list.remove(viewHolder.getAdapterPosition());
             adapter.notifyItemRemoved(viewHolder.getAdapterPosition());
-            Toast.makeText(getContext(), "Coordinates Removed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.coordinates_removed, Toast.LENGTH_SHORT).show();
             saveData();
 
             if (items_list.isEmpty()) {

@@ -21,14 +21,17 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/creeper"/>
+            android:src="@drawable/creeper"
+            android:layout_gravity="center"/>
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:padding="8dp"
-            android:text="Ooops..."
-            android:textSize="32sp"
+            android:text="@string/its_empty_save_coordinates_so_it_appears_here"
+            android:textSize="24sp"
             android:textStyle="bold"/>
     </LinearLayout>
 

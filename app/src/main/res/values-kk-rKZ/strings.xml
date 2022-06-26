@@ -56,6 +56,8 @@
     <!--Save Coords-->
     <string name="save_coordinates">Координаттарды сақтау</string>
     <string name="saving_coordinates">Координаттарды сақтау</string>
+    <string name="coordinates_removed">Координаттар жойылды</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Ой, бұл жерде бос, ccординаттарды сақтаңыз, сонда ол осы жерде пайда болады.</string>
     <string name="enter_a_name_for_coordinates">Координаттардың атауын енгізіңіз</string>
     <string name="save">Сақтау</string>
     <string name="cancel">Болдырмау</string>

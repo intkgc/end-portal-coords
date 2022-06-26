@@ -56,6 +56,8 @@
     <!--Save Coords-->
     <string name="save_coordinates">Koordinatları Kaydet</string>
     <string name="saving_coordinates">Koordinatları Kaydetme</string>
+    <string name="coordinates_removed">Koordinatlar Kaldırıldı</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Hata, burası boş, burada görünmesi için koordinatları kaydedin.</string>
     <string name="enter_a_name_for_coordinates">Lütfen koordinatlar için bir ad girin</string>
     <string name="save">Kaydetmek</string>
     <string name="cancel">İptal</string>

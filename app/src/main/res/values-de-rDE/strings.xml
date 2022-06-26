@@ -50,6 +50,8 @@
     <!--Save Coords-->
     <string name="save_coordinates">Koordinaten speichern</string>
     <string name="saving_coordinates">Koordinaten speichern</string>
+    <string name="coordinates_removed">Koordinaten entfernt</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Hoppla, es ist hier leer, speichern Sie die Koordinaten, damit es hier erscheint.</string>
     <string name="enter_a_name_for_coordinates">Bitte geben Sie einen Namen für die Koordinaten ein</string>
     <string name="save">Speichern</string>
     <string name="cancel">Absagen</string>

@@ -50,6 +50,8 @@
     <!--Save Coords-->
     <string name="save_coordinates">Zapisz współrzędne</string>
     <string name="saving_coordinates">Zapisywanie współrzędnych</string>
+    <string name="coordinates_removed">Usunięto współrzędne</string>
+    <string name="its_empty_save_coordinates_so_it_appears_here">Ups, jest tu puste, zapisz ccordinates, aby pojawiło się tutaj.</string>
     <string name="enter_a_name_for_coordinates">Proszę podać nazwę dla współrzędnych</string>
     <string name="save">Zapisać</string>
     <string name="cancel">Anulować</string>
