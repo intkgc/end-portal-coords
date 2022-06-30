@@ -11,8 +11,8 @@ public class EndPortalCalculator {
     public static Point calculate(Point throw0, Point throw1, float angle0, float angle1)
             throws AnglesEqualException, AnglesOppositeException {
         Point endPortal = new Point(0, 0);
-        System.out.println(throw0.x + " " + throw0.z);
-        System.out.println(throw1.x + " " + throw1.z);
+        System.out.println(throw0.x + " " + throw0.y);
+        System.out.println(throw1.x + " " + throw1.y);
         System.out.println(angle0 + " " + angle1);
         if (Math.abs(angle0 - angle1) < 1)
             throw new AnglesEqualException();
@@ -26,12 +26,12 @@ public class EndPortalCalculator {
                 case 0:
                 case 180:
                     endPortal.x = Math.round(throw0.x);
-                    endPortal.z = Math.round(cot(-angle1 * p) * throw0.x - (throw1.x * cot(-angle1 * p) - throw1.z));
+                    endPortal.y = Math.round(cot(-angle1 * p) * throw0.x - (throw1.x * cot(-angle1 * p) - throw1.y));
                     break;
                 case -90:
                 case 90:
-                    endPortal.z = Math.round(throw0.z);
-                    endPortal.x = Math.round(Math.round(throw1.x * cot(-angle1 * p) - throw1.z + throw0.z) / cot(-angle1 * p));
+                    endPortal.y = Math.round(throw0.y);
+                    endPortal.x = Math.round(Math.round(throw1.x * cot(-angle1 * p) - throw1.y + throw0.y) / cot(-angle1 * p));
                     break;
                 default:
                     switch (Math.round(angle1)) {
@@ -39,23 +39,31 @@ public class EndPortalCalculator {
                         case 0:
                         case 180:
                             endPortal.x = Math.round(throw1.x);
-                            endPortal.z = Math.round(cot(-angle0 * p) * throw1.x - (throw0.x * cot(-angle0 * p) - throw0.z));
+                            endPortal.y = Math.round(cot(-angle0 * p) * throw1.x - (throw0.x * cot(-angle0 * p) - throw0.y));
                             break;
                         case -90:
                         case 90:
-                            endPortal.z = Math.round(throw1.z);
-                            endPortal.x = Math.round((throw0.x * cot(-angle0 * p) - throw0.z + throw1.z) / cot(-angle0 * p));
+                            endPortal.y = Math.round(throw1.y);
+                            endPortal.x = Math.round((throw0.x * cot(-angle0 * p) - throw0.y + throw1.y) / cot(-angle0 * p));
                             break;
                         default:
-                            endPortal.x = Math.round(((throw0.x * cot(-angle0 * p) - throw0.z) - (throw1.x * cot(-angle1 * p) - throw1.z)) / (cot(-angle0 * p) - cot(-angle1 * p)));
-                            endPortal.z = Math.round(cot(-angle0 * p) * endPortal.x - (throw0.x * cot(-angle0 * p) - throw0.z));
+                            endPortal.x = Math.round(((throw0.x * cot(-angle0 * p) - throw0.y) - (throw1.x * cot(-angle1 * p) - throw1.y)) / (cot(-angle0 * p) - cot(-angle1 * p)));
+                            endPortal.y = Math.round(cot(-angle0 * p) * endPortal.x - (throw0.x * cot(-angle0 * p) - throw0.y));
                     }
             }
         }
         endPortal.x = Math.round(endPortal.x);
-        endPortal.z = Math.round(endPortal.z);
+        endPortal.y = Math.round(endPortal.y);
         return endPortal;
     }
+
+    public static Point calculate(Point firstThrow0, Point firstThrow1,
+                                  Point secondThrow0, Point secondThrow1) throws AnglesEqualException, AnglesOppositeException {
+        return calculate(firstThrow0, secondThrow1,
+                (float) Vector.angleOfReference(Vector.fromPoints(firstThrow0, firstThrow1)),
+                (float) Vector.angleOfReference(Vector.fromPoints(secondThrow0, secondThrow1)));
+    }
+
 
     private static final double p = Math.PI / 180;
 
