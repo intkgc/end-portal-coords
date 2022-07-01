@@ -1,5 +1,6 @@
 package com.jvmfrog.endportalcoords.util;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,7 +14,12 @@ public class FragmentUtils {
 
     public static void changeFragment(FragmentActivity activity, Fragment to, int frameId, Bundle bundle) {
         to.setArguments(bundle);
-        defaultFragmentTranslation(activity, to, frameId).commit();
+        FragmentManager fragmentManager = activity.getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(frameId, to);
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        transaction.commit();
+        //defaultFragmentTranslation(activity, to, frameId).commit();
     }
 
     public static void changeFragmentWithLeftToRightAnimation(FragmentActivity activity, Fragment to, int frameId, Bundle bundle) {

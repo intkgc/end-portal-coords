@@ -26,7 +26,7 @@
     <string name="step_two">Шаг 2</string>
     <string name="done">Готово</string>
 
-    <string name="eye_of_ender_says">Всевидящий Око Края, говорит что портал в Край находится по координатам:</string>
+    <string name="eye_of_ender_says">Всевидящее Око Края говорит, что Портал в Край находится по координатам:</string>
     <string name="debug_menu">Дебаг Меню</string>
     <string name="guide_title_where_are_coords_and_angle_throw">Где найти координаты и угол броска?</string>
     <string name="guide_title_coords_xz">Координаты X и Z</string>
@@ -42,7 +42,7 @@
     <string name="version">Версия</string>
     <string name="source_code">Исходный код</string>
     <string name="translate">Перевод</string>
-    <string name="help_in_app_translation">В приложении нету вашего языка? Либо хотите помочь с переводом приложения на другие языки? Тогда приглашаю Вас принять участие в переводе приложения на другие языки</string>
+    <string name="help_in_app_translation">В приложении нету вашего языка? Либо хотите помочь с переводом приложения на другие языки? Тогда приглашаю Вас принять участие в переводе приложения на другие языки.</string>
     <string name="translate_application">Перевести Приложение</string>
     <string name="app_logo">App Logo</string>
     <string name="thank_for_review">Спасибо за отзыв</string>

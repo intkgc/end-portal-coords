@@ -1,6 +1,5 @@
-package com.jvmfrog.endportalcoords.ui.fragment;
+package com.jvmfrog.endportalcoords.ui.fragment.java;
 
-import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithLeftToRightAnimation;
 import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithRightToLeftAnimation;
 
 import android.os.Bundle;
@@ -9,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.databinding.FragmentSecondStepBinding;
+import com.jvmfrog.endportalcoords.databinding.FragmentJavaSecondStepBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
@@ -17,9 +16,9 @@ import com.jvmfrog.endportalcoords.util.EndPortalCalculator;
 import com.jvmfrog.endportalcoords.util.Point;
 import com.shuhart.stepview.StepView;
 
-public class SecondStepFragment extends Fragment {
+public class JavaSecondStepFragment extends Fragment {
 
-    private FragmentSecondStepBinding binding;
+    private FragmentJavaSecondStepBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,7 @@ public class SecondStepFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle bundle) {
-        binding = FragmentSecondStepBinding.inflate(inflater, container, false);
+        binding = FragmentJavaSecondStepBinding.inflate(inflater, container, false);
 
         StepView stepView = getActivity().findViewById(R.id.step_view);
         binding.secondStepBtn.setOnClickListener(
@@ -49,7 +48,7 @@ public class SecondStepFragment extends Fragment {
                                     new Point(finalBundle.getFloat("secondX"), finalBundle.getFloat("secondZ")),
                                     finalBundle.getFloat("firstAngle"), finalBundle.getFloat("secondAngle"));
 
-                            changeFragmentWithRightToLeftAnimation(getActivity(), new FinishStepFragment(), R.id.wrapper, finalBundle);
+                            changeFragmentWithRightToLeftAnimation(getActivity(), new JavaFinishStepFragment(), R.id.wrapper, finalBundle);
                             stepView.go(2, true);
                             stepView.done(true);
 

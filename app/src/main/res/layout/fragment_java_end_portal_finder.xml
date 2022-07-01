@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.EndPortalFinderFragment">
+    tools:context=".ui.fragment.java.JavaEndPortalFinderFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,6 @@
             app:sv_stepPadding="4dp"
             app:sv_stepViewStyle="@style/NextStepView"
             app:sv_stepsNumber="3" />
-
         <include layout="@layout/wrapper"/>
     </LinearLayout>
 </FrameLayout>

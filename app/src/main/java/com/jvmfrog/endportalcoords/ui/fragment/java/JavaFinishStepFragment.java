@@ -1,7 +1,7 @@
-package com.jvmfrog.endportalcoords.ui.fragment;
+package com.jvmfrog.endportalcoords.ui.fragment.java;
 
 import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithLeftToRightAnimation;
-import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithRightToLeftAnimation;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -10,15 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import androidx.appcompat.app.AlertDialog;
+
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.adapter.Adapter;
 import com.jvmfrog.endportalcoords.adapter.Model;
-import com.jvmfrog.endportalcoords.databinding.FragmentFinishStepBinding;
+import com.jvmfrog.endportalcoords.databinding.FragmentJavaFinishStepBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
@@ -29,11 +29,10 @@ import com.shuhart.stepview.StepView;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class FinishStepFragment extends Fragment {
+public class JavaFinishStepFragment extends Fragment {
 
-    private FragmentFinishStepBinding binding;
+    private FragmentJavaFinishStepBinding binding;
     private String coords;
-    private Adapter adapter;
     ArrayList<Model> items_list;
 
     @Override
@@ -44,7 +43,7 @@ public class FinishStepFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle bundle) {
-        binding = FragmentFinishStepBinding.inflate(inflater, container, false);
+        binding = FragmentJavaFinishStepBinding.inflate(inflater, container, false);
 
         StepView stepView = getActivity().findViewById(R.id.step_view);
 
@@ -70,7 +69,7 @@ public class FinishStepFragment extends Fragment {
         //При клике возвращяет пользователя в первый шаг
         //Типо сохроняет коорды и сбрасывает счетчик шагов
         binding.finishStepBtn.setOnClickListener(view -> {
-            changeFragmentWithLeftToRightAnimation(getActivity(), new FirstStepFragment(), R.id.wrapper, bundle);
+            changeFragmentWithLeftToRightAnimation(getActivity(), new JavaFirstStepFragment(), R.id.wrapper, bundle);
             stepView.go(0, true);
             stepView.done(false);
         });

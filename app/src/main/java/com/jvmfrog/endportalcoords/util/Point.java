@@ -3,6 +3,7 @@ package com.jvmfrog.endportalcoords.util;
 import androidx.annotation.NonNull;
 
 public class Point {
+
     public float x;
     public float y;
 

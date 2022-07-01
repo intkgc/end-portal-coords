@@ -1,4 +1,4 @@
-package com.jvmfrog.endportalcoords.ui.fragment;
+package com.jvmfrog.endportalcoords.ui.fragment.java;
 
 import android.os.Bundle;
 
@@ -11,12 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.databinding.FragmentEndPortalFinderBinding;
-import com.jvmfrog.endportalcoords.databinding.FragmentFirstStepBinding;
+import com.jvmfrog.endportalcoords.databinding.FragmentJavaEndPortalFinderBinding;
 
-public class EndPortalFinderFragment extends Fragment {
+public class JavaEndPortalFinderFragment extends Fragment {
 
-    private FragmentEndPortalFinderBinding binding;
+    private FragmentJavaEndPortalFinderBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,9 +25,9 @@ public class EndPortalFinderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentEndPortalFinderBinding.inflate(inflater, container, false);
+        binding = FragmentJavaEndPortalFinderBinding.inflate(inflater, container, false);
 
-        replaceFragment(new FirstStepFragment());
+        replaceFragment(new JavaFirstStepFragment());
 
         return binding.getRoot();
     }
