@@ -24,6 +24,7 @@ import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
 import com.jvmfrog.endportalcoords.util.EndPortalCalculator;
 import com.jvmfrog.endportalcoords.util.Point;
+import com.jvmfrog.endportalcoords.util.SharedPreferenceUtils;
 import com.shuhart.stepview.StepView;
 
 import java.lang.reflect.Type;
@@ -33,7 +34,7 @@ public class JavaFinishStepFragment extends Fragment {
 
     private FragmentJavaFinishStepBinding binding;
     private String coords;
-    ArrayList<Model> items_list;
+    private ArrayList<Model> items_list;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,18 +48,16 @@ public class JavaFinishStepFragment extends Fragment {
 
         StepView stepView = getActivity().findViewById(R.id.step_view);
 
-        items_list = new ArrayList<>();
-
         try {
             Bundle finalBundle = getArguments();
             Point endPortal = EndPortalCalculator.calculate(
                     new Point(finalBundle.getFloat("firstX"), finalBundle.getFloat("firstZ")),
                     new Point(finalBundle.getFloat("secondX"), finalBundle.getFloat("secondZ")),
                     finalBundle.getFloat("firstAngle"), finalBundle.getFloat("secondAngle"));
-            System.out.println(endPortal.x + " " + endPortal.z);
+            System.out.println(endPortal.x + " " + endPortal.y);
 
-            binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.z);
-            coords = (int) endPortal.x + " " + (int) endPortal.z;
+            binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.y);
+            coords = (int) endPortal.x + " " + (int) endPortal.y;
 
         } catch (AnglesEqualException e) {
             Dialogs.angleEqualException(getContext());
@@ -86,7 +85,7 @@ public class JavaFinishStepFragment extends Fragment {
                         public void onClick(DialogInterface dialog, int which) {
                             String item_name = String.valueOf(item_name_edit_text.getText());
                             items_list.add(new Model(item_name, getString(R.string.coordinates) + ": " +  coords));
-                            saveData();
+                            SharedPreferenceUtils.saveModelArrayList(getActivity(), "coordinates", "data", items_list);
                         }
                     })
                     .setNegativeButton(R.string.cancel, null)
@@ -95,30 +94,5 @@ public class JavaFinishStepFragment extends Fragment {
         });
 
         return binding.getRoot();
-    }
-
-    //типо сохранение координат
-    public void saveData() {
-        SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(items_list);
-        editor.putString("data", json);
-        editor.apply();
-    }
-
-    //типо загрузка координат
-    public void loadData() {
-        SharedPreferences prefs = getContext().getSharedPreferences("prefs", Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = prefs.getString("data", null);
-        Type type = new TypeToken<ArrayList<Model>>() {
-        }.getType();
-        items_list = gson.fromJson(json, type);
-
-        //только дурак не поймет что оно делает
-        if (items_list == null) {
-            items_list = new ArrayList<>();
-        }
     }
 }
