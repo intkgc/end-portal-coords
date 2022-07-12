@@ -2,42 +2,39 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jvmfrog.endportalcoords">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EndPortalCoords"
-        android:hardwareAccelerated="true"
-        android:requestLegacyExternalStorage="true">
+        android:theme="@style/Theme.EndPortalCoords">
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppSplash"
-            android:hardwareAccelerated="true">
+            android:hardwareAccelerated="true"
+            android:theme="@style/Theme.AppSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Delay app measurement until MobileAds.initialize() is called -->
+        </activity> <!-- Delay app measurement until MobileAds.initialize() is called -->
         <meta-data
             android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
-            android:value="true"/>
-        <!-- Delay app measurement until MobileAds.initialize() is called -->
+            android:value="true" /> <!-- Delay app measurement until MobileAds.initialize() is called -->
         <meta-data
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
-            android:value="true"/>
-        <!-- Delay app measurement until MobileAds.initialize() is called -->
+            android:value="true" /> <!-- Delay app measurement until MobileAds.initialize() is called -->
         <meta-data
             android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
-            android:value="true"/>
+            android:value="true" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-4193046598871025~1742207292"/>
+            android:value="ca-app-pub-4193046598871025~1742207292" />
     </application>
+
 </manifest>

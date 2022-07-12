@@ -20,6 +20,7 @@ import com.google.android.ump.UserMessagingPlatform;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
+import com.jvmfrog.endportalcoords.ui.fragment.JavaPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.java.JavaEndPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.HistoryFragment;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        changeFragment(this, new JavaEndPortalFinderFragment(), R.id.frame, null);
+        changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.calculate:
-                    changeFragment(this, new JavaEndPortalFinderFragment(), R.id.frame, null);
+                    changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
                     break;
                 case R.id.history:
                     changeFragment(this, new HistoryFragment(), R.id.frame, null);
