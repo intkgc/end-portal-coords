@@ -23,7 +23,7 @@ Then repeat this action with second eye of ender
 ## Credits
 
 * [@IbremMiner837][IbremMiner837] - GUI and and other functional
-* [@KirboGames][KirboGames] - Rewrite End Calculator from https://skrepkaq.ru/stronghold
+* [@KirboGames][KirboGames] - Rewrite End Portal Calculator from https://skrepkaq.ru/stronghold
 * [@skrepkaq][skrepkaq] - End Portal Calculator
 
 [IbremMiner837]: https://github.com/IbremMiner837
