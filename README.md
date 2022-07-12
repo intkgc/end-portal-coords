@@ -1,4 +1,4 @@
-# End portal coordinates
+# End Portal Finder
 
 This app calculates the coordinates of the portal to the end by 2 throws of ender pearl
 
@@ -22,9 +22,9 @@ Then repeat this action with second eye of ender
 
 ## Credits
 
-* [@IbremMiner837][IbremMiner837] - GUI
-* [@KirboGames][KirboGames] - rewrite end portal calculator from https://skrepkaq.ru/stronghold
-* [@skrepkaq][skrepkaq] - end portal calculator
+* [@IbremMiner837][IbremMiner837] - GUI and and other functional
+* [@KirboGames][KirboGames] - Rewrite End Calculator from https://skrepkaq.ru/stronghold
+* [@skrepkaq][skrepkaq] - End Portal Calculator
 
 [IbremMiner837]: https://github.com/IbremMiner837
 [KirboGames]: https://github.com/KirboGames
