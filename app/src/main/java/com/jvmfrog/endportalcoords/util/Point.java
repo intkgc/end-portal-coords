@@ -1,5 +1,7 @@
 package com.jvmfrog.endportalcoords.util;
 
+import android.text.Editable;
+
 import androidx.annotation.NonNull;
 
 public class Point {
