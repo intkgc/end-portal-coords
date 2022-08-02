@@ -63,20 +63,6 @@
                 app:icon="@drawable/ic_round_refresh_24"
                 app:iconGravity="textStart"
                 style="@style/Widget.Material3.Button.ElevatedButton"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/coords_save_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="8dp"
-                android:padding="16dp"
-                android:text="@string/save_coordinates"
-                android:textSize="18sp"
-                android:textAllCaps="false"
-                app:icon="@drawable/ic_round_save_24"
-                app:iconGravity="textStart"
-                style="@style/Widget.Material3.Button.ElevatedButton"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 </FrameLayout>

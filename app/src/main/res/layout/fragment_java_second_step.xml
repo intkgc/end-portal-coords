@@ -118,7 +118,7 @@
                 android:textAllCaps="false"
                 app:icon="@drawable/ic_round_calculate_24"
                 app:iconGravity="textStart"
-                style="@style/Widget.Material3.Button.ElevatedButton"/>
+                style="@style/Widget.Material3.Button.TonalButton"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 

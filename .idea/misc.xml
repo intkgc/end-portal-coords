@@ -28,9 +28,15 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/EndPortalCoords/app/src/main/res/xml/locales_config.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/activity_main2.xml" value="0.19895833333333332" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/fragment_about.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/fragment_guide.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/fragment_java_end_portal_finder.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/fragment_java_finish_step.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/fragment_java_first_step.xml" value="0.16944444444444445" />
         <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/fragment_java_portal_finder.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/fragment_java_second_step.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/layout/item.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/end-portal-coords/app/src/main/res/menu/toolbar_menu.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5361842105263158" />
       </map>
     </option>

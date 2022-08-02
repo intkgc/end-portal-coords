@@ -155,7 +155,7 @@
                         android:textAllCaps="false"
                         app:icon="@drawable/ic_round_navigate_next_24"
                         app:iconGravity="textStart"
-                        style="@style/Widget.Material3.Button.ElevatedButton"/>
+                        style="@style/Widget.Material3.Button.TonalButton"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
@@ -271,7 +271,7 @@
                         android:textAllCaps="false"
                         app:icon="@drawable/ic_round_calculate_24"
                         app:iconGravity="textStart"
-                        style="@style/Widget.Material3.Button.ElevatedButton"/>
+                        style="@style/Widget.Material3.Button.TonalButton"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
@@ -304,7 +304,7 @@
                         android:paddingHorizontal="16dp"
                         android:layout_marginVertical="4dp"
                         android:padding="16dp"
-                        style="@style/Widget.Material3.CardView.Elevated">
+                        style="@style/Widget.Material3.CardView.Filled">
 
                         <TextView
                             android:id="@+id/portal_coords"
@@ -331,21 +331,7 @@
                         android:textAllCaps="false"
                         app:icon="@drawable/ic_round_refresh_24"
                         app:iconGravity="textStart"
-                        style="@style/Widget.Material3.Button.ElevatedButton"/>
-
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/coords_save_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:padding="16dp"
-                        android:text="@string/save_coordinates"
-                        android:textSize="18sp"
-                        android:textAllCaps="false"
-                        app:icon="@drawable/ic_round_save_24"
-                        app:iconGravity="textStart"
-                        style="@style/Widget.Material3.Button.ElevatedButton"/>
+                        style="@style/Widget.Material3.Button.TonalButton"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </ViewFlipper>

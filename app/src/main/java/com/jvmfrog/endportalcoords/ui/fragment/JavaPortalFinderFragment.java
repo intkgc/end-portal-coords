@@ -1,29 +1,22 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
-import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragmentWithRightToLeftAnimation;
-
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.jvmfrog.endportalcoords.R;
-import com.jvmfrog.endportalcoords.databinding.FragmentJavaEndPortalFinderBinding;
 import com.jvmfrog.endportalcoords.databinding.FragmentJavaPortalFinderBinding;
 import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
-import com.jvmfrog.endportalcoords.ui.fragment.java.JavaFinishStepFragment;
 import com.jvmfrog.endportalcoords.util.EndPortalCalculator;
 import com.jvmfrog.endportalcoords.util.Point;
 
 public class JavaPortalFinderFragment extends Fragment {
 
     private FragmentJavaPortalFinderBinding binding;
-    private String coords, firstX;
+    private String coords;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

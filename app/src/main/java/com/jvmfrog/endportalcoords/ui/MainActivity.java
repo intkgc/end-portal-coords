@@ -21,9 +21,7 @@ import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.JavaPortalFinderFragment;
-import com.jvmfrog.endportalcoords.ui.fragment.java.JavaEndPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
-import com.jvmfrog.endportalcoords.ui.fragment.HistoryFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,17 +39,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-
-            }
+        MobileAds.initialize(this, initializationStatus -> {
+            //
         });
 
         adRequest = new AdRequest.Builder()
                 .build();
-
-        binding.adView.loadAd(adRequest);
 
         // Set tag for underage of consent. false means users are not underage.
         ConsentRequestParameters params = new ConsentRequestParameters
@@ -94,9 +87,6 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.calculate:
                     changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
-                    break;
-                case R.id.history:
-                    changeFragment(this, new HistoryFragment(), R.id.frame, null);
                     break;
                 case R.id.guide:
                     changeFragment(this, new GuideFragment(), R.id.frame, null);

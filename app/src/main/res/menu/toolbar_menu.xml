@@ -9,12 +9,6 @@
         android:enabled="true"/>
 
     <item
-        android:id="@+id/history"
-        android:title="@string/coordinates"
-        android:icon="@drawable/ic_round_history_24"
-        android:enabled="true"/>
-
-    <item
         android:id="@+id/guide"
         android:title="@string/guide"
         android:icon="@drawable/ic_round_article_24"
