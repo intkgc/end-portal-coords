@@ -76,6 +76,18 @@
                         style="@style/Widget.Material3.Button.TextButton"/>
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/reviewBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Review"
+                        android:textSize="18sp"
+                        app:icon="@drawable/ic_round_rate_review_24"
+                        app:iconPadding="16dp"
+                        app:iconSize="24dp"
+                        android:textAlignment="textStart"
+                        style="@style/Widget.Material3.Button.TextButton"/>
+
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/sourceCodeBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

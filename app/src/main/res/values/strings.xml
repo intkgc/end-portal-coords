@@ -8,8 +8,6 @@
     <string name="banner_ad" translatable="false">ca-app-pub-4193046598871025/1806071883</string>
     <string name="test_banner_ad" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
 
-    <string name="about_app">About App</string>
-
     <string name="source_code_url" translatable="false">https://github.com/JVMFrog/end-portal-coords</string>
     <string name="crowdin_project_url" translatable="false">https://crwd.in/end-portal-finder</string>
     <string name="kirill_url" translatable="false">https://github.com/KirboGames</string>
@@ -38,6 +36,8 @@
     <string name="step_one">Step 1</string>
     <string name="step_two">Step 2</string>
     <string name="done">Done</string>
+    <string name="switch_to_bedrock" translatable="false">Bedrock</string>
+    <string name="switch_to_java" translatable="false">Java</string>
 
     <string name="eye_of_ender_says">The All-Seeing Eye of Ender, says that the Portal to the End is located at the coordinates:</string>
     <string name="debug_menu">Debug Menu</string>
@@ -49,6 +49,7 @@
     <string name="guide_coords_xz">X and Z coordinates can be found on the 9th line</string>
     <string name="guide_throw_angle">Throw Angle can be found on line 12</string>
 
+    <string name="about_app">About App</string>
     <string name="develops">Develops:</string>
     <string name="ibragim_maltsagov">Ibragim Maltsagov</string>
     <string name="kirill_borisenko">Kirill Borisenko</string>
@@ -74,6 +75,4 @@
     <string name="enter_a_name_for_coordinates">Please enter a name for the coordinates</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.jvmfrog.endportalcoords.ui.fragment;
+package com.jvmfrog.endportalcoords.ui.fragment.java;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
@@ -11,6 +11,7 @@ import com.jvmfrog.endportalcoords.exception.AnglesEqualException;
 import com.jvmfrog.endportalcoords.exception.AnglesOppositeException;
 import com.jvmfrog.endportalcoords.ui.Dialogs;
 import com.jvmfrog.endportalcoords.util.EndPortalCalculator;
+import com.jvmfrog.endportalcoords.util.OtherUtils;
 import com.jvmfrog.endportalcoords.util.Point;
 
 public class JavaPortalFinderFragment extends Fragment {
@@ -56,7 +57,7 @@ public class JavaPortalFinderFragment extends Fragment {
                             Float.parseFloat(binding.firstThrowAngle.getText().toString()),
                             Float.parseFloat(binding.secondThrowAngle.getText().toString()));
 
-                    binding.portalCoords.setText("X: " + (int) endPortal.x + " × " + "Z: " + (int) endPortal.y);
+                    binding.portalCoords.setText("X: " + (int) endPortal.x + " " + "Z: " + (int) endPortal.y);
                     coords = (int) endPortal.x + " " + (int) endPortal.y;
 
                     showNextScreen();
@@ -79,6 +80,10 @@ public class JavaPortalFinderFragment extends Fragment {
             binding.stepView.go(0, true);
             binding.stepView.done(false);
             clearTextInput();
+        });
+
+        binding.copyBtn.setOnClickListener(v -> {
+            OtherUtils.copyToClipboard(getContext(), coords);
         });
 
         return binding.getRoot();

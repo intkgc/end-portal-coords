@@ -1,7 +1,5 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +12,7 @@ import com.jvmfrog.endportalcoords.BuildConfig;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.util.ChromeCustomTab;
 import com.jvmfrog.endportalcoords.databinding.FragmentAboutBinding;
+import com.jvmfrog.endportalcoords.util.OtherUtils;
 
 public class AboutFragment extends Fragment {
 
@@ -33,18 +32,18 @@ public class AboutFragment extends Fragment {
         final ChromeCustomTab chromeCustomTabAPI = new ChromeCustomTab(getActivity());
 
         binding.appVersionBtn.setText(getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");
+        binding.appVersionBtn.setOnClickListener(v -> {
+            PlayCore.inAppUpdate(getActivity());
+        });
+        binding.reviewBtn.setOnClickListener(v -> {
+            PlayCore.inAppReview(getActivity());
+        });
         binding.sourceCodeBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.source_code_url), R.color.white));
         binding.kirillBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.kirill_url), R.color.white));
         binding.ibragimBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.ibragim_url), R.color.white));
+        binding.mailBtn.setOnClickListener(v -> {OtherUtils.sendEmail(getActivity(), "Test");});
         binding.vkGroupBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.JVMFrog), R.color.white));
-        binding.otherAppsBtn.setOnClickListener(view1 -> {
-            final String appPackageName = getContext().getPackageName();
-            try {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:JVMFrog")));
-            } catch (android.content.ActivityNotFoundException anfe) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.GOOGLE_PLAY))));
-            }
-        });
+        binding.otherAppsBtn.setOnClickListener(v -> {OtherUtils.otherApps(getActivity());});
         binding.translateAppBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.crowdin_project_url), R.color.white));
 
 

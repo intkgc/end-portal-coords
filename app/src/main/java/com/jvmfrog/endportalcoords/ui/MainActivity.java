@@ -3,15 +3,13 @@ package com.jvmfrog.endportalcoords.ui;
 import static com.jvmfrog.endportalcoords.util.FragmentUtils.changeFragment;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.ump.ConsentDebugSettings;
 import com.google.android.ump.ConsentForm;
 import com.google.android.ump.ConsentInformation;
@@ -20,7 +18,8 @@ import com.google.android.ump.UserMessagingPlatform;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
-import com.jvmfrog.endportalcoords.ui.fragment.JavaPortalFinderFragment;
+import com.jvmfrog.endportalcoords.ui.fragment.bedrock.BedrockPortalFinderFragment;
+import com.jvmfrog.endportalcoords.ui.fragment.java.JavaPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private ConsentInformation consentInformation;
     private AdRequest adRequest;
     private ConsentForm consentForm;
+
+    private boolean isSwitching = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,17 +83,32 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        binding.calculatorSwitchBtn.setOnClickListener(v -> {
+            if (!isSwitching) {
+                isSwitching = true;
+                changeFragment(this, new BedrockPortalFinderFragment(), R.id.frame, null);
+                binding.calculatorSwitchBtn.setText(R.string.switch_to_java);
+            } else {
+                isSwitching = false;
+                changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
+                binding.calculatorSwitchBtn.setText(R.string.switch_to_bedrock);
+            }
+        });
+
         //Переключатель для нижнего бара
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.calculate:
                     changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
+                    binding.calculatorSwitchBtn.show();
                     break;
                 case R.id.guide:
                     changeFragment(this, new GuideFragment(), R.id.frame, null);
+                    binding.calculatorSwitchBtn.hide();
                     break;
                 case R.id.about:
                     changeFragment(this, new AboutFragment(), R.id.frame, null);
+                    binding.calculatorSwitchBtn.hide();
                     break;
             }
             return true;

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.JavaPortalFinderFragment">
+    tools:context=".ui.fragment.java.JavaPortalFinderFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -306,17 +306,31 @@
                         android:padding="16dp"
                         style="@style/Widget.Material3.CardView.Filled">
 
-                        <TextView
-                            android:id="@+id/portal_coords"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:paddingVertical="8dp"
-                            android:paddingHorizontal="16dp"
-                            android:layout_marginVertical="4dp"
-                            android:text="X: 0 Z: 0"
-                            android:textSize="24sp"
-                            android:textStyle="bold"/>
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/portal_coords"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="8dp"
+                                android:paddingLeft="16dp"
+                                android:paddingRight="4dp"
+                                android:layout_marginVertical="4dp"
+                                android:text="X: 0 Z: 0"
+                                android:textSize="24sp"
+                                android:textStyle="bold"/>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/copy_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:icon="@drawable/ic_round_content_copy_24"
+                                style="@style/Widget.Material3.Button.IconButton"/>
+                        </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.button.MaterialButton
