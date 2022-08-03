@@ -2,6 +2,9 @@ package com.jvmfrog.endportalcoords.ui.fragment.java;
 
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.text.Editable;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

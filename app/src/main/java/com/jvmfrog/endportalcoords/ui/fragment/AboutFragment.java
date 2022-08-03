@@ -33,10 +33,10 @@ public class AboutFragment extends Fragment {
 
         binding.appVersionBtn.setText(getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + "(" + BuildConfig.VERSION_CODE + ")");
         binding.appVersionBtn.setOnClickListener(v -> {
-            PlayCore.inAppUpdate(getActivity());
+            //PlayCore.inAppUpdate(getActivity());
         });
         binding.reviewBtn.setOnClickListener(v -> {
-            PlayCore.inAppReview(getActivity());
+            //PlayCore.inAppReview(getActivity());
         });
         binding.sourceCodeBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.source_code_url), R.color.white));
         binding.kirillBtn.setOnClickListener(v -> chromeCustomTabAPI.OpenCustomTab(getActivity(), getString(R.string.kirill_url), R.color.white));
