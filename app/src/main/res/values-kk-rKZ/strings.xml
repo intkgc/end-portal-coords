@@ -4,9 +4,9 @@
 
     <string name="about_app">Қолданба туралы</string>
 
-    <string name="x_coord">X координат ойнатқышы</string>
-    <string name="y_coord">Y координат ойнатқышы</string>
-    <string name="z_coord">Z Ойыншының координаты</string>
+    <string name="x_coord">X координат</string>
+    <string name="y_coord">Y координат</string>
+    <string name="z_coord">Z координат</string>
     <string name="throw_angle">Лақтыру бұрышы</string>
     <string name="enter_firts_xyz_and_throw_angle">Бірінші XZ координаттарын және лақтыру бұрышын енгізіңіз</string>
     <string name="enter_second_xyz_and_throw_angle">Екінші XZ координаттарын енгізіп, лақтыру бұрышы</string>

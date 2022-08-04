@@ -32,7 +32,7 @@
                 app:sv_stepNumberTextSize="12sp"
                 app:sv_stepPadding="4dp"
                 app:sv_stepViewStyle="@style/NextStepView"
-                app:sv_stepsNumber="3" />
+                app:sv_stepsNumber="5" />
         </com.google.android.material.card.MaterialCardView>
 
         <ViewFlipper
@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/enter_firts_xyz_and_throw_angle"
+                        android:text="@string/enter_your_current_coordinates"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -88,7 +88,6 @@
                             android:inputType="number"
                             android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
-
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/first_z_coord_layout"
                         android:layout_width="match_parent"
@@ -131,6 +130,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/second_step"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="4dp"
@@ -149,7 +149,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/enter_second_xyz_and_throw_angle"
+                        android:text="@string/throw_the_eye_of_end_and_follow_it"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -177,7 +177,6 @@
                             android:inputType="number"
                             android:digits="0123456789.-"/>
                     </com.google.android.material.textfield.TextInputLayout>
-
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/second_z_coord_layout"
                         android:layout_width="match_parent"
@@ -206,6 +205,184 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/second_step_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:padding="16dp"
+                        android:text="@string/next_step"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_round_navigate_next_24"
+                        app:iconGravity="textStart"
+                        style="@style/Widget.Material3.Button.TonalButton"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/third_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                style="@style/Widget.Material3.CardView.Elevated">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/and_throw_the_eye_of_end_again_and_follow_it"
+                        android:textSize="21sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/third_x_coord_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingHorizontal="8dp"
+                        android:hint="@string/x_coord"
+                        app:hintAnimationEnabled="true"
+                        app:endIconMode="clear_text"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="12"
+                        app:helperText="@string/too"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/third_x_coord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/third_z_coord_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingHorizontal="8dp"
+                        android:hint="@string/z_coord"
+                        app:hintAnimationEnabled="true"
+                        app:endIconMode="clear_text"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="12"
+                        app:helperText="@string/too"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/third_z_coord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/third_step_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:padding="16dp"
+                        android:text="@string/next_step"
+                        android:textSize="18sp"
+                        android:textAllCaps="false"
+                        app:icon="@drawable/ic_round_navigate_next_24"
+                        app:iconGravity="textStart"
+                        style="@style/Widget.Material3.Button.TonalButton"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                app:cardCornerRadius="16dp"
+                app:cardUseCompatPadding="true"
+                style="@style/Widget.Material3.CardView.Elevated">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="8dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/and_throw_the_eye_of_end_for_the_last_time_and_follow_it"
+                        android:textSize="21sp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fourth_x_coord_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingHorizontal="8dp"
+                        android:hint="@string/x_coord"
+                        app:hintAnimationEnabled="true"
+                        app:endIconMode="clear_text"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="12"
+                        app:helperText="@string/too"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fourth_x_coord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fourth_z_coord_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:paddingHorizontal="8dp"
+                        android:hint="@string/z_coord"
+                        app:hintAnimationEnabled="true"
+                        app:endIconMode="clear_text"
+                        app:errorEnabled="true"
+                        app:counterEnabled="true"
+                        app:counterMaxLength="12"
+                        app:helperText="@string/too"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/fourth_z_coord"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:imeOptions="actionNext"
+                            android:singleLine="true"
+                            android:inputType="number"
+                            android:digits="0123456789.-"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/fourth_step_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"

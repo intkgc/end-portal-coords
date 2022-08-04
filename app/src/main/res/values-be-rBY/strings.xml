@@ -4,9 +4,9 @@
 
     <string name="about_app">Аб Дадатку</string>
 
-    <string name="x_coord">X Каардыната Гульца</string>
-    <string name="y_coord">Y Каардыната Гульца</string>
-    <string name="z_coord">Z Каардыната Гульца</string>
+    <string name="x_coord">X Каардыната</string>
+    <string name="y_coord">Y Каардыната</string>
+    <string name="z_coord">Z Каардыната</string>
     <string name="throw_angle">Кут Кідка</string>
     <string name="enter_firts_xyz_and_throw_angle">Увядзіце першыя каардынаты XZ і вугал кідка</string>
     <string name="enter_second_xyz_and_throw_angle">Увядзіце другія каардынаты XZ і кут кідка</string>

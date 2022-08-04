@@ -15,9 +15,9 @@
     <string name="JVMFrog" translatable="false">https://vk.com/jvmfrog</string>
     <string name="GOOGLE_PLAY" translatable="false">https://play.google.com/store/apps/dev?id=8551876312630719902</string>
 
-    <string name="x_coord">Player X Coordinate</string>
-    <string name="y_coord">Player Y Coordinate</string>
-    <string name="z_coord">Player Z Coordinate</string>
+    <string name="x_coord">X Coordinate</string>
+    <string name="y_coord">Y Coordinate</string>
+    <string name="z_coord">Z Coordinate</string>
     <string name="throw_angle">Throw Angle</string>
     <string name="enter_firts_xyz_and_throw_angle">Enter the first XZ coordinates and throw angle</string>
     <string name="enter_second_xyz_and_throw_angle">Enter the second XZ coordinates and throw angle</string>
@@ -75,4 +75,15 @@
     <string name="enter_a_name_for_coordinates">Please enter a name for the coordinates</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+
+    <!--Bedrock Calculator-->
+    <string name="warning_the_bedrock_calculator" translatable="false">Please note that due to the fact that in Bedrock Edition
+     there is no way to get the angle of the throw, the coordinates may not be accurate!</string>
+    <string name="enter_your_current_coordinates" translatable="false">Enter your current coordinates</string>
+    <string name="throw_the_eye_of_end_and_follow_it" translatable="false">Throw the Eye of Ender, follow him and
+     write the coordinates where he fell</string>
+    <string name="and_throw_the_eye_of_end_again_and_follow_it" translatable="false">And throw the Eye of Ender again, follow him and
+     write the coordinates where he fell</string>
+    <string name="and_throw_the_eye_of_end_for_the_last_time_and_follow_it" translatable="false">And throw the Eye of Ender for the last time, follow him and
+     write the coordinates where he fell</string>
 </resources>

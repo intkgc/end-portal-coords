@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">Шукач Портала в Край</string>
     <string name="about_app">Про додаток</string>
-    <string name="x_coord">X Координата Гравця</string>
-    <string name="y_coord">Y Координата Гравця</string>
-    <string name="z_coord">Z Координата Игрока</string>
+    <string name="x_coord">X Координата</string>
+    <string name="y_coord">Y Координата</string>
+    <string name="z_coord">Z Координата</string>
     <string name="throw_angle">Кут кидка</string>
     <string name="enter_firts_xyz_and_throw_angle">Введіть перші координати XZ та кут кидка</string>
     <string name="enter_second_xyz_and_throw_angle">Введіть другі координати XZ та кут кидка</string>

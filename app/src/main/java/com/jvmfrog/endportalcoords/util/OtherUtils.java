@@ -41,4 +41,8 @@ public class OtherUtils {
             context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.GOOGLE_PLAY))));
         }
     }
+
+    public static Point getPoint(Point point, Point point2) {
+        return new Point(point.x, point.y);
+    }
 }

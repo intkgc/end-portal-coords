@@ -2,9 +2,9 @@
 <resources>
     <string name="app_name">End Portal Seeker</string>
     <string name="about_app">O Aplikacji</string>
-    <string name="x_coord">X Współrzędne Gracza</string>
-    <string name="y_coord">Z Współrzędne Gracza</string>
-    <string name="z_coord">Z Współrzędne Gracza</string>
+    <string name="x_coord">X Współrzędne</string>
+    <string name="y_coord">Z Współrzędne</string>
+    <string name="z_coord">Z Współrzędne</string>
     <string name="throw_angle">Kąt Rzutu</string>
     <string name="enter_firts_xyz_and_throw_angle">Wprowadź pierwze współrzędne XZ i kąt rzutu</string>
     <string name="enter_second_xyz_and_throw_angle">Wprowadź drugie współrzędne XZ i kąt rzutu</string>

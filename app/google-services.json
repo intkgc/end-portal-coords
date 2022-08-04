@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "313979892148",
+    "project_id": "end-portal-coords",
+    "storage_bucket": "end-portal-coords.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313979892148:android:ad04f9b4fdf457f75142e1",
+        "android_client_info": {
+          "package_name": "com.jvmfrog.endportalcoords"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313979892148-1hpinrji743dv6ir4oq8rekd3860f3or.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC02NEm_dwim71DJo4I7ejsumXc67cYNaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313979892148-1hpinrji743dv6ir4oq8rekd3860f3or.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-4193046598871025~1742207292"
+    }
+  ],
+  "configuration_version": "1"
+}

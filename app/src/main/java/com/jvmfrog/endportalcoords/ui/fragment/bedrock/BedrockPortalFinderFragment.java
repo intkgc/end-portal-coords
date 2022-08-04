@@ -43,29 +43,55 @@ public class BedrockPortalFinderFragment extends Fragment {
             }
         });
 
-
         binding.secondStepBtn.setOnClickListener(view -> {
             if (!binding.secondXCoord.getText().toString().isEmpty() &&
                     !binding.secondZCoord.getText().toString().isEmpty()) {
+                showNextScreen();
+                binding.stepView.go(2, true);
+            } else {
+                System.out.println("Error fields must be filled");
+                Dialogs.checkAllFields(view.getContext());
+            }
+        });
+
+        binding.thirdStepBtn.setOnClickListener(view -> {
+            if (!binding.thirdXCoord.getText().toString().isEmpty() &&
+                    !binding.thirdZCoord.getText().toString().isEmpty()) {
+                showNextScreen();
+                binding.stepView.go(3, true);
+            } else {
+                System.out.println("Error fields must be filled");
+                Dialogs.checkAllFields(view.getContext());
+            }
+        });
+
+
+        binding.fourthStepBtn.setOnClickListener(view -> {
+            if (!binding.fourthXCoord.getText().toString().isEmpty() &&
+                    !binding.fourthZCoord.getText().toString().isEmpty()) {
 
                 try {
                     Point endPortal = EndPortalCalculator.calculate(
                             new Point(Float.parseFloat(binding.firstXCoord.getText().toString()),
                                     Float.parseFloat(binding.firstZCoord.getText().toString())),
                             new Point(Float.parseFloat(binding.secondXCoord.getText().toString()),
-                                    Float.parseFloat(binding.secondXCoord.getText().toString())));
+                                    Float.parseFloat(binding.secondXCoord.getText().toString())),
+                            new Point(Float.parseFloat(binding.thirdZCoord.getText().toString()),
+                                    Float.parseFloat(binding.thirdZCoord.getText().toString())),
+                            new Point(Float.parseFloat(binding.fourthZCoord.getText().toString()),
+                                    Float.parseFloat(binding.fourthZCoord.getText().toString())));
 
                     binding.portalCoords.setText("X: " + (int) endPortal.x + " " + "Z: " + (int) endPortal.y);
                     coords = (int) endPortal.x + " " + (int) endPortal.y;
 
                     showNextScreen();
-                    binding.stepView.go(2, true);
+                    binding.stepView.go(4, true);
                     binding.stepView.done(true);
 
                 } catch (AnglesEqualException e) {
-                    Dialogs.angleEqualException(getContext());
+                    e.printStackTrace();
                 } catch (AnglesOppositeException e) {
-                    Dialogs.angleOppositeException(getContext());
+                    e.printStackTrace();
                 }
             } else {
                 System.out.println("Error fields must be filled");
@@ -123,5 +149,9 @@ public class BedrockPortalFinderFragment extends Fragment {
         binding.firstZCoord.setText("");
         binding.secondXCoord.setText("");
         binding.secondZCoord.setText("");
+        binding.thirdXCoord.setText("");
+        binding.thirdZCoord.setText("");
+        binding.fourthXCoord.setText("");
+        binding.fourthZCoord.setText("");
     }
 }

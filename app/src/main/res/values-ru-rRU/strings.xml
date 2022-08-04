@@ -4,9 +4,9 @@
 
     <string name="about_app">О Приложении</string>
 
-    <string name="x_coord">X Координата Игрока</string>
-    <string name="y_coord">Y Координата Игрока</string>
-    <string name="z_coord">Z Координата Игрока</string>
+    <string name="x_coord">X Координата</string>
+    <string name="y_coord">Y Координата</string>
+    <string name="z_coord">Z Координата</string>
     <string name="throw_angle">Угол Броска</string>
     <string name="enter_firts_xyz_and_throw_angle">Введите первые координаты XZ и угол броска</string>
     <string name="enter_second_xyz_and_throw_angle">Введите вторые координаты XZ и угол броска</string>

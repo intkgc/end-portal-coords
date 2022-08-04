@@ -4,9 +4,9 @@
 
     <string name="about_app">Uygulama Hakkında</string>
 
-    <string name="x_coord">X Koordinat Oyuncusu</string>
-    <string name="y_coord">Y Koordinat Oyuncusu</string>
-    <string name="z_coord">Oyuncunun Z Koordinatı</string>
+    <string name="x_coord">X Koordinat</string>
+    <string name="y_coord">Y Koordinat</string>
+    <string name="z_coord">Z Koordinat</string>
     <string name="throw_angle">Atış açısı</string>
     <string name="enter_firts_xyz_and_throw_angle">İlk XZ koordinatlarını ve atış açısını girin</string>
     <string name="enter_second_xyz_and_throw_angle">İkinci XZ koordinatlarını ve atış açısını girin</string>
