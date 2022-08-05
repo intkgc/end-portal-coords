@@ -71,15 +71,21 @@ public class BedrockPortalFinderFragment extends Fragment {
                     !binding.fourthZCoord.getText().toString().isEmpty()) {
 
                 try {
+                    float x = Float.parseFloat(binding.firstXCoord.getText().toString()) + .5f;
+                    float z = Float.parseFloat(binding.firstZCoord.getText().toString()) + .5f;
+                    float x2 = Float.parseFloat(binding.secondXCoord.getText().toString());
+                    float z2 = Float.parseFloat(binding.secondZCoord.getText().toString());
+                    float x3 = Float.parseFloat(binding.thirdXCoord.getText().toString()) + .5f;
+                    float z3 = Float.parseFloat(binding.thirdZCoord.getText().toString()) + .5f;
+                    float x4 = Float.parseFloat(binding.fourthXCoord.getText().toString());
+                    float z4 = Float.parseFloat(binding.fourthZCoord.getText().toString());
+
                     Point endPortal = EndPortalCalculator.calculate(
-                            new Point(Float.parseFloat(binding.firstXCoord.getText().toString()),
-                                    Float.parseFloat(binding.firstZCoord.getText().toString())),
-                            new Point(Float.parseFloat(binding.secondXCoord.getText().toString()),
-                                    Float.parseFloat(binding.secondXCoord.getText().toString())),
-                            new Point(Float.parseFloat(binding.thirdZCoord.getText().toString()),
-                                    Float.parseFloat(binding.thirdZCoord.getText().toString())),
-                            new Point(Float.parseFloat(binding.fourthZCoord.getText().toString()),
-                                    Float.parseFloat(binding.fourthZCoord.getText().toString())));
+                            new Point(x, z),
+                            new Point(x2,z2),
+                            new Point(x3,z3),
+                            new Point(x4,z4)
+                    );
 
                     binding.portalCoords.setText("X: " + (int) endPortal.x + " " + "Z: " + (int) endPortal.y);
                     coords = (int) endPortal.x + " " + (int) endPortal.y;
