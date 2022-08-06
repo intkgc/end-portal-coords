@@ -2,41 +2,60 @@
 <resources>
     <string name="app_name">Искатель Портала в Край</string>
 
-    <string name="about_app">О Приложении</string>
+    <!-- Java Calculator -->
+    <string name="java_first_step">Введите первые координаты XZ и угол броска</string>
+    <string name="java_second_step">Введите вторые координаты XZ и угол броска</string>
+    <string name="calculate_coordinates">Рассчитать координаты</string>
+    <string name="to">От -180 до 180</string>
+    <string name="too">От -999999999 до 999999999</string>
+
+    <!--Bedrock Calculator-->
+    <string name="bedrock_warning">Внимание! Координаты для Bedrock издании могут сильно отличаться, из-за того что в Bedrock издании
+     нельзя узнать угол броска или дробные координаты!</string>
+    <string name="bedrock_first_step">Введите текущие координаты</string>
+    <string name="bedrock_second_step">Введите вторые координаты</string>
+    <string name="bedrock_third_step">Введите третие координаты</string>
+    <string name="bedrock_fourth_step">Введите четвертые координаты</string>
+
+    <string name="eye_of_ender_says">Всевидящее Око Края говорит, что Портал в Край находится по координатам:</string>
+
+    <!-- Steps, switch, error's and text input -->
+    <string name="next_step">Следующий шаг</string>
+    <string name="again">Заново</string>
+    <string name="step_one">Шаг 1</string>
+    <string name="step_two">Шаг 2</string>
+    <string name="step_third">Шаг 3</string>
+    <string name="step_fourth">Шаг 4</string>
+    <string name="done">Готово</string>
+
+    <string name="switch_to_bedrock" translatable="false">Bedrock</string>
+    <string name="switch_to_java" translatable="false">Java</string>
+
+    <string name="error">Ошибка</string>
+    <string name="angleEqualException">Углы не могут быть равными</string>
+    <string name="angleOppositeException">Углы не могут быть противоположными</string>
+    <string name="check_all_fields">Убедитесь что все поля заполнены</string>
 
     <string name="x_coord">X Координата</string>
     <string name="y_coord">Y Координата</string>
     <string name="z_coord">Z Координата</string>
     <string name="throw_angle">Угол Броска</string>
-    <string name="enter_firts_xyz_and_throw_angle">Введите первые координаты XZ и угол броска</string>
-    <string name="enter_second_xyz_and_throw_angle">Введите вторые координаты XZ и угол броска</string>
-    <string name="calculate_coordinates">Рассчитать Координаты</string>
-    <string name="to">От -180 до 180</string>
-    <string name="too">От -999999999 до 999999999</string>
+
+    <!-- Guide throw angle and coordinates -->
     <string name="guide">Гайд</string>
     <string name="skip">Пропустить</string>
-    <string name="error">Ошибка</string>
-    <string name="angleEqualException">Углы не могут быть равны</string>
-    <string name="angleOppositeException">Углы не могут быть противоположными</string>
-    <string name="check_all_fields">Убедитесь что все поля заполнены</string>
+    <string name="java_guide_title_debug_menu">Дебаг меню</string>
+    <string name="java_guide_title_where_are_coords_and_angle_throw">Где найти координаты и угол броска?</string>
+    <string name="java_guide_title_coords_xz">Координаты</string>
+    <string name="java_guide_title_throw_angle">Угол Броска</string>
+    <string name="java_guide_key_f">На клавиатуре нажмите клавишу "F3", чтобы открыть дебаг меню</string>
+    <string name="java_guide_if_debug_menu_opened">Если у вас открылось что то в таком роде, то вы на верном пути</string>
+    <string name="java_guide_coords_xz">Координаты можно найти на 9-ой строке</string>
+    <string name="java_guide_throw_angle">Угол броска можно найти на 12-ой строке</string>
 
-    <string name="next_step">Следующий шаг</string>
-    <string name="again">Заново</string>
-    <string name="step_one">Шаг 1</string>
-    <string name="step_two">Шаг 2</string>
-    <string name="done">Готово</string>
-
-    <string name="eye_of_ender_says">Всевидящее Око Края говорит, что Портал в Край находится по координатам:</string>
-    <string name="debug_menu">Дебаг Меню</string>
-    <string name="guide_title_where_are_coords_and_angle_throw">Где найти координаты и угол броска?</string>
-    <string name="guide_title_coords_xz">Координаты X и Z</string>
-    <string name="guide_title_throw_angle">Угол Броска</string>
-    <string name="guide_key_f">На клавиатуре нажмите клавишу "F3", чтобы открыть дебаг меню</string>
-    <string name="guide_if_debug_menu_opened">Если у вас открылось что то в таком роде, то вы на верном пути</string>
-    <string name="guide_coords_xz">Координаты X и Z можно найти на 9-ой строке</string>
-    <string name="guide_throw_angle">Угол броска можно найти на 12-ой строке</string>
-
-    <string name="develops">Разработчики:</string>
+    <!-- About App -->
+    <string name="about_app">О Приложении</string>
+    <string name="develops">Разработчики</string>
     <string name="ibragim_maltsagov">Ибрагим Мальцагов</string>
     <string name="kirill_borisenko">Кирилл Борисенко</string>
     <string name="version">Версия</string>
@@ -44,16 +63,15 @@
     <string name="translate">Перевод</string>
     <string name="help_in_app_translation">В приложении нету вашего языка? Либо хотите помочь с переводом приложения на другие языки? Тогда приглашаю Вас принять участие в переводе приложения на другие языки.</string>
     <string name="translate_application">Перевести Приложение</string>
-    <string name="app_logo">App Logo</string>
     <string name="thank_for_review">Спасибо за отзыв</string>
     <string name="we_are_on_vk">Мы в ВКонтакте</string>
     <string name="other_apps">Другие приложения</string>
 
-    <!--Navigation Bar-->
+    <!-- Navigation Bar -->
     <string name="calculator">Калькулятор</string>
     <string name="coordinates">Координаты</string>
 
-    <!--Save Coords-->
+    <!-- Save Coordinates -->
     <string name="save_coordinates">Сохранить Координаты</string>
     <string name="saving_coordinates">Сохранение Координат</string>
     <string name="coordinates_removed">Координаты удалены</string>

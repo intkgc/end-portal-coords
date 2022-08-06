@@ -2,40 +2,56 @@
 <resources>
     <string name="app_name">Portal Arayıcısını Bitir</string>
 
-    <string name="about_app">Uygulama Hakkında</string>
-
-    <string name="x_coord">X Koordinat</string>
-    <string name="y_coord">Y Koordinat</string>
-    <string name="z_coord">Z Koordinat</string>
-    <string name="throw_angle">Atış açısı</string>
-    <string name="enter_firts_xyz_and_throw_angle">İlk XZ koordinatlarını ve atış açısını girin</string>
-    <string name="enter_second_xyz_and_throw_angle">İkinci XZ koordinatlarını ve atış açısını girin</string>
+    <!-- Java Calculator -->
+    <string name="java_first_step">İlk XZ koordinatlarını ve atış açısını girin</string>
+    <string name="java_second_step">İkinci XZ koordinatlarını ve atış açısını girin</string>
     <string name="calculate_coordinates">Koordinatları Hesapla</string>
     <string name="to">-180 ila 180</string>
     <string name="too">-999999999 ila 999999999</string>
-    <string name="guide">Hyde</string>
-    <string name="skip">Atlamak</string>
+
+    <!--Bedrock Calculator-->
+    <string name="bedrock_warning">Please note that due to the fact that in Bedrock Edition
+     there is no way to get the angle of the throw, the coordinates may not be accurate!</string>
+    <string name="bedrock_first_step">Enter current coordinates</string>
+    <string name="bedrock_second_step">Enter second coordinates</string>
+    <string name="bedrock_third_step">Enter the third coordinates</string>
+    <string name="bedrock_fourth_step">Enter fourth coordinates</string>
+
+    <string name="eye_of_ender_says">Sonun Her Şeyi Gören Gözü, Sona giden portalın koordinatlarda bulunduğunu söylüyor:</string>
+
+    <!-- Steps, switch, error's and text input -->
+    <string name="next_step">Sonraki adım</string>
+    <string name="again">Yeniden</string>
+    <string name="step_one">Aşama 1</string>
+    <string name="step_two">Aşama 2</string>
+    <string name="step_third">Aşama 3</string>
+    <string name="step_fourth">Aşama 4</string>
+    <string name="done">Hazır</string>
+
     <string name="error">Hata</string>
     <string name="angleEqualException">Açılar eşit olamaz</string>
     <string name="angleOppositeException">Açılar zıt olamaz</string>
     <string name="check_all_fields">Tüm alanların doldurulduğundan emin olun</string>
 
-    <string name="next_step">Sonraki adım</string>
-    <string name="again">Yeniden</string>
-    <string name="step_one">Aşama 1</string>
-    <string name="step_two">Aşama 2</string>
-    <string name="done">Hazır</string>
+    <string name="x_coord">X Koordinat</string>
+    <string name="y_coord">Y Koordinat</string>
+    <string name="z_coord">Z Koordinat</string>
+    <string name="throw_angle">Atış açısı</string>
 
-    <string name="eye_of_ender_says">Sonun Her Şeyi Gören Gözü, Sona giden portalın koordinatlarda bulunduğunu söylüyor:</string>
-    <string name="debug_menu">Hata Ayıklama Menüsü</string>
-    <string name="guide_title_where_are_coords_and_angle_throw">Atış koordinatlarını ve açısını nerede bulabilirim?</string>
-    <string name="guide_title_coords_xz">X ve Z koordinatları</string>
-    <string name="guide_title_throw_angle">Atış açısı</string>
-    <string name="guide_key_f">Hata ayıklama menüsünü açmak için klavyede "F3" tuşuna basın</string>
-    <string name="guide_if_debug_menu_opened">Böyle bir şeye sahipseniz, o zaman doğru yoldasınız.</string>
-    <string name="guide_coords_xz">X ve Z koordinatları 9. satırda bulunabilir</string>
-    <string name="guide_throw_angle">Atış açısı 12. satırda bulunabilir.</string>
+    <!-- Guide throw angle and coordinates -->
+    <string name="guide">Hyde</string>
+    <string name="skip">Atlamak</string>
+    <string name="java_guide_title_debug_menu">Hata Ayıklama Menüsü</string>
+    <string name="java_guide_title_where_are_coords_and_angle_throw">Atış koordinatlarını ve açısını nerede bulabilirim?</string>
+    <string name="java_guide_title_coords_xz">koordinatlar</string>
+    <string name="java_guide_title_throw_angle">Atış açısı</string>
+    <string name="java_guide_key_f">Hata ayıklama menüsünü açmak için klavyede "F3" tuşuna basın</string>
+    <string name="java_guide_if_debug_menu_opened">Böyle bir şeye sahipseniz, o zaman doğru yoldasınız</string>
+    <string name="java_guide_coords_xz">Koordinatlar 9. satırda bulunabilir</string>
+    <string name="java_guide_throw_angle">Atış açısı 12. satırda bulunabilir</string>
 
+    <!-- About App -->
+    <string name="about_app">Uygulama Hakkında</string>
     <string name="develops">Geliştiriciler:</string>
     <string name="ibragim_maltsagov">İbrahim Maltsagov</string>
     <string name="kirill_borisenko">Kirill Borisenko</string>
@@ -44,16 +60,15 @@
     <string name="translate">Tercüme</string>
     <string name="help_in_app_translation">Uygulamanın diliniz yok mu? Veya uygulamanın diğer dillere çevrilmesine yardımcı olmak ister misiniz? O zaman sizi uygulamanın diğer dillere çevirisine katılmaya davet ediyorum.</string>
     <string name="translate_application">Uygulamayı Çevir</string>
-    <string name="app_logo">App Logo</string>
     <string name="thank_for_review">Geri dönüşünüz için teşekkür ederiz</string>
     <string name="we_are_on_vk">VKontakte\'deyiz</string>
     <string name="other_apps">Diğer uygulamalar</string>
 
-    <!--Navigation Bar-->
+    <!-- Navigation Bar -->
     <string name="calculator">Hesap makinesi</string>
     <string name="coordinates">Koordinatlar</string>
 
-    <!--Save Coords-->
+    <!-- Save Coordinates -->
     <string name="save_coordinates">Koordinatları Kaydet</string>
     <string name="saving_coordinates">Koordinatları Kaydetme</string>
     <string name="coordinates_removed">Koordinatlar Kaldırıldı</string>

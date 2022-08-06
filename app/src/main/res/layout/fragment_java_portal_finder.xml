@@ -41,7 +41,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/first_step"
+                android:id="@+id/java_first_step"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:elevation="4dp"
@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/enter_firts_xyz_and_throw_angle"
+                        android:text="@string/java_first_step"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -177,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/enter_second_xyz_and_throw_angle"
+                        android:text="@string/java_second_step"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout

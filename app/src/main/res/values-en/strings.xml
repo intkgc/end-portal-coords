@@ -1,40 +1,56 @@
 <resources>
     <string name="app_name">End Portal Seeker</string>
 
-    <string name="about_app">About App</string>
-
-    <string name="x_coord">X Coordinate</string>
-    <string name="y_coord">Y Coordinate</string>
-    <string name="z_coord">Z Coordinate</string>
-    <string name="throw_angle">Throw Angle</string>
-    <string name="enter_firts_xyz_and_throw_angle">Enter the first XZ coordinates and throw angle</string>
-    <string name="enter_second_xyz_and_throw_angle">Enter the second XZ coordinates and throw angle</string>
+    <!-- Java Calculator -->
+    <string name="java_first_step">Enter the first XZ coordinates and throw angle</string>
+    <string name="java_second_step">Enter the second XZ coordinates and throw angle</string>
     <string name="calculate_coordinates">Calculate Coordinates</string>
     <string name="to">-180 to 180</string>
     <string name="too">-999999999 to 999999999</string>
-    <string name="guide">Guide</string>
-    <string name="skip">Skip</string>
+
+    <!--Bedrock Calculator-->
+    <string name="bedrock_warning">Please note that due to the fact that in Bedrock Edition
+     there is no way to get the angle of the throw, the coordinates may not be accurate!</string>
+    <string name="bedrock_first_step">Enter current coordinates</string>
+    <string name="bedrock_second_step">Enter second coordinates</string>
+    <string name="bedrock_third_step">Enter the third coordinates</string>
+    <string name="bedrock_fourth_step">Enter fourth coordinates</string>
+
+    <string name="eye_of_ender_says">The All-Seeing Eye of Ender, says that the Portal to the End is located at the coordinates:</string>
+
+    <!-- Steps, switch, error's and text input -->
+    <string name="next_step">Next Step</string>
+    <string name="again">Again</string>
+    <string name="step_one">Step 1</string>
+    <string name="step_two">Step 2</string>
+    <string name="step_third">Step 3</string>
+    <string name="step_fourth">Step 4</string>
+    <string name="done">Done</string>
+
     <string name="error">Error</string>
     <string name="angleEqualException">Angles cannot be equal</string>
     <string name="angleOppositeException">Angles cannot be opposite</string>
     <string name="check_all_fields">Check if all fields are filled</string>
 
-    <string name="next_step">Next Step</string>
-    <string name="again">Again</string>
-    <string name="step_one">Step 1</string>
-    <string name="step_two">Step 2</string>
-    <string name="done">Done</string>
+    <string name="x_coord">X Coordinate</string>
+    <string name="y_coord">Y Coordinate</string>
+    <string name="z_coord">Z Coordinate</string>
+    <string name="throw_angle">Throw Angle</string>
 
-    <string name="eye_of_ender_says">The All-Seeing Eye of Ender, says that the Portal to the End is located at the coordinates:</string>
-    <string name="debug_menu">Debug Menu</string>
-    <string name="guide_title_where_are_coords_and_angle_throw">Where can I find the coordinates and angle throw</string>
-    <string name="guide_title_coords_xz">Coordinates X and Z</string>
-    <string name="guide_title_throw_angle">Angle Throw</string>
-    <string name="guide_key_f">On the keyboard, press the "F3" key to open the debug menu</string>
-    <string name="guide_if_debug_menu_opened">If you have something like this, you are on the right track</string>
-    <string name="guide_coords_xz">X and Z coordinates can be found on the 9th line</string>
-    <string name="guide_throw_angle">Throw Angle can be found on line 12</string>
+    <!-- Guide throw angle and coordinates -->
+    <string name="guide">Guide</string>
+    <string name="skip">Skip</string>
+    <string name="java_guide_title_debug_menu">Debug Menu</string>
+    <string name="java_guide_title_where_are_coords_and_angle_throw">Where can I find the coordinates and angle throw</string>
+    <string name="java_guide_title_coords_xz">Coordinates</string>
+    <string name="java_guide_title_throw_angle">Angle Throw</string>
+    <string name="java_guide_key_f">On the keyboard, press the "F3" key to open the debug menu</string>
+    <string name="java_guide_if_debug_menu_opened">If you have something like this, you are on the right track</string>
+    <string name="java_guide_coords_xz">Coordinates can be found on the 9th line</string>
+    <string name="java_guide_throw_angle">Throw Angle can be found on line 12</string>
 
+    <!-- About App -->
+    <string name="about_app">About App</string>
     <string name="develops">Develops:</string>
     <string name="ibragim_maltsagov">Ibragim Maltsagov</string>
     <string name="kirill_borisenko">Kirill Borisenko</string>
@@ -43,16 +59,15 @@
     <string name="translate">Translate</string>
     <string name="help_in_app_translation">The app doesn\'t have your language? Or do you want to help translate the application into other languages? Then I invite you to take part in the translation of the application into other languages</string>
     <string name="translate_application">Translate Application</string>
-    <string name="app_logo" translatable="false">App Logo</string>
     <string name="thank_for_review">Thanks for the review</string>
     <string name="we_are_on_vk">We are on VK</string>
     <string name="other_apps">Other Apps</string>
 
-    <!--Navigation Bar-->
+    <!-- Navigation Bar -->
     <string name="calculator">Calculator</string>
     <string name="coordinates">Coordinates</string>
 
-    <!--Save Coords-->
+    <!-- Save Coordinates -->
     <string name="save_coordinates">Save Coordinates</string>
     <string name="saving_coordinates">Saving Coordinates</string>
     <string name="coordinates_removed">Coordinates Removed</string>

@@ -18,10 +18,10 @@ public class CalculatorTest {
                     new Point(180.51f, 565.52f)
             ));
             System.out.println(EndPortalCalculator.calculate(
-                    new Point(0, -13),
-                    new Point(8, -17),
-                    new Point(19, 204),
-                    new Point(38, 192)
+                    new Point(13, -4),
+                    new Point(-52, 120),
+                    new Point(-124, 254),
+                    new Point(-201, 392)
             ));
         } catch (AnglesEqualException | AnglesOppositeException e) {
             e.printStackTrace();

@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/enter_your_current_coordinates"
+                        android:text="@string/bedrock_first_step"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -149,7 +149,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/throw_the_eye_of_end_and_follow_it"
+                        android:text="@string/bedrock_second_step"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -238,7 +238,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/and_throw_the_eye_of_end_again_and_follow_it"
+                        android:text="@string/bedrock_third_step"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -326,7 +326,7 @@
                         android:layout_height="wrap_content"
                         android:paddingHorizontal="8dp"
                         android:paddingTop="8dp"
-                        android:text="@string/and_throw_the_eye_of_end_for_the_last_time_and_follow_it"
+                        android:text="@string/bedrock_fourth_step"
                         android:textSize="21sp"/>
 
                     <com.google.android.material.textfield.TextInputLayout

@@ -40,14 +40,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/guide_title_where_are_coords_and_angle_throw"
+                        android:text="@string/java_guide_title_where_are_coords_and_angle_throw"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/guide_key_f"
+                        android:text="@string/java_guide_key_f"
                         android:textSize="24sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -82,14 +82,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/debug_menu"
+                        android:text="@string/java_guide_title_debug_menu"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/guide_if_debug_menu_opened"
+                        android:text="@string/java_guide_if_debug_menu_opened"
                         android:textSize="24sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -124,14 +124,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/guide_title_coords_xz"
+                        android:text="@string/java_guide_title_coords_xz"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/guide_coords_xz"
+                        android:text="@string/java_guide_coords_xz"
                         android:textSize="24sp"/>
                 </LinearLayout>
             </LinearLayout>
@@ -166,14 +166,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/guide_title_throw_angle"
+                        android:text="@string/java_guide_title_throw_angle"
                         android:textSize="24sp"
                         android:textStyle="bold"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/guide_throw_angle"
+                        android:text="@string/java_guide_throw_angle"
                         android:textSize="24sp"/>
                 </LinearLayout>
             </LinearLayout>
