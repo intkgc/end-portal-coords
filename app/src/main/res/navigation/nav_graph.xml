@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/javaPortalFinderFragment">
+
+
+    <fragment
+        android:id="@+id/javaPortalFinderFragment"
+        android:name="com.jvmfrog.endportalcoords.ui.fragment.java.JavaPortalFinderFragment"
+        android:label="fragment_java_portal_finder"
+        tools:layout="@layout/fragment_java_portal_finder" >
+        <action
+            android:id="@+id/action_javaPortalFinderFragment_to_bedrockPortalFinderFragment"
+            app:destination="@id/bedrockPortalFinderFragment" />
+        <action
+            android:id="@+id/action_javaPortalFinderFragment_to_guideFragment"
+            app:destination="@id/guideFragment"/>
+        <action
+            android:id="@+id/action_javaPortalFinderFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bedrockPortalFinderFragment"
+        android:name="com.jvmfrog.endportalcoords.ui.fragment.bedrock.BedrockPortalFinderFragment"
+        android:label="fragment_bedrock_portal_finder"
+        tools:layout="@layout/fragment_bedrock_portal_finder" >
+        <action
+            android:id="@+id/action_bedrockPortalFinderFragment_to_javaPortalFinderFragment"
+            app:destination="@id/javaPortalFinderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.jvmfrog.endportalcoords.ui.fragment.GuideFragment"
+        android:label="fragment_guide"
+        tools:layout="@layout/fragment_guide" >
+        <action
+            android:id="@+id/action_guideFragment_to_javaPortalFinderFragment"
+            app:destination="@id/javaPortalFinderFragment" />
+        <action
+            android:id="@+id/action_guideFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.jvmfrog.endportalcoords.ui.fragment.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_javaPortalFinderFragment"
+            app:destination="@id/javaPortalFinderFragment" />
+        <action
+            android:id="@+id/action_aboutFragment_to_guideFragment"
+            app:destination="@id/guideFragment" />
+    </fragment>
+</navigation>

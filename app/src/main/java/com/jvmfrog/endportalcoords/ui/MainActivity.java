@@ -7,6 +7,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
@@ -18,9 +20,11 @@ import com.google.android.ump.UserMessagingPlatform;
 import com.jvmfrog.endportalcoords.R;
 import com.jvmfrog.endportalcoords.databinding.ActivityMainBinding;
 import com.jvmfrog.endportalcoords.ui.fragment.AboutFragment;
+import com.jvmfrog.endportalcoords.ui.fragment.GuideDescFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.bedrock.BedrockPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.java.JavaPortalFinderFragment;
 import com.jvmfrog.endportalcoords.ui.fragment.GuideFragment;
+import com.jvmfrog.endportalcoords.util.NavigationUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
+        NavigationUtils.navigateWithNavHost(this, R.id.nav_host_fragment, R.id.javaPortalFinderFragment, null);
 
         MobileAds.initialize(this, initializationStatus -> {
             //
@@ -86,11 +90,11 @@ public class MainActivity extends AppCompatActivity {
         binding.calculatorSwitchBtn.setOnClickListener(v -> {
             if (!isSwitching) {
                 isSwitching = true;
-                changeFragment(this, new BedrockPortalFinderFragment(), R.id.frame, null);
+                NavigationUtils.navigateWithNavHost(this, R.id.nav_host_fragment, R.id.action_bedrockPortalFinderFragment_to_javaPortalFinderFragment, null);
                 binding.calculatorSwitchBtn.setText(R.string.switch_to_java);
             } else {
                 isSwitching = false;
-                changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
+                NavigationUtils.navigateWithNavHost(this, R.id.nav_host_fragment, R.id.action_javaPortalFinderFragment_to_bedrockPortalFinderFragment, null);
                 binding.calculatorSwitchBtn.setText(R.string.switch_to_bedrock);
             }
         });
@@ -99,15 +103,15 @@ public class MainActivity extends AppCompatActivity {
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.calculate:
-                    changeFragment(this, new JavaPortalFinderFragment(), R.id.frame, null);
+                    NavigationUtils.navigateWithNavHost(this, R.id.nav_host_fragment, R.id.bedrockPortalFinderFragment, null);
                     binding.calculatorSwitchBtn.show();
                     break;
                 case R.id.guide:
-                    changeFragment(this, new GuideFragment(), R.id.frame, null);
+                    NavigationUtils.navigateWithNavHost(this, R.id.nav_host_fragment, R.id.guideFragment, null);
                     binding.calculatorSwitchBtn.hide();
                     break;
                 case R.id.about:
-                    changeFragment(this, new AboutFragment(), R.id.frame, null);
+                    NavigationUtils.navigateWithNavHost(this, R.id.nav_host_fragment, R.id.aboutFragment, null);
                     binding.calculatorSwitchBtn.hide();
                     break;
             }
