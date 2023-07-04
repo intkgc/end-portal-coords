@@ -3,8 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/calculate"
-        android:title="@string/calculator"
+        android:id="@+id/java"
+        android:title="Java"
+        android:icon="@drawable/ic_round_calculate_24"
+        android:enabled="true"/>
+
+    <item
+        android:id="@+id/bedrock"
+        android:title="Bedrock"
         android:icon="@drawable/ic_round_calculate_24"
         android:enabled="true"/>
 

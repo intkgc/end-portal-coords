@@ -94,6 +94,9 @@
     <string name="enter_a_name_for_coordinates">Please enter a name for the coordinates</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="java_calculator" translatable="false">Java Calculator</string>
+    <string name="bedrock_calculator" translatable="false">Bedrock Calculator</string>
+    <string name="nether_calculator" translatable="false">Nether Calculator</string>
+    <string name="settings" translatable="false">Settings</string>
 </resources>
