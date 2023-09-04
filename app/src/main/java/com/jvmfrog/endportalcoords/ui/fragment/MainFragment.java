@@ -1,5 +1,4 @@
 package com.jvmfrog.endportalcoords.ui.fragment;
-
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -38,7 +37,7 @@ public class MainFragment extends Fragment {
             List<MainModel> list = new ArrayList<>();
             list.add(new MainModel(R.drawable.java_edition_logo, R.string.java_calculator, R.id.javaPortalFinderFragment));
             list.add(new MainModel(R.drawable.bedrock_edition_logo, R.string.bedrock_calculator, R.id.bedrockPortalFinderFragment));
-            list.add(new MainModel(R.drawable.nether_portal_icon, R.string.nether_calculator, R.id.javaPortalFinderFragment));
+            list.add(new MainModel(R.drawable.nether_portal_icon, R.string.nether_calculator, R.id.netherCoordsFragment));
             list.add(new MainModel(R.drawable.guide_icon, R.string.guide, R.id.guideFragment));
             list.add(new MainModel(R.drawable.settings_icon, R.string.settings, R.id.javaPortalFinderFragment));
             binding.recview.setLayoutManager(new LinearLayoutManager(getActivity()));

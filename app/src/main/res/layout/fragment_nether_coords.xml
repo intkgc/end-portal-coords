@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.NetherCoordsFragment"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="21dp"
+        app:cardUseCompatPadding="true"
+        style="@style/Widget.Material3.CardView.Elevated">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:padding="8dp"
+                android:text="Введите координаты верхнего мира"
+                android:textSize="21sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/overworld_x_coord_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:hint="@string/x_coord"
+                app:hintAnimationEnabled="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                app:helperText="@string/too"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/overworld_x_coord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:digits="0123456789.-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/overworld_z_coord_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:hint="@string/z_coord"
+                app:hintAnimationEnabled="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                app:helperText="@string/too"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/overworld_z_coord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:digits="0123456789.-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardCornerRadius="21dp"
+        app:cardUseCompatPadding="true"
+        style="@style/Widget.Material3.CardView.Elevated">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="8dp"
+                android:padding="8dp"
+                android:text="Введите координаты нижнего мира"
+                android:textSize="21sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nether_x_coord_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:hint="@string/x_coord"
+                app:hintAnimationEnabled="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                app:helperText="@string/too"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nether_x_coord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:digits="0123456789.-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nether_z_coord_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:hint="@string/z_coord"
+                app:hintAnimationEnabled="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true"
+                app:counterEnabled="true"
+                app:counterMaxLength="12"
+                app:helperText="@string/too"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nether_z_coord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:digits="0123456789.-"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
